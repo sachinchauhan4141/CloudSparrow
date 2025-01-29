@@ -58,7 +58,7 @@ const TenthPage = () => {
           YOU TRYING TO SOLVE?
         </p>
       </div>
-      <div className='flex flex-wrap gap-[8px] items-center justify-center mb-[50px]'>
+      <div className='flex flex-wrap gap-[8px] items-center justify-center mb-[50px]  '>
         <Card />
         <Card />
         <Card />
@@ -72,7 +72,7 @@ const TenthPage = () => {
 
 const Card = () => {
   return (
-    <div className='flex items-center justify-between w-[100%] sm:w-[600px] p-3 mt-5 border'>
+    <div className='flex items-center justify-between w-[100%] sm:w-[600px] p-3 mt-5 border sm:mx-10 md:mx-10 mx-2'>
       <p className="text-sm sm:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       <FaPlus className='text-[#2A6BFD] text-xl' />
     </div>
