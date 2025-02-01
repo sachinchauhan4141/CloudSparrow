@@ -50,13 +50,13 @@ const Navbar = () => {
         <div className="absolute top-20 left-0 w-full bg-[url('./assets/BackGroundImage.png')] py-4 flex flex-col items-center lg:hidden">
           {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
             (item) => (
-              <a
+              <Link
                 key={item}
-                href="/"
+                to={item === "Careers" ? "/careers" : "/"}
                 className="py-2 text-lg font-medium hover:text-blue-400 transition"
               >
                 {item}
-              </a>
+              </Link>
             )
           )}
           <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition">
@@ -69,7 +69,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 
 // import React from 'react'
 
