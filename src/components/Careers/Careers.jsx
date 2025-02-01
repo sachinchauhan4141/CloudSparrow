@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { IoIosArrowDropdownCircle,IoIosArrowDroprightCircle } from "react-icons/io";
+import {
+  IoIosArrowDropdownCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 
 const Careers = () => {
   return (
@@ -17,16 +20,10 @@ const Careers = () => {
       </div>
       <div className="p-12 flex mx-20">
         <div className="w-1/2 ">
-          <img
-            className="w-[500px] h-[540px] absolute"
-            src="/cloudsparrow-all-img/careerimg2.png"
-            alt=""
-            srcset=""
-          />
-          <div className="w-[500px] h-[540px] relative flex">
-            <div className="w-1/3 border-2 border-black min-h-full rounded-3xl"></div>
-            <div className="w-1/3 border-2 border-red-500 h-[500px] rounded-3xl mx-1 mt-[40px]"></div>
-            <div className="w-1/3 border-2 border-green-500 h-[420px] mt-[40px] rounded-3xl"></div>
+          <div className="w-[500px] h-[540px] flex">
+            <div className="overflow-hidden w-1/3 rounded-3xl"><img src="/cloudsparrow-all-img/girl1.jpeg" alt="" /></div>
+            <div className="overflow-hidden w-1/3 h-[500px] rounded-3xl mx-1 mt-[40px]"><img src="/cloudsparrow-all-img/girl2.jpeg" alt="" /></div>
+            <div className="overflow-hidden w-1/3 h-[420px] mt-[40px] rounded-3xl"><img src="/cloudsparrow-all-img/girl3.jpeg" alt="" /></div>
           </div>
         </div>
         <div className="w-1/2 mt-12">
@@ -69,124 +66,128 @@ const Careers = () => {
 };
 
 const JobPage = () => {
-  const jobDetailsData = [{
-    jobDescription: {
-      jobTitle: "Senior SAP FICO Consultant",
-      location: "Coimbatore",
-      terms: "Full Time",
-      expirence: "10 years",
-      remuneration: "Market Standard",
+  const jobDetailsData = [
+    {
+      jobDescription: {
+        jobTitle: "Senior SAP FICO Consultant",
+        location: "Coimbatore",
+        terms: "Full Time",
+        expirence: "10 years",
+        remuneration: "Market Standard",
+      },
+      aboutUs:
+        "Hub-AI is an SAP S/4HANA consulting company, fast-growing with over 150+ consultants, and has 100% YOY growth. Our vibrant and diverse culture builds an environment where collaboration and innovation thrive. We prioritize providing plenty of opportunities for learning and professional development, ensuring every team member can plan their path to success along with the company's progressive growth. This unique blend of growth, culture, and career development makes us a top choice in the SAP consulting field.",
+      aboutTheRole:
+        "The Consultant facilitates the implementation and support of SAP Finance and controlling to enhance the client's business functionality and overall performance while maintaining a high degree of customer satisfaction.",
+      responsibilities: [
+        "Candidate should know SAP implementation methodology i.e. ASAP and Active Methodology.",
+        "Design, configuration, and testing of core FI/CO modules (GL, New GL functionality, AP, AR).",
+        "Design, configuration, and testing of Asset Management.",
+        "Design, configuration, and testing of Consolidations.",
+        "Design, configuration, and testing of CO-PA.",
+        "Design, configuration, and testing of Cost center accounting.",
+        "Design, configuration, and testing of Profit center accounting.",
+        "Design, configuration, and testing of Product costing.",
+        "Design, configuration, and testing of the Material ledger.",
+        "Experience and knowledge of key integration points with FI/CO modules.",
+        "Ability to configure FICO processes in S/4HANA and should have knowledge of simplification in the FICO module.",
+        "Deep knowledge of FICO Enterprise structure, Business partner, FSCM, New GL functionality, Material ledger, Taxation, Banking automation, Logistics integrated accounting entries.",
+      ],
+      candidateRequirements: [
+        "Bachelor's Degree (Preferably in Finance / Accounting).",
+        "Minimum 10 years of SAP FI/CO configuration experience.",
+        "Should have four full lifecycle SAP implementation experiences (Project Preparation through Go-Live and Hyper care) and at least 2 full lifecycle S/4HANA greenfield implementations.",
+        "Strong knowledge of Taxation, P&L, and Balance sheet.",
+        "Business knowledge and process design skills.",
+        "Ability to analyze problems and provide clear recommendations.",
+        "Strong organizational skills.",
+        "Able to collaborate with clients and have a strong desire to excel.",
+        "Excellent communication skills, written and verbal.",
+        "Good interpersonal skills.",
+        "Must be able to work independently as well as a team player and can manage own workload.",
+      ],
     },
-    aboutUs:
-      "Hub-AI is an SAP S/4HANA consulting company, fast-growing with over 150+ consultants, and has 100% YOY growth. Our vibrant and diverse culture builds an environment where collaboration and innovation thrive. We prioritize providing plenty of opportunities for learning and professional development, ensuring every team member can plan their path to success along with the company's progressive growth. This unique blend of growth, culture, and career development makes us a top choice in the SAP consulting field.",
-    aboutTheRole:
-      "The Consultant facilitates the implementation and support of SAP Finance and controlling to enhance the client's business functionality and overall performance while maintaining a high degree of customer satisfaction.",
-    responsibilities: [
-      "Candidate should know SAP implementation methodology i.e. ASAP and Active Methodology.",
-      "Design, configuration, and testing of core FI/CO modules (GL, New GL functionality, AP, AR).",
-      "Design, configuration, and testing of Asset Management.",
-      "Design, configuration, and testing of Consolidations.",
-      "Design, configuration, and testing of CO-PA.",
-      "Design, configuration, and testing of Cost center accounting.",
-      "Design, configuration, and testing of Profit center accounting.",
-      "Design, configuration, and testing of Product costing.",
-      "Design, configuration, and testing of the Material ledger.",
-      "Experience and knowledge of key integration points with FI/CO modules.",
-      "Ability to configure FICO processes in S/4HANA and should have knowledge of simplification in the FICO module.",
-      "Deep knowledge of FICO Enterprise structure, Business partner, FSCM, New GL functionality, Material ledger, Taxation, Banking automation, Logistics integrated accounting entries.",
-    ],
-    candidateRequirements: [
-      "Bachelor's Degree (Preferably in Finance / Accounting).",
-      "Minimum 10 years of SAP FI/CO configuration experience.",
-      "Should have four full lifecycle SAP implementation experiences (Project Preparation through Go-Live and Hyper care) and at least 2 full lifecycle S/4HANA greenfield implementations.",
-      "Strong knowledge of Taxation, P&L, and Balance sheet.",
-      "Business knowledge and process design skills.",
-      "Ability to analyze problems and provide clear recommendations.",
-      "Strong organizational skills.",
-      "Able to collaborate with clients and have a strong desire to excel.",
-      "Excellent communication skills, written and verbal.",
-      "Good interpersonal skills.",
-      "Must be able to work independently as well as a team player and can manage own workload.",
-    ],
-  },{
-    jobDescription: {
-      jobTitle: "Senior SAP FICO Consultant",
-      location: "Coimbatore",
-      terms: "Full Time",
-      expirence: "10 years",
-      remuneration: "Market Standard",
+    {
+      jobDescription: {
+        jobTitle: "Senior SAP FICO Consultant",
+        location: "Coimbatore",
+        terms: "Full Time",
+        expirence: "10 years",
+        remuneration: "Market Standard",
+      },
+      aboutUs:
+        "Hub-AI is an SAP S/4HANA consulting company, fast-growing with over 150+ consultants, and has 100% YOY growth. Our vibrant and diverse culture builds an environment where collaboration and innovation thrive. We prioritize providing plenty of opportunities for learning and professional development, ensuring every team member can plan their path to success along with the company's progressive growth. This unique blend of growth, culture, and career development makes us a top choice in the SAP consulting field.",
+      aboutTheRole:
+        "The Consultant facilitates the implementation and support of SAP Finance and controlling to enhance the client's business functionality and overall performance while maintaining a high degree of customer satisfaction.",
+      responsibilities: [
+        "Candidate should know SAP implementation methodology i.e. ASAP and Active Methodology.",
+        "Design, configuration, and testing of core FI/CO modules (GL, New GL functionality, AP, AR).",
+        "Design, configuration, and testing of Asset Management.",
+        "Design, configuration, and testing of Consolidations.",
+        "Design, configuration, and testing of CO-PA.",
+        "Design, configuration, and testing of Cost center accounting.",
+        "Design, configuration, and testing of Profit center accounting.",
+        "Design, configuration, and testing of Product costing.",
+        "Design, configuration, and testing of the Material ledger.",
+        "Experience and knowledge of key integration points with FI/CO modules.",
+        "Ability to configure FICO processes in S/4HANA and should have knowledge of simplification in the FICO module.",
+        "Deep knowledge of FICO Enterprise structure, Business partner, FSCM, New GL functionality, Material ledger, Taxation, Banking automation, Logistics integrated accounting entries.",
+      ],
+      candidateRequirements: [
+        "Bachelor's Degree (Preferably in Finance / Accounting).",
+        "Minimum 10 years of SAP FI/CO configuration experience.",
+        "Should have four full lifecycle SAP implementation experiences (Project Preparation through Go-Live and Hyper care) and at least 2 full lifecycle S/4HANA greenfield implementations.",
+        "Strong knowledge of Taxation, P&L, and Balance sheet.",
+        "Business knowledge and process design skills.",
+        "Ability to analyze problems and provide clear recommendations.",
+        "Strong organizational skills.",
+        "Able to collaborate with clients and have a strong desire to excel.",
+        "Excellent communication skills, written and verbal.",
+        "Good interpersonal skills.",
+        "Must be able to work independently as well as a team player and can manage own workload.",
+      ],
     },
-    aboutUs:
-      "Hub-AI is an SAP S/4HANA consulting company, fast-growing with over 150+ consultants, and has 100% YOY growth. Our vibrant and diverse culture builds an environment where collaboration and innovation thrive. We prioritize providing plenty of opportunities for learning and professional development, ensuring every team member can plan their path to success along with the company's progressive growth. This unique blend of growth, culture, and career development makes us a top choice in the SAP consulting field.",
-    aboutTheRole:
-      "The Consultant facilitates the implementation and support of SAP Finance and controlling to enhance the client's business functionality and overall performance while maintaining a high degree of customer satisfaction.",
-    responsibilities: [
-      "Candidate should know SAP implementation methodology i.e. ASAP and Active Methodology.",
-      "Design, configuration, and testing of core FI/CO modules (GL, New GL functionality, AP, AR).",
-      "Design, configuration, and testing of Asset Management.",
-      "Design, configuration, and testing of Consolidations.",
-      "Design, configuration, and testing of CO-PA.",
-      "Design, configuration, and testing of Cost center accounting.",
-      "Design, configuration, and testing of Profit center accounting.",
-      "Design, configuration, and testing of Product costing.",
-      "Design, configuration, and testing of the Material ledger.",
-      "Experience and knowledge of key integration points with FI/CO modules.",
-      "Ability to configure FICO processes in S/4HANA and should have knowledge of simplification in the FICO module.",
-      "Deep knowledge of FICO Enterprise structure, Business partner, FSCM, New GL functionality, Material ledger, Taxation, Banking automation, Logistics integrated accounting entries.",
-    ],
-    candidateRequirements: [
-      "Bachelor's Degree (Preferably in Finance / Accounting).",
-      "Minimum 10 years of SAP FI/CO configuration experience.",
-      "Should have four full lifecycle SAP implementation experiences (Project Preparation through Go-Live and Hyper care) and at least 2 full lifecycle S/4HANA greenfield implementations.",
-      "Strong knowledge of Taxation, P&L, and Balance sheet.",
-      "Business knowledge and process design skills.",
-      "Ability to analyze problems and provide clear recommendations.",
-      "Strong organizational skills.",
-      "Able to collaborate with clients and have a strong desire to excel.",
-      "Excellent communication skills, written and verbal.",
-      "Good interpersonal skills.",
-      "Must be able to work independently as well as a team player and can manage own workload.",
-    ],
-  },{
-    jobDescription: {
-      jobTitle: "Senior SAP FICO Consultant",
-      location: "Coimbatore",
-      terms: "Full Time",
-      expirence: "10 years",
-      remuneration: "Market Standard",
+    {
+      jobDescription: {
+        jobTitle: "Senior SAP FICO Consultant",
+        location: "Coimbatore",
+        terms: "Full Time",
+        expirence: "10 years",
+        remuneration: "Market Standard",
+      },
+      aboutUs:
+        "Hub-AI is an SAP S/4HANA consulting company, fast-growing with over 150+ consultants, and has 100% YOY growth. Our vibrant and diverse culture builds an environment where collaboration and innovation thrive. We prioritize providing plenty of opportunities for learning and professional development, ensuring every team member can plan their path to success along with the company's progressive growth. This unique blend of growth, culture, and career development makes us a top choice in the SAP consulting field.",
+      aboutTheRole:
+        "The Consultant facilitates the implementation and support of SAP Finance and controlling to enhance the client's business functionality and overall performance while maintaining a high degree of customer satisfaction.",
+      responsibilities: [
+        "Candidate should know SAP implementation methodology i.e. ASAP and Active Methodology.",
+        "Design, configuration, and testing of core FI/CO modules (GL, New GL functionality, AP, AR).",
+        "Design, configuration, and testing of Asset Management.",
+        "Design, configuration, and testing of Consolidations.",
+        "Design, configuration, and testing of CO-PA.",
+        "Design, configuration, and testing of Cost center accounting.",
+        "Design, configuration, and testing of Profit center accounting.",
+        "Design, configuration, and testing of Product costing.",
+        "Design, configuration, and testing of the Material ledger.",
+        "Experience and knowledge of key integration points with FI/CO modules.",
+        "Ability to configure FICO processes in S/4HANA and should have knowledge of simplification in the FICO module.",
+        "Deep knowledge of FICO Enterprise structure, Business partner, FSCM, New GL functionality, Material ledger, Taxation, Banking automation, Logistics integrated accounting entries.",
+      ],
+      candidateRequirements: [
+        "Bachelor's Degree (Preferably in Finance / Accounting).",
+        "Minimum 10 years of SAP FI/CO configuration experience.",
+        "Should have four full lifecycle SAP implementation experiences (Project Preparation through Go-Live and Hyper care) and at least 2 full lifecycle S/4HANA greenfield implementations.",
+        "Strong knowledge of Taxation, P&L, and Balance sheet.",
+        "Business knowledge and process design skills.",
+        "Ability to analyze problems and provide clear recommendations.",
+        "Strong organizational skills.",
+        "Able to collaborate with clients and have a strong desire to excel.",
+        "Excellent communication skills, written and verbal.",
+        "Good interpersonal skills.",
+        "Must be able to work independently as well as a team player and can manage own workload.",
+      ],
     },
-    aboutUs:
-      "Hub-AI is an SAP S/4HANA consulting company, fast-growing with over 150+ consultants, and has 100% YOY growth. Our vibrant and diverse culture builds an environment where collaboration and innovation thrive. We prioritize providing plenty of opportunities for learning and professional development, ensuring every team member can plan their path to success along with the company's progressive growth. This unique blend of growth, culture, and career development makes us a top choice in the SAP consulting field.",
-    aboutTheRole:
-      "The Consultant facilitates the implementation and support of SAP Finance and controlling to enhance the client's business functionality and overall performance while maintaining a high degree of customer satisfaction.",
-    responsibilities: [
-      "Candidate should know SAP implementation methodology i.e. ASAP and Active Methodology.",
-      "Design, configuration, and testing of core FI/CO modules (GL, New GL functionality, AP, AR).",
-      "Design, configuration, and testing of Asset Management.",
-      "Design, configuration, and testing of Consolidations.",
-      "Design, configuration, and testing of CO-PA.",
-      "Design, configuration, and testing of Cost center accounting.",
-      "Design, configuration, and testing of Profit center accounting.",
-      "Design, configuration, and testing of Product costing.",
-      "Design, configuration, and testing of the Material ledger.",
-      "Experience and knowledge of key integration points with FI/CO modules.",
-      "Ability to configure FICO processes in S/4HANA and should have knowledge of simplification in the FICO module.",
-      "Deep knowledge of FICO Enterprise structure, Business partner, FSCM, New GL functionality, Material ledger, Taxation, Banking automation, Logistics integrated accounting entries.",
-    ],
-    candidateRequirements: [
-      "Bachelor's Degree (Preferably in Finance / Accounting).",
-      "Minimum 10 years of SAP FI/CO configuration experience.",
-      "Should have four full lifecycle SAP implementation experiences (Project Preparation through Go-Live and Hyper care) and at least 2 full lifecycle S/4HANA greenfield implementations.",
-      "Strong knowledge of Taxation, P&L, and Balance sheet.",
-      "Business knowledge and process design skills.",
-      "Ability to analyze problems and provide clear recommendations.",
-      "Strong organizational skills.",
-      "Able to collaborate with clients and have a strong desire to excel.",
-      "Excellent communication skills, written and verbal.",
-      "Good interpersonal skills.",
-      "Must be able to work independently as well as a team player and can manage own workload.",
-    ],
-  }];
+  ];
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleCollapse = (index) => {
@@ -194,21 +195,31 @@ const JobPage = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-
-
   return (
     <>
       <div className="bg-gray-200 mx-16 px-8  py-12 mb-12">
-        {jobDetailsData.map((data,index)=>{
-          return(<JobDescriptionPoint jobDetails={data} toggleCollapse={toggleCollapse} index={index}  activeIndex={activeIndex} key={index}/>)  
+        {jobDetailsData.map((data, index) => {
+          return (
+            <JobDescriptionPoint
+              jobDetails={data}
+              toggleCollapse={toggleCollapse}
+              index={index}
+              activeIndex={activeIndex}
+              key={index}
+            />
+          );
         })}
       </div>
     </>
   );
 };
 
-const JobDescriptionPoint = ({ jobDetails,toggleCollapse,index,activeIndex }) => {
-  
+const JobDescriptionPoint = ({
+  jobDetails,
+  toggleCollapse,
+  index,
+  activeIndex,
+}) => {
   return (
     <>
       <div className="flex border-t-2 p-2 mx-8 justify-between">
@@ -221,14 +232,20 @@ const JobDescriptionPoint = ({ jobDetails,toggleCollapse,index,activeIndex }) =>
           <p className="bg-white text-[14px] font-medium font-[Fivo Sans Modern] px-4 py-2 rounded-3xl text-[#0F75BC]">
             2 jobs
           </p>
-          <button onClick={()=>toggleCollapse(index)}>
-            {activeIndex === index ?<IoIosArrowDropdownCircle className="text-4xl text-[#0F75BC]" /> :<IoIosArrowDroprightCircle className="text-4xl"/>}
+          <button onClick={() => toggleCollapse(index)}>
+            {activeIndex === index ? (
+              <IoIosArrowDropdownCircle className="text-4xl text-[#0F75BC]" />
+            ) : (
+              <IoIosArrowDroprightCircle className="text-4xl" />
+            )}
           </button>
         </div>
       </div>
-      {activeIndex === index && <div className="flex flex-col mx-8">
-        <JobDescriptionCard JobDetails={jobDetails} />
-      </div>}
+      {activeIndex === index && (
+        <div className="flex flex-col mx-8">
+          <JobDescriptionCard JobDetails={jobDetails} />
+        </div>
+      )}
     </>
   );
 };
