@@ -1,14 +1,14 @@
-import HomePage from "./components/HomePage"
-import SecondPage from "./components/SecondPage"
-import ThirdPage from "./components/ThirdPage"
-import FourthPage from "./components/FourthPage"
-import FifthPage from "./components/FifthPage"
-import SixthPage from "./components/SixthPage"
-import SeventhPage from "./components/SeventhPage"
-import EightPage from "./components/EightPage"
-import NinthPage from "./components/NinthPage"
-import TenthPage from "./components/TenthPage"
-import Footer from "./components/Footer"
+import HomePage from "./components/Home/HomePage"
+import SecondPage from "./components/Home/SecondPage"
+import ThirdPage from "./components/Home/ThirdPage"
+import FourthPage from "./components/Home/FourthPage"
+import FifthPage from "./components/Home/FifthPage"
+import SixthPage from "./components/Home/SixthPage"
+import SeventhPage from "./components/Home/SeventhPage"
+import EightPage from "./components/Home/EightPage"
+import NinthPage from "./components/Home/NinthPage"
+import TenthPage from "./components/Home/TenthPage"
+import Footer from "./components/Common/Footer"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
   <FifthPage/>
   <SixthPage/>
   <SeventhPage/>
-  <EightPage/>
+  <EightPage/>Home/
   <NinthPage/>
   <TenthPage/>
   <Footer/>

@@ -12,7 +12,7 @@
 //             <a href="/" className='font-[Fivo Sans Modern] font-medium '>About</a>
 //             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Services</a>
 //             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Portfolio</a>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Blog</a>
+//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Careers</a>
 //             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Contact</a>
 //         </div>
 //     </nav>
@@ -43,7 +43,7 @@ const Navbar = () => {
 
       {/* Navigation Links (Desktop) */}
       <nav className="hidden lg:flex gap-8">
-        {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map(
+        {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
           (item) => (
             <a
               key={item}
@@ -73,7 +73,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="absolute top-20 left-0 w-full bg-[#232322] py-4 flex flex-col items-center lg:hidden">
-          {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map(
+          {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
             (item) => (
               <a
                 key={item}

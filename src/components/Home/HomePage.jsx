@@ -57,7 +57,7 @@
 // export default HomePage;
 
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Common/Navbar";
 
 const HomePage = () => {
   return (
@@ -103,7 +103,6 @@ const HomePage = () => {
         />
       </div>
 
-      {/* Footer Section */}
       {/* <div className="flex flex-col md:flex-row items-center justify-between max-w-xl mx-auto bg-gray-800 text-white py-4 px-6 rounded-md mt-16 md:mt-10">
         <p className="text-center md:text-left text-sm font-semibold">
           Creative web company specializing in WordPress, eCommerce, and
