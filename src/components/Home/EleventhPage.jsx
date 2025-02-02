@@ -38,7 +38,7 @@ const EleventhPage = () => {
           </button>
         </div>
 
-        <div className="flex justify-center w-full items-center relative mt-10">
+        <div className="flex justify-center w-full items-center relative mt-5">
           <img
             src="/cloudsparrow-all-img/FooterImage.png"
             alt="UI Design"
