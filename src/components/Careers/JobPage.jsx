@@ -89,56 +89,54 @@ const JobDescriptionCard = ({ JobDetails }) => {
   return (
     <div className="bg-white p-8 my-2 flex flex-col ">
       <div>
-        <p className=" text-[18px] font-semibold ">Job Description:</p>
+        <p className=" text-[18px] font-bold ">Job Description:</p>
         <div className="text-[16px] my-2">
-          <p className="font-semibold">
+          <p className="font-bold">
             Job title:{" "}
-            <span className=" font-extralight">
+            <span className="font-normal">
               {JobDetails.jobDescription.jobTitle}
             </span>
           </p>
-          <p className="font-semibold">
+          <p className="font-bold">
             Location:{" "}
-            <span className="font-extralight">
+            <span className="font-normal">
               {JobDetails.jobDescription.location}
             </span>
           </p>
-          <p className="font-semibold">
+          <p className="font-bold">
             Terms:{" "}
-            <span className="font-extralight">
+            <span className="font-normal">
               {JobDetails.jobDescription.terms}
             </span>
           </p>
-          <p className="font-semibold">
+          <p className="font-bold">
             Expirence:{" "}
-            <span className="font-extralight">
+            <span className="font-normal">
               {JobDetails.jobDescription.expirence}
             </span>
           </p>
-          <p className="font-semibold">
+          <p className="font-bold">
             Remuneration:{" "}
-            <span className="font-extralight">
+            <span className="font-normal">
               {JobDetails.jobDescription.remuneration}
             </span>
           </p>
         </div>
       </div>
       <div className="my-4">
-        <p className=" text-[18px] font-semibold ">About us:</p>
-        <p className=" text-[16px] font-light mt-2">{JobDetails.aboutUs}</p>
+        <p className=" text-[18px] font-bold ">About us:</p>
+        <p className=" text-[16px]  mt-2">{JobDetails.aboutUs}</p>
       </div>
       <div className="my-4">
-        <p className=" text-[18px] font-semibold ">About the role:</p>
-        <p className=" text-[16px] font-light mt-2">
-          {JobDetails.aboutTheRole}
-        </p>
+        <p className=" text-[18px] font-bold ">About the role:</p>
+        <p className=" text-[16px]  mt-2">{JobDetails.aboutTheRole}</p>
       </div>
       <div className="my-4">
-        <p className=" text-[18px] font-semibold ">Responsibilities:</p>
+        <p className=" text-[18px] font-bold ">Responsibilities:</p>
         <ul className="list-disc ml-5">
           {JobDetails.responsibilities.map((res, index) => {
             return (
-              <li key={index} className=" text-[16px] font-light">
+              <li key={index} className=" text-[16px] ">
                 {res}
               </li>
             );
@@ -146,11 +144,11 @@ const JobDescriptionCard = ({ JobDetails }) => {
         </ul>
       </div>
       <div className="my-4">
-        <p className=" text-[18px] font-semibold ">Candidate requirements:</p>
+        <p className=" text-[18px] font-bold ">Candidate requirements:</p>
         <ul className="list-disc ml-5">
           {JobDetails.candidateRequirements.map((res, index) => {
             return (
-              <li key={index} className=" text-[16px] font-light">
+              <li key={index} className=" text-[16px]">
                 {res}
               </li>
             );
