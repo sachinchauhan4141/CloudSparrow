@@ -4,20 +4,23 @@ import { JobPage } from "./JobPage";
 const Careers = () => {
   return (
     <>
-      <div className="bg-[url('./assets/careerimg.png')] bg-cover bg-center min-h-[500px] text-white flex flex-col items-start justify-center bg-linear-to-r from-black to-white">
-        <div>
-          <h1 className="font-[Fivo Sans Modern] font-bold text-[64px] ml-12">
-            Join the Cloud-Sparrow
-          </h1>
-          <p className="font-[Fivo Sans Modern] font-bold text-[20px] ml-12">
+      <div className="bg-[url('./assets/careerimg.png')] bg-cover bg-center min-h-[500px] text-white">
+        <div className="font-[Fivo Sans Modern] pl-28 w-[1600px] min-h-[500px] bg-gradient-to-r from-[#080808B8] via-transparent to-transparent flex flex-col items-start justify-center">
+          <div>
+            <p className="font-extrabold text-[14px]">
+              HOME / <span className="text-[#0F75BC]">CAREERS</span>
+            </p>
+          </div>
+          <h1 className="font-bold text-[74px]">Join the Cloud-Sparrow</h1>
+          <p className="font-bold text-[20px]">
             At Cloud-Sparrow, we are on a mission to revolutionize the way{" "}
             <br /> businesses approach Hyperautomation & digital transformation.
           </p>
         </div>
       </div>
       <div className="p-12 flex mx-20">
-        <div className="w-1/2 ">
-          <div className="w-[500px] h-[540px] flex">
+        <div className="w-1/2">
+          <div className="w-[610px] h-[546px] flex">
             <div className="overflow-hidden w-1/3 rounded-3xl">
               <img src="/cloudsparrow-all-img/girl1.jpeg" alt="" />
             </div>
@@ -29,8 +32,8 @@ const Careers = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 mt-12">
-          <h1 className="font-[Fivo Sans Modern] font-bold text-[42px] text-[#080808] leading-[1.1]">
+        <div className="w-1/2 mt-12 ml-18">
+          <h1 className="font-[Fivo Sans Modern] font-bold text-[48px] text-[#080808] leading-[1.1]">
             Doers. Hackers.
             <br /> Thinkers.
           </h1>
@@ -45,13 +48,13 @@ const Careers = () => {
             problems <br /> while transforming customer ideas into successful
             products.
           </p>
-          <button className="bg-[#0F75BC] py-2 px-6 rounded-sm text-white text-[14px]">
+          <button className="bg-[#0F75BC] py-2 px-6 rounded-sm text-white text-[15px]">
             See Open Positions
           </button>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="font-[Fivo Sans Modern] text-center font-bold text-[58px] text-[#080808] w-1/2 leading-[1.1]">
+      <div className="flex flex-col items-center justify-center mb-12">
+        <h1 className="font-[Fivo Sans Modern] text-center font-bold text-[64px] text-[#080808] w-1/2 leading-[1.1]">
           Career growth
           <br />
           is always in sight.
