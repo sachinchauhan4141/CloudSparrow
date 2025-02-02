@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCirclePlus } from "react-icons/fa6";
 
-const SecondPage = () => {
+const BannerFooter = () => {
   return (
     <div className="flex flex-col w-full h-full border bg-[#0C0C0C] p-4 md:p-8">
       {/* Header Section */}
@@ -53,4 +53,4 @@ const SecondPage = () => {
   );
 };
 
-export default SecondPage;
+export default BannerFooter;

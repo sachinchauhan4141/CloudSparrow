@@ -1,5 +1,5 @@
 import React from "react";
-import SecondPage from "./SecondPage";
+import BannerFooter from "./BannerFooter";
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
 import FifthPage from "./FifthPage";
@@ -15,7 +15,7 @@ const HomePage = () => {
   return (
     <div>
       <Banner />
-      <SecondPage />
+      <BannerFooter />
       <ThirdPage />
       <FourthPage />
       <FifthPage />
