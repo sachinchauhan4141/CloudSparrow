@@ -69,30 +69,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// import React from 'react'
-
-// const Navbar = () => {
-//   return (
-//     <div className='flex justify-between h-[80px] w-full text-white'>
-//         <nav className='flex  items-center top-[30px] pl-[30px]'>
-//         <div className='flex h-[80px] w-[80px] items-center pr-3 pt-3'>
-//             <img src="/cloudsparrow-all-img/logo.png" alt="NoImage" srcset="" />
-//         </div>
-//         <div className='flex h-[10px] w-[480] gap-12 ml-[30px] mb-[20px]'>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Home</a>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>About</a>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Services</a>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Portfolio</a>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Careers</a>
-//             <a href="/" className='font-[Fivo Sans Modern] font-medium '>Contact</a>
-//         </div>
-//     </nav>
-//     <div className='flex pr-[30px] items-center top-[30px]'>
-//         <button className=' h-[40px] w-[150px] font-[Fivo Sans Modern] text-[14px] bg-[#2A6BFD] font-semibold rounded-xl'>Work With Us</button>
-//     </div>
-//     </div>
-//   )
-// }
-
-// export default Navbar

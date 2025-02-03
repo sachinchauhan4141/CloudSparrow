@@ -1,14 +1,11 @@
 import React from "react";
 import BannerFooter from "./BannerFooter";
-import ThirdPage from "./ThirdPage";
-import FourthPage from "./FourthPage";
-import FifthPage from "./FifthPage";
-import SixthPage from "./SixthPage";
-import SeventhPage from "./SeventhPage";
+import HeroSection from "./HeroSection";
+import WhatWeDo from "./WhatWeDo";
+import Work from "./Work";
+import Testimonials from "./Testimonials";
 import EightPage from "./EightPage";
-import NinthPage from "./NinthPage";
-import TenthPage from "./TenthPage";
-import EleventhPage from "./EleventhPage";
+import ProductCycle from "./ProductCycle";
 import Banner from "./Banner";
 
 const HomePage = () => {
@@ -16,15 +13,12 @@ const HomePage = () => {
     <div>
       <Banner />
       <BannerFooter />
-      <ThirdPage />
-      <FourthPage />
-      <FifthPage />
-      <SixthPage />
-      <SeventhPage />
+      <HeroSection />
+      <WhatWeDo />
+      <Work />
+      <Testimonials />
       <EightPage />
-      <NinthPage />
-      <TenthPage />
-      <EleventhPage />
+      <ProductCycle />
     </div>
   );
 };

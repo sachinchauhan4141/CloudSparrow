@@ -3,10 +3,10 @@ import { FaCirclePlus } from "react-icons/fa6";
 
 const BannerFooter = () => {
   return (
-    <div className="flex flex-col w-full h-full border bg-[#0C0C0C] p-4 md:p-8">
+    <div className="flex flex-col w-full border bg-[#0C0C0C] px-8 py-16">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-full mt-10 md:mt-16 px-4 md:px-20">
-        <p className="font-[Fivo Sans Modern] font-bold text-white text-5xl text-left">
+      <div className="flex flex-row items-center justify-between w-full px-20">
+        <p className=" font-bold text-white text-6xl text-left leading-16">
           DIGITAL PRODUCTS <br /> EXPERIENCES
         </p>
         <img
@@ -23,9 +23,9 @@ const BannerFooter = () => {
           src="/cloudsparrow-all-img/ThirdPageCircle.png"
           alt=""
         />
-        <div className="text-white font-[Fivo Sans Modern] text-left">
+        <div className="text-white  text-left mx-auto pb-20">
           <div>
-            <p className="text-9xl font-semibold">4.0x</p>
+            <p className="text-[160px] font-semibold">4.0x</p>
           </div>
           <div className="my-2 bg-gradient-to-r from-black via-white to-black h-1 w-full" ></div>
           <div className="flex gap-8 justify-center items-center">
@@ -39,11 +39,11 @@ const BannerFooter = () => {
       </div>
 
       {/* Image Gallery Section */}
-      <div className="flex flex-wrap justify-evenly items-center mt-10 pb-6">
+      <div className="flex flex-wrap justify-evenly items-center pb-6">
         {[1, 2, 3, 4, 5, 6, 7].map((num) => (
           <img
             key={num}
-            className="h-16 md:h-20 object-contain"
+            className="h-20 object-contain"
             src={`/cloudsparrow-all-img/image${num}.png`}
             alt=""
           />

@@ -1,6 +1,7 @@
 import React from "react";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 
-const FourthPage = () => {
+const WhatWeDo = () => {
   return (
     <div className="px-12">
       {/* Section Header */}
@@ -10,13 +11,13 @@ const FourthPage = () => {
           alt="No"
           className="w-[20px] md:w-auto"
         />
-        <p className="ml-3 font-[Fivo Sans Modern] text-[#2A6BFD] font-bold text-[14px] md:text-[16px]">
+        <p className="ml-3  text-[#2A6BFD] font-bold text-[14px] md:text-[16px]">
           WHAT WE DO
         </p>
       </div>
 
       {/* Title */}
-      <p className="mt-4 ml-24 font-[Fivo Sans Modern] max-w-[70%] text-[70px] font-bold leading-tight">
+      <p className="mt-4 ml-24  max-w-[70%] text-[70px] font-bold leading-16">
         WE AIM FOR 100% CUSTOMER SATISFACTION
       </p>
 
@@ -92,7 +93,14 @@ const Card = ({ logo, img, title, description, tags }) => {
       </div>
 
       {/* Card Content */}
-      <h2 className="text-3xl font-bold uppercase mt-4">{title}</h2>
+      <div className="flex justify-between items-center mt-4 gap-4">
+        <div>
+          <h2 className="text-3xl font-bold uppercase">{title}</h2>
+        </div>
+        <div>
+          <IoIosArrowDroprightCircle className="text-4xl bg-[#FFFFFF] text-black rounded-full" />
+        </div>
+      </div>
       <p className="text-sm mt-4">{description}</p>
 
       {/* Tags */}
@@ -110,4 +118,4 @@ const Card = ({ logo, img, title, description, tags }) => {
   );
 };
 
-export default FourthPage;
+export default WhatWeDo;

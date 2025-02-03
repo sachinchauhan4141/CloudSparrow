@@ -42,7 +42,7 @@ const JobDescriptionPoint = ({
     <>
       <div
         className={
-          "flex border-t-2  p-2 mx-8 justify-between font-[Fivo Sans Modern] " +
+          "flex border-t-2  p-2 mx-8 justify-between  " +
           (activeIndex !== index ? "border-[#5F5F61]" : "border-[#0F75BC]")
         }
       >

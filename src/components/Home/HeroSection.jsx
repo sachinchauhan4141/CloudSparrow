@@ -2,21 +2,21 @@ import React from "react";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { FaCirclePlus } from "react-icons/fa6";
 
-const ThirdPage = () => {
+const HeroSection = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
       {/* Title Section */}
-      <div className="w-[60%] text-left">
-        <p className="font-[Fivo Sans Modern] font-bold text-[44px] text-[#0C0C0C] mt-[50px] max-w-[950px] leading-tight">
+      <div className="w-[80%] text-left">
+        <p className=" font-bold text-[58px] text-[#0C0C0C] mt-[50px] leading-14">
           WE REIMAGINE DIGITAL NARRATIVES, EMPOWERING BRANDS TO CONNECT WITH
-          CONSUMERS IN MEANINGFUL WAYS.
+          CONSUMERS IN <span className="bg-gradient-to-r from-[#2A6BFD] via-[#11CED2] to-[#11CED2] inline-block text-transparent bg-clip-text">MEANINGFUL WAYS</span>.
         </p>
       </div>
 
       {/* Content Section */}
       <div className="flex flex-row items-center w-full mt-[40px]">
         {/* Image Section */}
-        <div className="w-[840px] h-[440px]">
+        <div className="w-[900px] h-[440px] mr-8">
           <img
             className="size-full"
             src="/cloudsparrow-all-img/ThirdPage.png"
@@ -28,11 +28,11 @@ const ThirdPage = () => {
         <div className="flex flex-col w-[460px] h-[400px] ml-[60px] text-left">
           <div className="flex items-center justify-start">
             <img
-              className="h-[35px] w-[30px]"
+              className="h-[35px] w-[35px]"
               src="/cloudsparrow-all-img/ThirdPage2.png"
               alt=""
             />
-            <p className="font-[Fivo Sans Modern] text-[30px] font-bold pl-[20px] max-w-96 leading-tight">
+            <p className=" text-[30px] font-bold pl-[20px] max-w-96 leading-tight">
               A multi-disciplined creative company
             </p>
           </div>
@@ -49,7 +49,7 @@ const ThirdPage = () => {
               service they may need.
             </p>
 
-            <button className="flex items-center justify-center md:justify-evenly h-[35px] w-[130px] md:w-[100px] font-[Fivo Sans Modern] text-[12px] text-white bg-[#2A6BFD] font-semibold rounded-[4px] mt-[20px] mx-auto md:mx-0">
+            <button className="flex items-center justify-center md:justify-evenly h-[35px] w-[130px] md:w-[100px]  text-[12px] text-white bg-[#2A6BFD] font-semibold rounded-[4px] mt-[20px] mx-auto md:mx-0">
               <BiMessageRoundedDetail className="text-lg md:text-xl" />
               Let's Talk
             </button>
@@ -90,4 +90,4 @@ const ThirdPage = () => {
   );
 };
 
-export default ThirdPage;
+export default HeroSection;

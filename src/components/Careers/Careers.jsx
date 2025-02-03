@@ -5,7 +5,7 @@ const Careers = () => {
   return (
     <>
       <div className="bg-[url('./assets/careerimg.png')] bg-cover bg-center min-h-[500px] text-white">
-        <div className="font-[Fivo Sans Modern] pl-28 w-[1600px] min-h-[500px] bg-gradient-to-r from-[#080808B8] via-transparent to-transparent flex flex-col items-start justify-center">
+        <div className=" pl-28 w-[1600px] min-h-[500px] bg-gradient-to-r from-[#080808B8] via-transparent to-transparent flex flex-col items-start justify-center">
           <div>
             <p className="font-extrabold text-[14px]">
               HOME / <span className="text-[#0F75BC]">CAREERS</span>
@@ -33,11 +33,11 @@ const Careers = () => {
           </div>
         </div>
         <div className="w-1/2 mt-12 ml-18">
-          <h1 className="font-[Fivo Sans Modern] font-bold text-[48px] text-[#080808] leading-[1.1]">
+          <h1 className=" font-bold text-[48px] text-[#080808] leading-[1.1]">
             Doers. Hackers.
             <br /> Thinkers.
           </h1>
-          <p className="font-[Fivo Sans Modern] text-[16px] my-6 font-medium text-[#080808]">
+          <p className=" text-[16px] my-6 font-medium text-[#080808]">
             Cloud-Sparrow is a product engineering company working with
             innovative <br /> startups and enterprises. We have provided core
             product development <br /> for 110+ startups across the globe
@@ -54,12 +54,12 @@ const Careers = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center mb-12">
-        <h1 className="font-[Fivo Sans Modern] text-center font-bold text-[64px] text-[#080808] w-1/2 leading-[1.1]">
+        <h1 className=" text-center font-bold text-[64px] text-[#080808] w-1/2 leading-[1.1]">
           Career growth
           <br />
           is always in sight.
         </h1>
-        <p className="font-[Fivo Sans Modern] text-[16px] my-6 font-medium text-[#080808] w-1/2 text-center">
+        <p className=" text-[16px] my-6 font-medium text-[#080808] w-1/2 text-center">
           We see the career path as a sequence of careful choices, decisions &
           experiences that <br /> define you as a person & a professional.
           That’s why we ask you to share your career goals <br /> once you join
