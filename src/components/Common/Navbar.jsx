@@ -6,31 +6,29 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-between bg-[url('./assets/NavBg.png')] sm:items-center h-20 w-full px-4 md:px-8 lg:px-12 text-white">
+    <div className="flex absolute justify-between items-center h-20 w-full px-8 text-white">
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex gap-8 items-center">
         <img
           src="/cloudsparrow-all-img/logo.png"
           alt="NoImage"
-          className="h-12 w-12"
+          className="size-16"
         />
+        {/* Navigation Links (Desktop) */}
+        <nav className="hidden lg:flex gap-8">
+          {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
+            (item) => (
+              <Link
+                key={item}
+                to={item === "Careers" ? "/careers" : "/"}
+                className="font-medium hover:text-blue-400 transition text-sm"
+              >
+                {item}
+              </Link>
+            )
+          )}
+        </nav>
       </div>
-
-      {/* Navigation Links (Desktop) */}
-      <nav className="hidden lg:flex gap-8">
-        {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
-          (item) => (
-            <Link
-              key={item}
-              to={item === "Careers" ? "/careers" : "/"}
-              className="font-medium hover:text-blue-400 transition"
-            >
-              {item}
-            </Link>
-          )
-        )}
-      </nav>
-
       {/* Work With Us Button */}
       <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition">
         Work With Us

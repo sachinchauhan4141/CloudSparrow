@@ -22,9 +22,9 @@ const Banner = () => {
   };
 
   return (
-    <div className="bg-[url('./assets/BackGroundImage.png')] bg-cover bg-center w-full h-full min-h-screen">
+    <div className="bg-[url('./assets/BackGroundImage.png')] bg-cover bg-center w-full h-full min-h-screen pt-20">
       {/* Main Content Section */}
-      <div className="flex pt-8 flex-row items-start justify-center w-full px-16 gap-40">
+      <div className="flex pt-8 flex-row items-start justify-center w-full px-12 gap-40">
         {/* Left Section */}
         <div className="w-[60%] pl-20">
           <p className="text-white text-6xl font-bold mx-auto">
