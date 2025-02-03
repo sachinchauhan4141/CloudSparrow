@@ -4,7 +4,7 @@ import HeroSection from "./HeroSection";
 import WhatWeDo from "./WhatWeDo";
 import Work from "./Work";
 import Testimonials from "./Testimonials";
-import EightPage from "./EightPage";
+import TechStack from "./TechStack";
 import ProductCycle from "./ProductCycle";
 import Banner from "./Banner";
 
@@ -17,7 +17,7 @@ const HomePage = () => {
       <WhatWeDo />
       <Work />
       <Testimonials />
-      <EightPage />
+      <TechStack />
       <ProductCycle />
     </div>
   );
