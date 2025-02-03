@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="w-[80%] text-left">
         <p className=" font-bold text-[58px] text-[#0C0C0C] mt-[50px] leading-14">
           WE REIMAGINE DIGITAL NARRATIVES, EMPOWERING BRANDS TO CONNECT WITH
-          CONSUMERS IN <span className="bg-gradient-to-r from-[#2A6BFD] via-[#11CED2] to-[#11CED2] inline-block text-transparent bg-clip-text">MEANINGFUL WAYS</span>.
+          CONSUMERS IN <span className="bg-gradient-to-r from-[#2A6BFD] via-[#11CED2] to-[#11CED2] inline-block text-transparent bg-clip-text">MEANINGFUL WAYS</span>
         </p>
       </div>
 
