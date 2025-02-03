@@ -8,7 +8,7 @@ import {
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col w-full h-full py-10 px-30">
+    <div className="flex flex-col w-full h-full py-16 px-30">
       {/* Header Section */}
       <div className="flex items-center mt-6">
         <img

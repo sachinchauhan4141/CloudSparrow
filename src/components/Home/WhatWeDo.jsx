@@ -3,7 +3,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 const WhatWeDo = () => {
   return (
-    <div className="px-12">
+    <div className="pl-10 pt-18">
       {/* Section Header */}
       <div className="flex items-center mt-[20px] ml-24">
         <img
@@ -11,18 +11,18 @@ const WhatWeDo = () => {
           alt="No"
           className="w-[20px] md:w-auto"
         />
-        <p className="ml-3  text-[#2A6BFD] font-bold text-[14px] md:text-[16px]">
+        <p className="ml-3  text-[#2A6BFD] font-bold text-sm">
           WHAT WE DO
         </p>
       </div>
 
       {/* Title */}
-      <p className="mt-4 ml-24  max-w-[70%] text-[70px] font-bold leading-16">
+      <p className="mt-4 ml-24  max-w-[58%] text-6xl font-bold leading-16">
         WE AIM FOR 100% CUSTOMER SATISFACTION
       </p>
 
       {/* Card Section */}
-      <div className="flex flex-wrap justify-center gap-2 mt-[40px]">
+      <div className="flex flex-wrap justify-center gap-4 mt-[40px]">
         <Card
           logo={"/cloudsparrow-all-img/Card1Logo.png"}
           img={"/cloudsparrow-all-img/Card1Image.png"}
@@ -79,7 +79,7 @@ const WhatWeDo = () => {
 
 const Card = ({ logo, img, title, description, tags }) => {
   return (
-    <div className="flex flex-col bg-black w-[440px] h-auto p-8 rounded-lg shadow-lg text-white">
+    <div className="flex flex-col bg-black w-[460px] h-auto p-8 rounded-lg shadow-lg text-white">
       {/* Card Header */}
       <div className="flex justify-between items-start">
         <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white">

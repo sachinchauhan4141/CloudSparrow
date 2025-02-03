@@ -14,9 +14,9 @@ const HeroSection = () => {
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-row items-center w-full mt-[40px]">
+      <div className="flex flex-row gap-12 items-center w-full mt-10">
         {/* Image Section */}
-        <div className="w-[900px] h-[440px] mr-8">
+        <div className="w-[860px] h-[460px] mr-8">
           <img
             className="size-full"
             src="/cloudsparrow-all-img/ThirdPage.png"
@@ -25,10 +25,10 @@ const HeroSection = () => {
         </div>
 
         {/* Text Section */}
-        <div className="flex flex-col w-[460px] h-[400px] ml-[60px] text-left">
+        <div className="flex flex-col w-[460px] text-left mt-14">
           <div className="flex items-center justify-start">
             <img
-              className="h-[35px] w-[35px]"
+              className="size-[35px]"
               src="/cloudsparrow-all-img/ThirdPage2.png"
               alt=""
             />
@@ -43,14 +43,13 @@ const HeroSection = () => {
               successfully creating various projects in the fields of web
               development and other online services for 10 years.
             </p>
-            <p className="text-[14px] md:text-[16px] mt-[20px]">
+            <p className="text-[16px] mt-[10px]">
               Today Cloud Sparrow Technologies continues to be the online
               leading company where businesses can find each and every online
               service they may need.
             </p>
-
-            <button className="flex items-center justify-center md:justify-evenly h-[35px] w-[130px] md:w-[100px]  text-[12px] text-white bg-[#2A6BFD] font-semibold rounded-[4px] mt-[20px] mx-auto md:mx-0">
-              <BiMessageRoundedDetail className="text-lg md:text-xl" />
+            <button className="flex items-center justify-evenly h-[35px] w-[100px]  text-[12px] text-white bg-[#2A6BFD] font-semibold rounded-[4px] mt-[10px]">
+              <BiMessageRoundedDetail className="text-xl" />
               Let's Talk
             </button>
           </div>

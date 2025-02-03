@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa";
 const ProductCycle = () => {
   return (
     <div className="bg-gradient-to-b from-blue-900 via-[#2A6BFD] to-[#14b4f4] relative">
-      <div className="bg-gradient-to-b from-gray-300 via-white to-white h-full rounded-b-4xl py-[50px] px-20">
+      <div className="bg-gradient-to-b from-gray-300 via-white to-white h-full rounded-b-4xl py-28 px-20">
         <div className="flex flex-col items-center justify-center">
           <div className="flex ml-56 gap-4 w-full">
             <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
@@ -63,7 +63,7 @@ const ProductCycle = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col py-8 min-h-[560px]">
+      <div className="flex flex-col pt-24 min-h-[90vh]">
         <div className="flex flex-wrap items-center justify-center">
           <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
           <p className=" text-[12px] sm:text-[14px] text-white font-bold ml-4">
@@ -111,7 +111,7 @@ const ProductCycle = () => {
 
 const Card = () => {
   return (
-    <div className="flex items-center justify-between w-[580px] py-4 px-6 mt-2 border rounded-md border-[#0C0C0C33]">
+    <div className="flex items-center justify-between w-[570px] py-4 px-6 mt-2 border rounded-md border-[#0C0C0C33]">
       <p className="text-base">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>

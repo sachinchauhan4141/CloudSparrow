@@ -6,7 +6,7 @@ import {
 
 const Work = () => {
   return (
-    <div className="">
+    <div className="mt-10">
       <div className="w-full relative">
         <img
           className="h-80 w-full absolute"
@@ -40,7 +40,7 @@ const Work = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col justify-between items-center w-[50%] gap-18">
+          <div className="flex flex-col justify-between items-center w-[54%] gap-18">
             <div className="rounded-xl overflow-hidden border-4">
               <img
                 className="w-full h-full"
