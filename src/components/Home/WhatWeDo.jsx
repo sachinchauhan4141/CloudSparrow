@@ -5,11 +5,11 @@ const WhatWeDo = () => {
   return (
     <div className="pl-10 pt-18">
       {/* Section Header */}
-      <div className="flex items-center mt-[20px] ml-24">
+      <div className="flex items-center mt-5 ml-24">
         <img
           src="/cloudsparrow-all-img/FourthPage.png"
           alt="No"
-          className="w-[20px] md:w-auto"
+          className="w-5 md:w-auto"
         />
         <p className="ml-3  text-[#2A6BFD] font-bold text-sm">
           WHAT WE DO
@@ -22,7 +22,7 @@ const WhatWeDo = () => {
       </p>
 
       {/* Card Section */}
-      <div className="flex flex-wrap justify-center gap-4 mt-[40px]">
+      <div className="flex flex-wrap justify-center gap-4 mt-10">
         <Card
           logo={"/cloudsparrow-all-img/Card1Logo.png"}
           img={"/cloudsparrow-all-img/Card1Image.png"}
@@ -79,7 +79,7 @@ const WhatWeDo = () => {
 
 const Card = ({ logo, img, title, description, tags }) => {
   return (
-    <div className="flex flex-col bg-black w-[460px] h-auto p-8 rounded-lg shadow-lg text-white">
+    <div className="flex flex-col bg-black w-md h-auto p-8 rounded-lg shadow-lg text-white">
       {/* Card Header */}
       <div className="flex justify-between items-start">
         <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white">
@@ -88,7 +88,7 @@ const Card = ({ logo, img, title, description, tags }) => {
         <img
           src={img}
           alt="N/A"
-          className="rounded-md object-cover w-[240px] h-[150px]"
+          className="rounded-md object-cover w-3xs h-36"
         />
       </div>
 
