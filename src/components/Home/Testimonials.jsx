@@ -24,17 +24,17 @@ const Testimonials = () => {
         <div>
           {/* Title and Description */}
           <div className="mt-8">
-            <h2 className=" text-[44px] font-bold leading-12">
+            <h2 className=" text-5xl font-bold leading-12">
               WHAT OUR HAPPY CUSTOMERS SAY
             </h2>
-            <p className=" text-[16px] mt-4 w-[400px]">
+            <p className=" text-sm mt-4 w-sm">
               Lorem ipsum dolor sit amet consectetur. Eu auctor faucibus nunc
               accumsan tristique augue sodales egestas orci.
             </p>
           </div>
 
           {/* CTA Button */}
-          <button className="mt-6 h-[40px] w-[150px]  text-[14px] bg-[#2A6BFD] text-white font-semibold rounded-[6px]">
+          <button className="mt-6 h-10 w-36  text-[14px] bg-[#2A6BFD] text-white font-semibold rounded-[6px]">
             Work With Us
           </button>
           <div className="font-[Public Sans] flex flex-col mt-12">
@@ -58,7 +58,7 @@ const Testimonials = () => {
                 />
                 <FaCirclePlus className="absolute mx-24 mb-1 rounded-full border border-white size-8 text-[#2A6BFD] bg-white" />
               </div>
-              <div className="text-[12px] max-w-32 font-medium text-[#0C0C0C]">
+              <div className="text-sm max-w-32 font-medium text-[#0C0C0C]">
                 <p>Join them now</p>
               </div>
             </div>
@@ -81,7 +81,7 @@ const Testimonials = () => {
 
 const Card = () => {
   return (
-    <div className="flex flex-col justify-between border border-[#E5E5E5] rounded-2xl w-[400px] h-auto p-8 flex-shrink-0">
+    <div className="flex flex-col justify-between border border-[#E5E5E5] rounded-2xl w-sm h-auto p-6 flex-shrink-0">
       {/* Quote and Stars */}
       <div className="flex items-center justify-between">
         <FaQuoteLeft className="text-blue-500 text-2xl" />

@@ -27,14 +27,14 @@ const Work = () => {
           <div className="flex flex-col justify-between items-center w-[25%] h-full">
             <div className="flex items-center justify-center h-[40%]">
               <img
-                className="w-[140px]"
+                className="w-36"
                 src="/cloudsparrow-all-img/peakStudio.png"
                 alt=""
               />
             </div>
             <div className="bottom-0 rounded-t-md overflow-hidden border border-l-3 ">
               <img
-                className="w-[140px] h-80"
+                className="w-36 h-80"
                 src="/cloudsparrow-all-img/phoneimg.png"
                 alt=""
               />
@@ -62,7 +62,7 @@ const Work = () => {
             </div>
             <div className="rounded-xl overflow-hidden border-3 ">
               <img
-                className="w-[140px] h-70"
+                className="w-36 h-70"
                 src="/cloudsparrow-all-img/phoneimg2.png"
                 alt=""
               />
