@@ -6,14 +6,14 @@ const ProductCycle = () => {
     <div className="bg-gradient-to-b from-blue-900 via-[#2A6BFD] to-[#14b4f4] relative">
       <div className="bg-gradient-to-b from-gray-300 via-white to-white h-full rounded-b-4xl py-28 px-20">
         <div className="flex flex-col items-center justify-center">
-          <div className="flex ml-64 gap-4 w-full">
-            <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
-            <p className="text-[12px] text-[#2A6BFD] font-bold">
-              OUR PRODUCT DEVELOPMENT CYCLE
-            </p>
-          </div>
           <div className="mt-8 flex flex-row items-start">
             <div className="w-3xl text-left">
+              <div className="flex gap-4 w-full mb-4">
+                <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
+                <p className="text-[12px] text-[#2A6BFD] font-bold">
+                  OUR PRODUCT DEVELOPMENT CYCLE
+                </p>
+              </div>
               <p className=" text-6xl font-bold leading-16">
                 DISCOVER HOW OUR SOFTWARE HOUSE DEVELOPS HIGH-QUALITY WEB AND
                 MOBILE APPS
