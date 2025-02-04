@@ -6,7 +6,7 @@ const ProductCycle = () => {
     <div className="bg-gradient-to-b from-blue-900 via-[#2A6BFD] to-[#14b4f4] relative">
       <div className="bg-gradient-to-b from-gray-300 via-white to-white h-full rounded-b-4xl py-28 px-20">
         <div className="flex flex-col items-center justify-center">
-          <div className="mt-8 flex flex-row items-start">
+          <div className="mt-6 flex flex-row items-start">
             <div className="w-3xl text-left">
               <div className="flex gap-4 w-full mb-4">
                 <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />

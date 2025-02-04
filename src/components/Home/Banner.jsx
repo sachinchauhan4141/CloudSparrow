@@ -28,7 +28,8 @@ const Banner = () => {
         {/* Left Section */}
         <div className="w-[60%] pl-20">
           <p className="text-white text-5xl font-bold mx-auto">
-            HIGHLY BESPOKE <br /> WEBSITES AND DIGITAL <br /> EXPERIENCES FOR <br /> AMBITIOUS{" "}
+            HIGHLY BESPOKE <br /> WEBSITES AND DIGITAL <br /> EXPERIENCES FOR{" "}
+            <br /> AMBITIOUS{" "}
             <span className="bg-gradient-to-r from-[#2A6BFD] to-[#11CED2] inline-block text-transparent bg-clip-text">
               BRANDS
             </span>
@@ -51,41 +52,30 @@ const Banner = () => {
       </div>
 
       {/* Image Section */}
-      <div className="relative flex items-center justify-center mt-8">
-        <img
-          className="w-[65%]"
-          src="/cloudsparrow-all-img/home.png"
-          alt="Home"
-        />
-        <div className="absolute flex flex-col gap-28 justify-center items-center top-6">
-          <div className="flex items-center justify-center w-full h-[76%] gap-28 overflow-hidden">
-            <IoIosArrowDropleftCircle
-              className="text-4xl text-[black] border border-black rounded-full"
-              onClick={prev}
+      <div className="flex items-center justify-center mt-8">
+        <div className="flex items-center justify-center w-full overflow-hidden">
+          <IoIosArrowDropleftCircle
+            className="text-4xl text-[black] border border-black rounded-full"
+            onClick={prev}
+          />
+          <div className="relative w-4xl">
+            {/* Background Image */}
+            <img
+              className="w-full h-full object-cover"
+              src="/cloudsparrow-all-img/home.png"
+              alt="Background"
             />
-            <div className="w-[70%] h-[480px] overflow-hidden rounded-2xl">
-              <img
-                className="w-full h-full"
-                src={data[curr]}
-                alt="Decoration"
-              />
-            </div>
-            <IoIosArrowDroprightCircle
-              className="text-4xl text-[black] border border-black rounded-full"
-              onClick={next}
+            {/* Overlay Image */}
+            <img
+              className="absolute top-9 left-35 w-[600px] object-contain"
+              src={data[curr]}
+              alt="Overlay"
             />
           </div>
-          <div className="flex justify-between items-center bg-[#D4D4D8] border border-[#0C0C0C33] text-[#0C0C0C] font-medium rounded-md max-w-[30%] p-2 text-[10px] leading-3">
-            <div className="w-[70%] px-2">
-              <p>
-                Creative web company specialising in WordPress, eCommerce and
-                Contentful
-              </p>
-            </div>
-            <div className="border border-[#0C0C0C33] rounded-md px-2 py-1">
-              <button className=" ">Book a Call</button>
-            </div>
-          </div>
+          <IoIosArrowDroprightCircle
+            className="text-4xl text-[black] border border-black rounded-full"
+            onClick={next}
+          />
         </div>
       </div>
     </div>
