@@ -19,24 +19,24 @@ const BannerFooter = () => {
       {/* Middle Section */}
       <div className="flex flex-row items-center justify-between w-full px-16">
         <div className="flex ml-8">
-          <div className="size-64 p-4">
+          <div className="size-60 p-4">
             <img
               className=""
               src="/cloudsparrow-all-img/webDesign.png"
               alt=""
             />
           </div>
-          <div className="size-64 p-4">
+          <div className="size-60 p-4">
             <img src="/cloudsparrow-all-img/mobileApp.png" alt="" />
           </div>
-          <div className="size-64 p-4">
+          <div className="size-60 p-4">
             <img src="/cloudsparrow-all-img/seo.png" alt="" />
           </div>
         </div>
         {/* right section */}
         <div className="text-white  text-left mx-auto pb-20">
           <div>
-            <p className="text-[160px] font-semibold">4.0x</p>
+            <p className="text-9xl font-semibold">4.0x</p>
           </div>
           <div className="my-2 bg-gradient-to-r from-black via-white to-black h-1 w-full"></div>
           <div className="flex gap-8 justify-center items-center">

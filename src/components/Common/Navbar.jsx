@@ -15,13 +15,13 @@ const Navbar = () => {
           className="size-16"
         />
         {/* Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex gap-8">
+        <nav className="hidden lg:flex gap-12">
           {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
             (item) => (
               <Link
                 key={item}
                 to={item === "Careers" ? "/careers" : "/"}
-                className="font-medium hover:text-blue-400 transition text-sm"
+                className="font-medium hover:text-blue-400 transition text-xs"
               >
                 {item}
               </Link>

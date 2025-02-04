@@ -18,7 +18,7 @@ const Careers = () => {
           </p>
         </div>
       </div>
-      <div className="p-12 flex mx-20">
+      <div className="p-12 flex mx-20 gap-20">
         <div className="w-1/2">
           <div className="w-[610px] h-[546px] flex">
             <div className="overflow-hidden w-1/3 rounded-3xl">

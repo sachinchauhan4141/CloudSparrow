@@ -24,19 +24,21 @@ const Banner = () => {
   return (
     <div className="bg-[url('./assets/BackGroundImage.png')] bg-cover bg-center w-full h-full min-h-screen pt-20">
       {/* Main Content Section */}
-      <div className="flex pt-8 flex-row items-start justify-center w-full px-12 gap-40">
+      <div className="flex pt-8 flex-row items-center justify-center w-full px-12 gap-7">
         {/* Left Section */}
         <div className="w-[60%] pl-20">
-          <p className="text-white text-6xl font-bold mx-auto">
-            HIGHLY BESPOKE WEBSITES AND DIGITAL EXPERIENCES FOR AMBITIOUS{" "}
-            <span className="bg-gradient-to-r from-[#2A6BFD] to-[#11CED2] inline-block text-transparent bg-clip-text">BRANDS</span>
+          <p className="text-white text-5xl font-bold mx-auto">
+            HIGHLY BESPOKE <br /> WEBSITES AND DIGITAL <br /> EXPERIENCES FOR <br /> AMBITIOUS{" "}
+            <span className="bg-gradient-to-r from-[#2A6BFD] to-[#11CED2] inline-block text-transparent bg-clip-text">
+              BRANDS
+            </span>
           </p>
         </div>
 
         {/* Right Section */}
         <div className="flex flex-col items-center md:items-start max-w-md text-center md:text-left">
           <img
-            className="size-36"
+            className="size-28"
             src="/cloudsparrow-all-img/CallUs.png"
             alt="Call Us"
           />

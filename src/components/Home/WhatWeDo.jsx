@@ -5,7 +5,7 @@ const WhatWeDo = () => {
   return (
     <div className="pl-10 pt-18">
       {/* Section Header */}
-      <div className="flex items-center mt-5 ml-24">
+      <div className="flex items-center mt-5 ml-28">
         <img
           src="/cloudsparrow-all-img/FourthPage.png"
           alt="No"
@@ -17,7 +17,7 @@ const WhatWeDo = () => {
       </div>
 
       {/* Title */}
-      <p className="mt-4 ml-24  max-w-[58%] text-6xl font-bold leading-16">
+      <p className="mt-4 ml-28  max-w-[58%] text-6xl font-bold leading-16">
         WE AIM FOR 100% CUSTOMER SATISFACTION
       </p>
 
@@ -79,7 +79,7 @@ const WhatWeDo = () => {
 
 const Card = ({ logo, img, title, description, tags }) => {
   return (
-    <div className="flex flex-col bg-black w-md h-auto p-8 rounded-lg shadow-lg text-white">
+    <div className="flex flex-col bg-black w-sm h-auto p-8 rounded-lg shadow-lg text-white">
       {/* Card Header */}
       <div className="flex justify-between items-start">
         <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white">
@@ -95,7 +95,7 @@ const Card = ({ logo, img, title, description, tags }) => {
       {/* Card Content */}
       <div className="flex justify-between items-center mt-4 gap-4">
         <div>
-          <h2 className="text-3xl font-bold uppercase">{title}</h2>
+          <h2 className="text-2xl font-bold uppercase">{title}</h2>
         </div>
         <div>
           <IoIosArrowDroprightCircle className="text-4xl bg-[#FFFFFF] text-black rounded-full" />
