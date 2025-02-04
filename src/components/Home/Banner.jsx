@@ -67,7 +67,7 @@ const Banner = () => {
             />
             {/* Overlay Image */}
             <img
-              className="absolute top-9 left-35 w-[600px] object-contain"
+              className="absolute top-9 left-35 w-[600px] object-contain rounded-xl"
               src={data[curr]}
               alt="Overlay"
             />

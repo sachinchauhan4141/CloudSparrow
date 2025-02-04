@@ -1,7 +1,21 @@
-import React from "react";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
+import React, { useRef } from "react";
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 
 const WhatWeDo = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -300 : 300,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="pl-10 pt-18">
       {/* Section Header */}
@@ -11,9 +25,7 @@ const WhatWeDo = () => {
           alt="No"
           className="w-5 md:w-auto"
         />
-        <p className="ml-3  text-[#2A6BFD] font-bold text-sm">
-          WHAT WE DO
-        </p>
+        <p className="ml-3  text-[#2A6BFD] font-bold text-sm">WHAT WE DO</p>
       </div>
 
       {/* Title */}
@@ -22,103 +34,84 @@ const WhatWeDo = () => {
       </p>
 
       {/* Card Section */}
-      <div className="flex overflow-x-scroll justify-evenly gap-4 mt-10 mx-10">
-      <Card
-          logo={"/cloudsparrow-all-img/Card1Logo.png"}
-          img={"/cloudsparrow-all-img/Card1Image.png"}
-          title={"Web Design/Development"}
-          description={
-            "The range of our web design services is quite extensive. From blogs and forums to multimedia galleries and complete online stores, our specialty is affordable designs for small and medium businesses."
-          }
-          tags={[
-            "Website Design",
-            "Website Development",
-            "WordPress",
-            "eCommerce Website",
-            "Responsive Web Design",
-            "Custom CMS",
-          ]}
+      <div className="flex justify-center items-center mt-10 mx-4 gap-2">
+        <IoIosArrowDropleftCircle
+          onClick={() => scroll("left")}
+          className="rounded-full border border-white size-20 "
         />
-      <Card
-          logo={"/cloudsparrow-all-img/Card1Logo.png"}
-          img={"/cloudsparrow-all-img/Card1Image.png"}
-          title={"Web Design/Development"}
-          description={
-            "The range of our web design services is quite extensive. From blogs and forums to multimedia galleries and complete online stores, our specialty is affordable designs for small and medium businesses."
-          }
-          tags={[
-            "Website Design",
-            "Website Development",
-            "WordPress",
-            "eCommerce Website",
-            "Responsive Web Design",
-            "Custom CMS",
-          ]}
-        />
-      <Card
-          logo={"/cloudsparrow-all-img/Card1Logo.png"}
-          img={"/cloudsparrow-all-img/Card1Image.png"}
-          title={"Web Design/Development"}
-          description={
-            "The range of our web design services is quite extensive. From blogs and forums to multimedia galleries and complete online stores, our specialty is affordable designs for small and medium businesses."
-          }
-          tags={[
-            "Website Design",
-            "Website Development",
-            "WordPress",
-            "eCommerce Website",
-            "Responsive Web Design",
-            "Custom CMS",
-          ]}
-        />
-        <Card
-          logo={"/cloudsparrow-all-img/Card1Logo.png"}
-          img={"/cloudsparrow-all-img/Card1Image.png"}
-          title={"Web Design/Development"}
-          description={
-            "The range of our web design services is quite extensive. From blogs and forums to multimedia galleries and complete online stores, our specialty is affordable designs for small and medium businesses."
-          }
-          tags={[
-            "Website Design",
-            "Website Development",
-            "WordPress",
-            "eCommerce Website",
-            "Responsive Web Design",
-            "Custom CMS",
-          ]}
-        />
-        <Card
-          logo={"/cloudsparrow-all-img/Card2Logo.png"}
-          img={"/cloudsparrow-all-img/Card2Image.png"}
-          title={"Mobile App Development"}
-          description={
-            "No matter how good a design looks, it cannot save a poorly functioning website. This is why Interlacing Technologies strive to provide the best web development services with our talented developers using cutting-edge technologies."
-          }
-          tags={[
-            "Mobile App",
-            "Android App",
-            "IOS App",
-            "Mobile Websites",
-            "Hybrid Apps",
-            "Native Applications",
-          ]}
-        />
-        <Card
-          logo={"/cloudsparrow-all-img/Card3Logo.png"}
-          img={"/cloudsparrow-all-img/Card3Image.png"}
-          title={"SEO Optimization"}
-          description={
-            "The final step of utilizing a website is enabling it to get as many visitors as possible. Our SEO services ensure a top spot for your website in search engines results thus maximizing the traffic."
-          }
-          tags={[
-            "SEO Content Strategy",
-            "SEO Writing",
-            "Website SEO",
-            "Reports",
-            "Keyword Research",
-            "On-Page Optimization",
-            "Copywriting",
-          ]}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto no-scrollbar justify-evenly gap-4"
+        >
+          <Card
+            logo={"/cloudsparrow-all-img/Card1Logo.png"}
+            img={"/cloudsparrow-all-img/Card1Image.png"}
+            title={"Web Design/Development"}
+            description={
+              "The range of our web design services is quite extensive. From blogs and forums to multimedia galleries and complete online stores, our specialty is affordable designs for small and medium businesses."
+            }
+            tags={[
+              "Website Design",
+              "Website Development",
+              "WordPress",
+              "eCommerce Website",
+              "Responsive Web Design",
+              "Custom CMS",
+            ]}
+          />
+          <Card
+            logo={"/cloudsparrow-all-img/Card2Logo.png"}
+            img={"/cloudsparrow-all-img/Card2Image.png"}
+            title={"Mobile App Development"}
+            description={
+              "No matter how good a design looks, it cannot save a poorly functioning website. This is why Interlacing Technologies strive to provide the best web development services with our talented developers using cutting-edge technologies."
+            }
+            tags={[
+              "Mobile App",
+              "Android App",
+              "IOS App",
+              "Mobile Websites",
+              "Hybrid Apps",
+              "Native Applications",
+            ]}
+          />
+          <Card
+            logo={"/cloudsparrow-all-img/Card3Logo.png"}
+            img={"/cloudsparrow-all-img/Card3Image.png"}
+            title={"SEO Optimization"}
+            description={
+              "The final step of utilizing a website is enabling it to get as many visitors as possible. Our SEO services ensure a top spot for your website in search engines results thus maximizing the traffic."
+            }
+            tags={[
+              "SEO Content Strategy",
+              "SEO Writing",
+              "Website SEO",
+              "Reports",
+              "Keyword Research",
+              "On-Page Optimization",
+              "Copywriting",
+            ]}
+          />
+          <Card
+            logo={"/cloudsparrow-all-img/Card1Logo.png"}
+            img={"/cloudsparrow-all-img/Card1Image.png"}
+            title={"Web Design/Development"}
+            description={
+              "The range of our web design services is quite extensive. From blogs and forums to multimedia galleries and complete online stores, our specialty is affordable designs for small and medium businesses."
+            }
+            tags={[
+              "Website Design",
+              "Website Development",
+              "WordPress",
+              "eCommerce Website",
+              "Responsive Web Design",
+              "Custom CMS",
+            ]}
+          />
+        </div>
+        <IoIosArrowDroprightCircle
+          onClick={() => scroll("right")}
+          className="rounded-full border border-white size-20 "
         />
       </div>
     </div>

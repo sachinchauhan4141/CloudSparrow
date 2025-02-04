@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 import {
@@ -7,8 +7,19 @@ import {
 } from "react-icons/io";
 
 const Testimonials = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -300 : 300,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="flex flex-col w-full h-full py-16 px-30">
+    <div className="flex flex-col h-full py-16 mx-30">
       {/* Header Section */}
       <div className="flex items-center mt-6">
         <img
@@ -20,7 +31,7 @@ const Testimonials = () => {
           TESTIMONIALS
         </p>
       </div>
-      <div className="flex">
+      <div className="flex gap-20">
         <div>
           {/* Title and Description */}
           <div className="mt-8">
@@ -66,13 +77,22 @@ const Testimonials = () => {
         </div>
         {/* Testimonial Cards - Horizontal Scroll */}
         <div className="flex justify-start items-center gap-4 overflow-hidden">
-          <IoIosArrowDropleftCircle className="rounded-full border border-white size-20" />
-          <div className="overflow-x-scroll mt-10 flex gap-6">
+          <IoIosArrowDropleftCircle
+            onClick={() => scroll("left")}
+            className="rounded-full border border-white size-20"
+          />
+          <div
+            ref={scrollRef}
+            className="overflow-x-scroll no-scrollbar mt-10 flex gap-6"
+          >
             <Card />
             <Card />
             <Card />
           </div>
-          <IoIosArrowDroprightCircle className="rounded-full border border-white size-20 " />
+          <IoIosArrowDroprightCircle
+            onClick={() => scroll("right")}
+            className="rounded-full border border-white size-20 "
+          />
         </div>
       </div>
     </div>

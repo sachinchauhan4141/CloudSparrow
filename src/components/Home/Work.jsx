@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 
 const Work = () => {
+  const [curr, setCurr] = useState(0);
+
+  const data = [
+    "/cloudsparrow-all-img/bottomTab.png",
+    "/cloudsparrow-all-img/bottomTab.png",
+    "/cloudsparrow-all-img/bottomTab.png",
+  ];
+
+  const prev = () => {
+    curr == 0 ? setCurr(data.length - 1) : setCurr(curr - 1);
+  };
+
+  const next = () => {
+    curr == data.length - 1 ? setCurr(0) : setCurr(curr + 1);
+  };
+
   return (
     <div className="mt-10">
       <div className="w-full relative">
@@ -44,14 +60,14 @@ const Work = () => {
             <div className="rounded-xl overflow-hidden border-4">
               <img
                 className="w-full h-full"
-                src="/cloudsparrow-all-img/bottomTab.png"
+                src={data[curr]}
                 alt=""
               />
             </div>
             <div className="flex justify-between items-center w-full text-white">
-              <IoIosArrowDropleftCircle className="rounded-full border border-white size-8" />
+              <IoIosArrowDropleftCircle onClick={prev} className="rounded-full border border-white size-8" />
               <button className="font-bold text-sm">CHECK VIEW PROJECT</button>
-              <IoIosArrowDroprightCircle className="rounded-full border border-white size-8 " />
+              <IoIosArrowDroprightCircle onClick={next} className="rounded-full border border-white size-8 " />
             </div>
           </div>
           <div className="flex flex-col justify-center gap-20 items-center w-[25%] h-full">
