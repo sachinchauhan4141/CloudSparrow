@@ -71,6 +71,11 @@ const Banner = () => {
               src={data[curr]}
               alt="Overlay"
             />
+            <img
+              className="absolute w-full h-full top-0 object-cover"
+              src="/cloudsparrow-all-img/hands.png"
+              alt="Overlay"
+            />
           </div>
           <IoIosArrowDroprightCircle
             className="text-4xl text-[black] border border-black rounded-full"
