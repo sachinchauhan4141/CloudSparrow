@@ -22,7 +22,7 @@ const WhatWeDo = () => {
       </p>
 
       {/* Card Section */}
-      <div className="flex flex-wrap justify-center gap-4 mt-10">
+      <div className="flex flex-wrap justify-between mt-10 mx-28">
         <Card
           logo={"/cloudsparrow-all-img/Card1Logo.png"}
           img={"/cloudsparrow-all-img/Card1Image.png"}
