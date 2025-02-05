@@ -36,12 +36,28 @@ const Services = () => {
         </div>
         <div className="w-[60%]">
           <div className="flex gap-7 justify-end">
-            <Card text="Marketing that sells" color="#499DFF" />
-            <Card text="Designs that tell stories" color="#FDE284" />
+            <Card
+              text="Marketing that sells"
+              color="#499DFF"
+              image={"/cloudsparrow-all-img/boytab.png"}
+            />
+            <Card
+              text="Designs that tell stories"
+              color="#FDE284"
+              image={"/cloudsparrow-all-img/girlgallery.png"}
+            />
           </div>
           <div className="flex gap-7 mt-8">
-            <Card text="Apps that compel" color="#FF9559" />
-            <Card text="Development that propels growth" color="#00CA8E" />
+            <Card
+              text="Apps that compel"
+              color="#FF9559"
+              image={"/cloudsparrow-all-img/girlwithphone.png"}
+            />
+            <Card
+              text="Development that propels growth"
+              color="#00CA8E"
+              image={"/cloudsparrow-all-img/girlvideocall.png"}
+            />
           </div>
         </div>
       </div>
@@ -99,7 +115,10 @@ const Services = () => {
 
 export const Card = ({ icon, text, image, color }) => {
   return (
-    <div className={"w-[36%] rounded-lg p-4 text-xl bg-[" + color + "] "}>
+    <div
+      style={{ backgroundColor: color }}
+      className="w-[36%] rounded-lg p-4 text-xl"
+    >
       <div className="flex justify-end">
         <img src={icon} alt="" className="border size-9" />
       </div>
@@ -110,7 +129,7 @@ export const Card = ({ icon, text, image, color }) => {
         </h3>
       </div>
       <div className="flex justify-center items-center size-32 mt-4">
-        <img src={image} alt="" className="border" />
+        <img src={image} alt="" className="size-full" />
       </div>
     </div>
   );

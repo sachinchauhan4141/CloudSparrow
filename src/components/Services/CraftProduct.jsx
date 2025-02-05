@@ -2,7 +2,7 @@ import React from "react";
 
 const CraftProduct = () => {
   return (
-    <div className={"py-10 border gap-16 text-[#1F252B]"}>
+    <div className={"py-10 gap-16 text-[#1F252B]"}>
       <div className="flex px-30">
         <div className="w-[40%]">
           <h1 className="text-6xl font-medium">
@@ -22,17 +22,33 @@ const CraftProduct = () => {
         </div>
       </div>
       <div className="px-8 my-10 flex gap-8 overflow-x-scroll no-scrollbar">
-        <div className="border min-w-[40vw] h-[60vh] rounded-2xl">
-          <img src="" alt="" className="" />
+        <div className="min-w-[40vw] h-[60vh] rounded-2xl overflow-hidden">
+          <img
+            src={"/cloudsparrow-all-img/car.png"}
+            alt=""
+            className="size-full"
+          />
         </div>
-        <div className="border min-w-[20vw] h-[60vh] rounded-2xl">
-          <img src="" alt="" className="" />
+        <div className="min-w-[22vw] h-[60vh] rounded-2xl overflow-hidden">
+          <img
+            src={"/cloudsparrow-all-img/man.png"}
+            alt=""
+            className="size-full"
+          />
         </div>
-        <div className="border min-w-[20vw] h-[60vh] rounded-2xl">
-          <img src="" alt="" className="" />
+        <div className="min-w-[22vw] h-[60vh] rounded-2xl overflow-hidden">
+          <img
+            src={"/cloudsparrow-all-img/children.png"}
+            alt=""
+            className="size-full"
+          />
         </div>
-        <div className="border min-w-[20vw] h-[60vh] rounded-2xl">
-          <img src="" alt="" className="" />
+        <div className="min-w-[22vw] h-[60vh] rounded-2xl overflow-hidden">
+          <img
+            src={"/cloudsparrow-all-img/model.png"}
+            alt=""
+            className="size-full"
+          />
         </div>
       </div>
     </div>

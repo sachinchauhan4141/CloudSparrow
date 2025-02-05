@@ -1,8 +1,26 @@
 import React from "react";
 
+const data = [
+  "Healthcare",
+  "Cloud Solutions",
+  "e-Commerce",
+  "Sports",
+  "Gaming",
+  "Travel",
+  "Insurance",
+  "Real Estate",
+  "Marketing & Advertisement",
+  "Automobile",
+  "Logistics",
+  "Education & Non Profit",
+  "Manufacturing",
+  "Media & Entertainment",
+  "Technology & Consulting",
+];
+
 const DevCulture = () => {
   return (
-    <div className={"py-24 px-30 border gap-16 text-center text-[#1F252B]"}>
+    <div className={"py-24 px-30 gap-16 text-center text-[#1F252B]"}>
       <div className="my-4">
         <h1 className="text-6xl font-medium">
           Create the culture of <br />{" "}
@@ -16,64 +34,16 @@ const DevCulture = () => {
           text ever since the 1500s
         </h3>
       </div>
+
       <div className="flex flex-wrap gap-4 items-center justify-center px-14">
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
-        <p className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md">
-          Our Services <span>*</span>
-        </p>
+        {data.map((data) => (
+          <p
+            key={data}
+            className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md"
+          >
+            {data}
+          </p>
+        ))}
       </div>
     </div>
   );
