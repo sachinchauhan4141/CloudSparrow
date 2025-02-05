@@ -1,8 +1,11 @@
 import React from "react";
+import ServiceSection from "./ServiceSection";
+import DevCulture from "./DevCulture";
+import CraftProduct from "./CraftProduct";
 
 const Services = () => {
   return (
-    <div>
+    <>
       <div className="flex text-center py-48 px-50 border gap-16 text-[#1F252B]">
         <div className="w-[40%]">
           <div className="">
@@ -42,7 +45,55 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </div>
+      <ServiceSection
+        title="Website Development"
+        bgcolor="#1D1D1D"
+        color="#FFFFFF"
+      />
+      <ServiceSection
+        title="Product Development"
+        bgcolor="#FDE284"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="App Development"
+        bgcolor="#FF9559"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="Digital Marketing & SEO
+"
+        bgcolor="#00CA8E"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="UI/UX Designing"
+        bgcolor="#C1EBFF"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="Quality Assurance"
+        bgcolor="#FFDFFA"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="Consulting & Assurance"
+        bgcolor="#FDE6AE"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="Content Writing"
+        bgcolor="#64E9A5"
+        color="#1F252B"
+      />
+      <ServiceSection
+        title="Logo Designing & Branding"
+        bgcolor="#985DF6"
+        color="#1F252B"
+      />
+      <DevCulture />
+      <CraftProduct />
+    </>
   );
 };
 
