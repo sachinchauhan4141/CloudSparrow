@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useResolvedPath } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const path = useResolvedPath();
+  console.log(path.pathname);
+  
 
   return (
     <div className="flex absolute justify-between items-center h-20 w-full px-8 text-white">
@@ -15,13 +18,13 @@ const Navbar = () => {
           className="size-16"
         />
         {/* Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex gap-12">
+        <nav className="hidden lg:flex gap-12 ">
           {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
             (item) => (
               <Link
                 key={item}
-                to={item === "Careers" ? "/careers" : "/"}
-                className="font-medium hover:text-blue-400 transition text-xs"
+                to={item === "Home" ? "/" : item.toLowerCase()}
+                className={"font-medium hover:text-blue-400 transition text-xs "+((path.pathname==="/contact"||path.pathname==="/services")?" text-black ":" ")}
               >
                 {item}
               </Link>
@@ -50,7 +53,7 @@ const Navbar = () => {
             (item) => (
               <Link
                 key={item}
-                to={item === "Careers" ? "/careers" : "/"}
+                to={item === "Home" ? "/" : item.toLowerCase()}
                 className="py-2 text-lg font-medium hover:text-blue-400 transition"
               >
                 {item}

@@ -28,7 +28,7 @@ const TechStack = () => {
         {/* mid bottom section */}
         <div className="flex w-full items-center justify-between">
           <div className="flex w-full items-center">
-            <div class="grid grid-cols-4 grid-rows-3">
+            <div className="grid grid-cols-4 grid-rows-3">
               <div className="size-16 text-transparent">1</div>
               <div className="size-16 text-transparent">2</div>
               <div className="size-16 text-transparent">3</div>
@@ -48,7 +48,7 @@ const TechStack = () => {
               <div className="size-16 text-transparent">11</div>
               <div className="size-16 text-transparent">12</div>
             </div>
-            <div class="grid grid-cols-4 grid-rows-3">
+            <div className="grid grid-cols-4 grid-rows-3">
               <div className="size-16 border-2 flex items-center justify-center">
                 <img src="/cloudsparrow-all-img/red.png" alt="" />
               </div>
@@ -71,7 +71,7 @@ const TechStack = () => {
           </div>
           <div className="flex w-full items-center justify-between">
             <div></div>
-            <div class="grid grid-cols-4 grid-rows-3">
+            <div className="grid grid-cols-4 grid-rows-3">
               <div className="size-16 border-2 flex items-center justify-center">
                 <img src="/cloudsparrow-all-img/wordpress.png" alt="" />
               </div>
@@ -96,7 +96,7 @@ const TechStack = () => {
       </div>
       {/* bottom section */}
       <div className="border-y-2 border-[#0C0C0C] w-full text-center flex justify-center items-center">
-        <div class="flex w-[80vw] border-x-1">
+        <div className="flex w-[80vw] border-x-1">
           <div className="size-16 border-r-2 border-l-1 flex items-center justify-center">
             <img src="/cloudsparrow-all-img/angular.png" alt="" />
           </div>

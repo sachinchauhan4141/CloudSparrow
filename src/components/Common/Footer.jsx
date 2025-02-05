@@ -2,6 +2,7 @@ import React from "react";
 import { CiFacebook } from "react-icons/ci";
 import { FaInstagram, FaYoutube, FaPhoneAlt } from "react-icons/fa";
 import { CiLinkedin, CiLocationOn, CiMail } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -74,12 +75,12 @@ const Footer = () => {
         <div className="w-full border-dotted bg-gradient-to-r h-[1px] from-[#55555500] via-gray-600 to-[#55555500]" />
         <div className="flex flex-col justify-center items-center h-[20%]">
           <div className="flex text-[#FFFFFF] items-center justify-evenly gap-14 text-xs font-medium h-full">
-            <p className="cursor-pointer">HOME</p>
-            <p className="cursor-pointer">ABOUT</p>
-            <p className="cursor-pointer">SERVICES</p>
-            <p className="cursor-pointer">PORTFOLIO</p>
-            <p className="cursor-pointer">CAREERS</p>
-            <p className="cursor-pointer">CONTACT</p>
+            <Link className="cursor-pointer" to={"/"}>HOME</Link>
+            <Link className="cursor-pointer" to={"/about"}>ABOUT</Link>
+            <Link className="cursor-pointer" to={"/services"}>SERVICES</Link>
+            <Link className="cursor-pointer" to={"/portfolio"}>PORTFOLIO</Link>
+            <Link className="cursor-pointer" to={"/careers"}>CAREERS</Link>
+            <Link className="cursor-pointer" to={"/contact"}>CONTACT</Link>
           </div>
           <div className="w-full border-dotted bg-gradient-to-r h-[1px] from-[#55555500] via-gray-600 to-[#55555500]" />
           <div className="h-full flex items-center justify-center">
