@@ -37,12 +37,16 @@ const DevCulture = () => {
 
       <div className="flex flex-wrap gap-4 items-center justify-center px-14">
         {data.map((data) => (
-          <p
-            key={data}
-            className="py-2 px-9 border border-dashed text-2xl w-fit rounded-md"
-          >
-            {data}
-          </p>
+          <div className="border border-[#9CA7AA] flex justify-center gap-4 items-center border-dashed py-1 px-2 rounded-md">
+            <p key={data} className="text-sm w-fit font-medium">
+              {data}
+            </p>
+            <img
+              src=""
+              alt=""
+              className="size-12 border rounded-md overflow-hidden bg-[#FFEDC1]"
+            />
+          </div>
         ))}
       </div>
     </div>
