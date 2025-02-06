@@ -3,20 +3,20 @@ import React from "react";
 const Contact = () => {
   return (
     <div>
-      <div className="text-center py-48 px-60 border">
+      <div className="text-center py-48 px-60 bg-[radial-gradient(circle_at_bottom,#FDE7E1_20%,#FFF9EC_30%,#FFFFFF_60%)]">
         <h1 className="text-7xl font-bold leading-20">
           GOOD THINGS HAPPEN <br /> WHEN YOU SAY
           <p className="text-[#407BFF]">“Hello”</p>
         </h1>
       </div>
-      <div className="py-28 px-52 border bg-[#F6F6F6]">
+      <div className="py-28 px-52 bg-[#F6F6F6]">
         <div>
           <h1 className="text-6xl font-medium">Where to find us?</h1>
         </div>
         <div className="flex gap-8 mt-16">
-          <Card color={"#499DFF"} />
-          <Card color={"#FF9559"} />
-          <Card color={"#00CA8E"} />
+          <Card title={"Delhi NCR"} color={"#499DFF"} image={"/cloudsparrow-all-img/delhi.png"} />
+          <Card title={"Lucknow"} color={"#FF9559"} image={"/cloudsparrow-all-img/lucknow.png"}/>
+          <Card title={"USA"} color={"#00CA8E"} image={"/cloudsparrow-all-img/usa.png"}/>
         </div>
       </div>
       <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
@@ -240,15 +240,14 @@ const Contact = () => {
   );
 };
 
-const Card = ({ color }) => {
+const Card = ({ title,color,image }) => {
   return (
     <div
-      className={
-        "text-[#1F252B] rounded-md text-center px-20 py-10 bg-[" + color + "] "
-      }
+      style={{ backgroundColor: color }}
+      className="text-[#1F252B] rounded-md text-center px-20 py-10"
     >
       <div>
-        <h1 className="text-2xl font-bold">Delhi NCR</h1>
+        <h1 className="text-2xl font-bold">{title}</h1>
       </div>
       <div className="my-5">
         <p className="font-medium">
@@ -256,7 +255,7 @@ const Card = ({ color }) => {
         </p>
       </div>
       <div className="flex justify-center items-center">
-        <img className="size-20" src="" alt="" />
+        <img className="size-20" src={image} alt="" />
       </div>
     </div>
   );
