@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceSection from "./ServiceSection";
 import DevCulture from "./DevCulture";
-import CraftProduct from "./CraftProduct";
+import CraftProduct from "../Common/CraftProduct";
 
 const Services = () => {
   return (

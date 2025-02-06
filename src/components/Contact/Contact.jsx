@@ -14,9 +14,21 @@ const Contact = () => {
           <h1 className="text-6xl font-medium">Where to find us?</h1>
         </div>
         <div className="flex gap-8 mt-16">
-          <Card title={"Delhi NCR"} color={"#499DFF"} image={"/cloudsparrow-all-img/delhi.png"} />
-          <Card title={"Lucknow"} color={"#FF9559"} image={"/cloudsparrow-all-img/lucknow.png"}/>
-          <Card title={"USA"} color={"#00CA8E"} image={"/cloudsparrow-all-img/usa.png"}/>
+          <Card
+            title={"Delhi NCR"}
+            color={"#499DFF"}
+            image={"/cloudsparrow-all-img/delhi.png"}
+          />
+          <Card
+            title={"Lucknow"}
+            color={"#FF9559"}
+            image={"/cloudsparrow-all-img/lucknow.png"}
+          />
+          <Card
+            title={"USA"}
+            color={"#00CA8E"}
+            image={"/cloudsparrow-all-img/usa.png"}
+          />
         </div>
       </div>
       <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
@@ -240,7 +252,7 @@ const Contact = () => {
   );
 };
 
-const Card = ({ title,color,image }) => {
+const Card = ({ title, color, image }) => {
   return (
     <div
       style={{ backgroundColor: color }}

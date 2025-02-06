@@ -5,8 +5,6 @@ import { Link, useResolvedPath } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const path = useResolvedPath();
-  console.log(path.pathname);
-  
 
   return (
     <div className="flex absolute justify-between items-center h-20 w-full px-8 text-white">
@@ -24,7 +22,14 @@ const Navbar = () => {
               <Link
                 key={item}
                 to={item === "Home" ? "/" : item.toLowerCase()}
-                className={"font-medium hover:text-blue-400 transition text-xs "+((path.pathname==="/contact"||path.pathname==="/services")?" text-black ":" ")}
+                className={
+                  "font-medium hover:text-blue-400 transition text-xs " +
+                  (path.pathname === "/contact" ||
+                  path.pathname === "/services" ||
+                  path.pathname === "/about"
+                    ? " text-black "
+                    : " ")
+                }
               >
                 {item}
               </Link>
