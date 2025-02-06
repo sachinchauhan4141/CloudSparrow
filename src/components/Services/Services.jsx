@@ -27,7 +27,6 @@ const Services = () => {
           </div>
           <div className="flex justify-start my-8">
             <button
-              type="submit"
               className="uppercase py-3 px-10 bg-[#F48B3A] rounded-md text-xs font-medium text-white"
             >
               Get Started Now!
