@@ -16,7 +16,7 @@ const Navbar = () => {
           className="size-16"
         />
         {/* Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex gap-12 ">
+        <nav className="hidden lg:flex gap-8 ">
           {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
             (item) => (
               <Link
@@ -36,7 +36,7 @@ const Navbar = () => {
         </nav>
       </div>
       {/* Work With Us Button */}
-      <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition">
+      <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
         Work With Us
       </button>
 
@@ -63,7 +63,7 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition">
+          <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
             Work With Us
           </button>
         </div>
