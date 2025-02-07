@@ -22,12 +22,12 @@ const Banner = () => {
   };
 
   return (
-    <div className="bg-[url('./assets/BackGroundImage.png')] bg-cover bg-center w-full h-full min-h-screen pt-20">
+    <div className="bg-[url('./assets/BackGroundImage.png')] bg-cover bg-center w-full h-full pt-20">
       {/* Main Content Section */}
-      <div className="flex pt-8 flex-row items-center justify-center w-full px-12 gap-7">
+      <div className="flex lg:pt-8 lg:flex-row flex-col items-center justify-center w-full lg:px-12 gap-7">
         {/* Left Section */}
-        <div className="w-[60%] pl-20">
-          <p className="text-white text-5xl font-bold mx-auto">
+        <div className="lg:w-[60%] lg:pl-20">
+          <p className="text-white text-3xl lg:text-5xl font-bold mx-auto">
             HIGHLY BESPOKE <br /> WEBSITES AND DIGITAL <br /> EXPERIENCES FOR{" "}
             <br /> AMBITIOUS{" "}
             <span className="bg-gradient-to-r from-[#2A6BFD] to-[#11CED2] inline-block text-transparent bg-clip-text">
@@ -53,12 +53,12 @@ const Banner = () => {
 
       {/* Image Section */}
       <div className="flex items-center justify-center mt-8">
-        <div className="flex items-center justify-center w-full overflow-hidden">
+        <div className="flex items-center justify-center w-full overflow-hidden mx-4 lg:mx-0">
           <IoIosArrowDropleftCircle
-            className="text-4xl text-[black] border border-black rounded-full"
+            className="text-3xl lg:text-4xl text-[black] rounded-full"
             onClick={prev}
           />
-          <div className="relative w-4xl">
+          <div className="relative lg:w-4xl w-fit">
             {/* Background Image */}
             <img
               className="w-full h-full object-cover"
@@ -66,7 +66,7 @@ const Banner = () => {
               alt="Background"
             />
             {/* Overlay Image */}
-            <div className="absolute border-2 top-9 left-35 w-[600px] h-[420px] object-contain rounded-xl overflow-hidden">
+            <div className="absolute border-2 top-2 w-[210px] h-[150px] left-12 lg:top-9 lg:left-35 lg:w-[600px] lg:h-[420px] object-contain rounded-xl overflow-hidden">
               <img src={data[curr]} alt="Overlay" className="size-full" />
             </div>
             <img
@@ -76,7 +76,7 @@ const Banner = () => {
             />
           </div>
           <IoIosArrowDroprightCircle
-            className="text-4xl text-[black] border border-black rounded-full"
+            className="text-3xl lg:text-4xl text-[black] rounded-full"
             onClick={next}
           />
         </div>

@@ -21,7 +21,7 @@ const Contact = () => {
             Where to find us?
           </h1>
         </div>
-        <div className="flex gap-8 mt-4 lg:mt-16 overflow-scroll">
+        <div className="flex gap-8 mt-4 lg:mt-16 overflow-scroll no-scrollbar">
           <Card
             title={"Delhi NCR"}
             color={"#499DFF"}

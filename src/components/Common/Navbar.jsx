@@ -7,7 +7,7 @@ const Navbar = () => {
   const path = useResolvedPath();
 
   return (
-    <div className="flex absolute justify-between items-center h-20 w-full px-8 text-black">
+    <div className="flex absolute justify-between items-center h-20 w-full px-4 text-black">
       {/* Logo */}
       <div className="flex gap-8 items-center">
         <img

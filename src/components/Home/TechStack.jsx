@@ -2,7 +2,7 @@ import React from "react";
 
 const TechStack = () => {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="hidden lg:flex flex-col justify-center items-center">
       {/* top section */}
       <div className="border-y-2 border-[#0C0C0C] w-full text-center py-5">
         <img src="" alt="" />

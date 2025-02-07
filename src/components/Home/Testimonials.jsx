@@ -19,7 +19,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="flex flex-col h-full py-16 mx-30">
+    <div className="flex flex-col h-full py-2 mx-6 lg:py-16 lg:mx-30">
       {/* Header Section */}
       <div className="flex items-center mt-6">
         <img
@@ -31,24 +31,24 @@ const Testimonials = () => {
           TESTIMONIALS
         </p>
       </div>
-      <div className="flex gap-20">
+      <div className="lg:flex gap-20">
         <div>
           {/* Title and Description */}
-          <div className="mt-8">
-            <h2 className=" text-5xl font-bold leading-12">
+          <div className="mt-4 lg:mt-8">
+            <h2 className="text-3xl lg:text-5xl font-bold lg:leading-12">
               WHAT OUR HAPPY CUSTOMERS SAY
             </h2>
-            <p className=" text-sm mt-4 w-sm">
+            <p className=" text-sm mt-4 lg:w-sm">
               Lorem ipsum dolor sit amet consectetur. Eu auctor faucibus nunc
               accumsan tristique augue sodales egestas orci.
             </p>
           </div>
 
           {/* CTA Button */}
-          <button className="mt-6 h-10 w-36  text-[14px] bg-[#2A6BFD] text-white font-semibold rounded-[6px]">
+          <button className="mt-6 h-10 w-36 text-[14px] bg-[#2A6BFD] text-white font-semibold rounded-[6px]">
             Work With Us
           </button>
-          <div className="flex flex-col mt-12">
+          <div className="flex flex-col mt-6 lg:mt-12">
             <p className="mb-6">Satisfied customers! 😮</p>
             <div className="flex gap-2">
               <div className="flex items-center overflow-hidden w-36">
@@ -79,7 +79,7 @@ const Testimonials = () => {
         <div className="flex justify-start items-center gap-4 overflow-hidden">
           <IoIosArrowDropleftCircle
             onClick={() => scroll("left")}
-            className="rounded-full border border-white size-20"
+            className="hidden lg:block rounded-full size-20"
           />
           <div
             ref={scrollRef}
@@ -91,7 +91,7 @@ const Testimonials = () => {
           </div>
           <IoIosArrowDroprightCircle
             onClick={() => scroll("right")}
-            className="rounded-full border border-white size-20 "
+            className="hidden lg:block rounded-full size-20 "
           />
         </div>
       </div>
@@ -101,7 +101,7 @@ const Testimonials = () => {
 
 const Card = () => {
   return (
-    <div className="flex flex-col justify-between border border-[#E5E5E5] rounded-2xl w-sm h-auto p-6 flex-shrink-0">
+    <div className="flex flex-col justify-between border border-[#E5E5E5] rounded-2xl w-fit lg:w-sm h-auto p-6 flex-shrink-0">
       {/* Quote and Stars */}
       <div className="flex items-center justify-between">
         <FaQuoteLeft className="text-blue-500 text-2xl" />

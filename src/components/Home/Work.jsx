@@ -22,7 +22,7 @@ const Work = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="hidden lg:block mt-10">
       <div className="w-full relative">
         <img
           className="h-80 w-full absolute"

@@ -4,25 +4,25 @@ import { FaPlus } from "react-icons/fa";
 const ProductCycle = () => {
   return (
     <div className="bg-gradient-to-b from-blue-900 via-[#2A6BFD] to-[#14b4f4] relative">
-      <div className="bg-gradient-to-b from-gray-300 via-white to-white h-full rounded-b-4xl py-28 px-20">
+      <div className="bg-gradient-to-b from-gray-300 via-white to-white h-full rounded-b-4xl py-4 lg:py-28 px-4 lg:px-20">
         <div className="flex flex-col items-center justify-center">
-          <div className="mt-6 flex flex-row items-start">
-            <div className="w-3xl text-left">
+          <div className="mt-4 lg:mt-6 flex flex-row items-start">
+            <div className="lg:w-3xl text-left">
               <div className="flex gap-4 w-full mb-4">
                 <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
                 <p className="text-[12px] text-[#2A6BFD] font-bold">
                   OUR PRODUCT DEVELOPMENT CYCLE
                 </p>
               </div>
-              <p className=" text-6xl font-bold leading-16">
+              <p className="text-2xl lg:text-6xl font-bold lg:leading-16">
                 DISCOVER HOW OUR SOFTWARE HOUSE DEVELOPS HIGH-QUALITY WEB AND
                 MOBILE APPS
               </p>
-              <button className="h-10 w-36 mt-7  text-sm text-white bg-[#2A6BFD] font-semibold rounded-[4px]">
+              <button className="h-10 w-36 mt-4 lg:mt-7  text-sm text-white bg-[#2A6BFD] font-semibold rounded-[4px]">
                 Let's Start
               </button>
             </div>
-            <div className="">
+            <div className="hidden lg:block">
               <img
                 className="h-96 w-80 object-cover"
                 src="/cloudsparrow-all-img/ninth.png"
@@ -32,7 +32,7 @@ const ProductCycle = () => {
           </div>
         </div>
         <div>
-          <div className="flex items-center justify-center pt-12 flex-wrap">
+          <div className="flex items-center justify-center pt-6 lg:pt-12 flex-wrap">
             <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
             <p className=" text-[10px] sm:text-[12px] text-[#2A6BFD] font-bold ml-4">
               FAQ
@@ -43,17 +43,15 @@ const ProductCycle = () => {
               alt="No"
             />
           </div>
-          <div className="flex flex-col items-center justify-center mt-7 leading-16">
-            <p className=" text-6xl font-bold text-center">WHAT PROBLEM ARE</p>
-            <p className=" text-6xl font-bold text-center">
+          <div className="flex flex-col items-center justify-center mt-4 lg:mt-7 lg:leading-16">
+            <p className="text-3xl lg:text-6xl font-bold text-center">
+              WHAT PROBLEM ARE
+            </p>
+            <p className="text-3xl lg:text-6xl font-bold text-center">
               YOU TRYING TO SOLVE?
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 mt-6 items-center justify-center">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+          <div className="flex flex-wrap gap-2 mt-4 lg:mt-6 items-center justify-center">
             <Card />
             <Card />
             <Card />
@@ -61,7 +59,7 @@ const ProductCycle = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col pt-24 min-h-[90vh]">
+      <div className="flex flex-col pt-10 lg:pt-24 lg:min-h-[90vh] min-h-[40vh]">
         <div className="flex flex-wrap items-center justify-center">
           <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
           <p className=" text-[12px] sm:text-[14px] text-white font-bold ml-4">
@@ -75,16 +73,16 @@ const ProductCycle = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center my-4">
-          <p className=" text-6xl text-white font-bold">LET'S BUILD YOUR</p>
-          <p className=" text-6xl text-white font-bold">PRODUCT TOGETHER</p>
+          <p className="text-4xl lg:text-6xl text-white font-bold">LET'S BUILD YOUR</p>
+          <p className="text-4xl lg:text-6xl text-white font-bold">PRODUCT TOGETHER</p>
         </div>
 
         <div className="flex flex-col items-center justify-center text-center mt-2">
-          <p className=" text-sm text-white font-bold">
+          <p className="text-xs lg:text-sm text-white font-bold">
             Partner with us for a digital journey that transforms your business
             ideas
           </p>
-          <p className=" text-sm text-white font-bold">
+          <p className="text-xs lg:text-sm text-white font-bold">
             into successful, cutting-edge solutions.
           </p>
           <button className="h-8 w-24 mt-4  text-[12px] text-[#2A6BFD] bg-white font-semibold rounded-[4px] hover:cursor-pointer">

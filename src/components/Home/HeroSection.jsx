@@ -6,17 +6,17 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
       {/* Title Section */}
-      <div className="w-[80%] text-left">
-        <p className=" font-bold text-[58px] text-[#0C0C0C] mt-[50px] leading-14">
+      <div className="lg:w-[80%] text-left">
+        <p className="font-bold text-2xl lg:text-[58px] text-[#0C0C0C] mt-4 mx-4 lg:mx-0 lg:mt-[50px] lg:leading-14">
           WE REIMAGINE DIGITAL NARRATIVES, EMPOWERING BRANDS TO CONNECT WITH
           CONSUMERS IN <span className="bg-gradient-to-r from-[#2A6BFD] via-[#11CED2] to-[#11CED2] inline-block text-transparent bg-clip-text">MEANINGFUL WAYS</span>
         </p>
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-row gap-12 items-center w-full mt-10">
+      <div className="flex flex-row gap-12 items-center w-full lg:mt-10">
         {/* Image Section */}
-        <div className="w-[860px] h-[460px] mr-8">
+        <div className="hidden lg:block w-[860px] h-[460px] mr-8">
           <img
             className="size-full"
             src="/cloudsparrow-all-img/ThirdPage.png"
@@ -25,7 +25,7 @@ const HeroSection = () => {
         </div>
 
         {/* Text Section */}
-        <div className="flex flex-col w-[460px] text-left mt-14">
+        <div className="flex flex-col lg:w-[460px] text-left lg:mt-14 mt-4 mx-4 lg:mx-0">
           <div className="flex items-center justify-start">
             <img
               className="size-[35px]"
@@ -48,12 +48,12 @@ const HeroSection = () => {
               leading company where businesses can find each and every online
               service they may need.
             </p>
-            <button className="flex items-center justify-evenly h-[35px] w-[100px]  text-[12px] text-white bg-[#2A6BFD] font-semibold rounded-[4px] mt-[10px]">
+            <button className="flex items-center justify-evenly h-[35px] w-[100px] text-[12px] text-white bg-[#2A6BFD] font-semibold rounded-[4px] mt-[10px]">
               <BiMessageRoundedDetail className="text-xl" />
               Let's Talk
             </button>
           </div>
-          <div className="flex items-center justify-between mt-18">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between lg:mt-18 mt-10">
             <div className="flex justify-center items-center gap-4">
               <div className="flex items-center overflow-hidden w-36">
                 <img
@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <p>Meet our IT team of designers & developers</p>
               </div>
             </div>
-            <div>
+            <div className="mt-4 mg:mt-0">
               <button className="text-[12px] px-6 py-2 border border-[#0374BB33] rounded-lg text-[#0C0C0C]">
                 {"About Us >"}
               </button>
