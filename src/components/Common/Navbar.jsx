@@ -7,7 +7,7 @@ const Navbar = () => {
   const path = useResolvedPath();
 
   return (
-    <div className="flex absolute justify-between items-center h-20 w-full px-8 text-white">
+    <div className="flex absolute justify-between items-center h-20 w-full px-8 text-black">
       {/* Logo */}
       <div className="flex gap-8 items-center">
         <img
@@ -24,10 +24,8 @@ const Navbar = () => {
                 to={item === "Home" ? "/" : item.toLowerCase()}
                 className={
                   "font-medium hover:text-blue-400 transition text-xs " +
-                  (path.pathname === "/contact" ||
-                  path.pathname === "/services" ||
-                  path.pathname === "/about"
-                    ? " text-black "
+                  (path.pathname === "/" || path.pathname === "/careers"
+                    ? " text-white "
                     : " ")
                 }
               >

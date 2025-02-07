@@ -6,7 +6,7 @@ import CraftProduct from "../Common/CraftProduct";
 const Services = () => {
   return (
     <>
-      <div className="flex text-center py-48 px-50 gap-16 text-[#1F252B]">
+      <div className="flex text-center pt-48 pb-20 px-50 gap-16 text-[#1F252B]">
         <div className="w-[40%]">
           <div className="">
             <p className="py-2 px-9 border border-[#9CA7AA] border-dashed text-2xl w-fit rounded-md">
@@ -39,11 +39,13 @@ const Services = () => {
               text="Marketing that sells"
               color="#499DFF"
               image={"/cloudsparrow-all-img/boytab.png"}
+              icon={"/cloudsparrow-all-img/service_card_1_icon.png"}
             />
             <Card
               text="Designs that tell stories"
               color="#FDE284"
               image={"/cloudsparrow-all-img/girlgallery.png"}
+              icon={"/cloudsparrow-all-img/service_card_2_icon.png"}
             />
           </div>
           <div className="flex gap-7 mt-8">
@@ -51,11 +53,13 @@ const Services = () => {
               text="Apps that compel"
               color="#FF9559"
               image={"/cloudsparrow-all-img/girlwithphone.png"}
+              icon={"/cloudsparrow-all-img/service_card_3_icon.png"}
             />
             <Card
               text="Development that propels growth"
               color="#00CA8E"
               image={"/cloudsparrow-all-img/girlvideocall.png"}
+              icon={"/cloudsparrow-all-img/service_card_4_icon.png"}
             />
           </div>
         </div>
@@ -137,7 +141,7 @@ export const Card = ({ icon, text, image, color }) => {
       className="w-[36%] rounded-lg p-4 text-xl"
     >
       <div className="flex justify-end">
-        <img src={icon} alt="" className="border size-9" />
+        <img src={icon} alt="" className="size-9" />
       </div>
       <div className="my-4 text-start">
         <h3 className="font-medium">
@@ -145,7 +149,7 @@ export const Card = ({ icon, text, image, color }) => {
           {text?.substring(1)}
         </h3>
       </div>
-      <div className="flex justify-center items-center size-32 mt-4 mx-auto">
+      <div className="flex justify-center items-center size-32 mt-10 mx-auto">
         <img src={image} alt="" className="size-full" />
       </div>
     </div>

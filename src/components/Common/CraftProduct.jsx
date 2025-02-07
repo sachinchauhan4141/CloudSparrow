@@ -52,8 +52,8 @@ const CraftProduct = () => {
             className="size-full"
           />
           <div className="absolute top-0 left-0 flex flex-col justify-between items-start w-full h-full px-4 py-6">
-            <div className="border size-16">
-              <img src="" alt="" />
+            <div className="h-16 w-60">
+              <img src="/cloudsparrow-all-img/project_1_icon.png" alt="" />
             </div>
             <div className="">
               <button className="bg-[#F48B3A] rounded-4xl px-8 py-4 text-xs font-medium cursor-pointer">
@@ -69,8 +69,8 @@ const CraftProduct = () => {
             className="size-full"
           />
           <div className="absolute top-0 left-0 flex flex-col justify-between items-start w-full h-full px-4 py-6">
-            <div className="border size-16">
-              <img src="" alt="" />
+            <div className="size-16">
+              <img src="/cloudsparrow-all-img/project_2_icon.png" alt="" />
             </div>
             <div className="">
               <button className="bg-[#F48B3A] rounded-4xl px-8 py-4 text-xs font-medium cursor-pointer">
@@ -86,8 +86,8 @@ const CraftProduct = () => {
             className="size-full"
           />
           <div className="absolute top-0 left-0 flex flex-col justify-between items-start w-full h-full px-4 py-6">
-            <div className="border size-16">
-              <img src="" alt="" />
+            <div className="size-16">
+              <img src="/cloudsparrow-all-img/project_3_icon.png" alt="" />
             </div>
             <div className="">
               <button className="bg-[#F48B3A] rounded-4xl px-8 py-4 text-xs font-medium cursor-pointer">
@@ -103,8 +103,8 @@ const CraftProduct = () => {
             className="size-full"
           />
           <div className="absolute top-0 left-0 flex flex-col justify-between items-start w-full h-full px-4 py-6">
-            <div className="border size-16">
-              <img src="" alt="" />
+            <div className="size-16">
+              <img src="/cloudsparrow-all-img/project_4_icon.png" alt="" />
             </div>
             <div className="">
               <button className="bg-[#F48B3A] rounded-4xl px-8 py-4 text-xs font-medium cursor-pointer">

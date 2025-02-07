@@ -22,10 +22,10 @@ const ProductCycle = () => {
                 Let's Start
               </button>
             </div>
-            <div className="mt-5">
+            <div className="">
               <img
-                className="h-80 w-80 object-cover"
-                src="/cloudsparrow-all-img/ninth.jpeg"
+                className="h-96 w-80 object-cover"
+                src="/cloudsparrow-all-img/ninth.png"
                 alt="No"
               />
             </div>

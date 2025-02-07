@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <div className="flex gap-2 justify-center items-center pt-48 px-50 bg-[radial-gradient(circle_at_bottom,#FDE7E1_20%,#FFF9EC_30%,#FFFFFF_60%)]">
-        <div className="flex flex-col gap-8 justify-between items-start w-[60%]">
+        <div className="flex flex-col gap-8 justify-between items-start w-[60%] pb-20">
           <h1 className="text-7xl font-bold leading-20 text-[#1F252B]">
             We create brands that get noticed
           </h1>
@@ -46,17 +46,10 @@ const About = () => {
               />
             </div>
             <div className="w-[40%] h-full flex flex-col gap-1 text-[#FFFFFF]">
-              <div className="border overflow-hidden rounded-full h-[30%]">
-                <div className="rounded-t-full bg-[#1B76FF]">
-                  <h1>97%</h1>
-                </div>
-                <div className="rounded-b-full bg-[#FFCD1D]">
-                  <p className="text-sm">
-                    Generated <br /> Revenue/Day
-                  </p>
-                </div>
+              <div className="overflow-hidden rounded-full p-3 items-center justify-center flex">
+                <img src="cloudsparrow-all-img/revenue.png" alt=" size-full" />
               </div>
-              <div className="overflow-hidden rounded-4xl h-[70%]">
+              <div className="overflow-hidden rounded-4xl">
                 <img
                   src="cloudsparrow-all-img/mansetup.png"
                   alt=""
@@ -67,8 +60,12 @@ const About = () => {
           </div>
           <div className="w-full">
             <div className="flex h-[40%] bg-[#FFFFFF] p-6 gap-4">
-              <div className="size-10 w-[10%]">
-                <img src="" alt="" className="size-full" />
+              <div className="size-10 w-[10%] p-1">
+                <img
+                  src="cloudsparrow-all-img/reliability.png"
+                  alt=""
+                  className="size-full"
+                />
               </div>
               <div className="w-[90%] text-start flex flex-col justify-evenly items-start">
                 <h1 className="text-lg font-medium text-[#E05A32]">
@@ -81,27 +78,39 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="h-[20%] flex items-start p-6 gap-2">
-              <div className="size-10 w-[10%]">
-                <img src="" alt="" className="size-full" />
+            <div className="h-[20%] flex items-center justify-center p-6 gap-4">
+              <div className="size-10 w-[10%] p-1 overflow-hidden">
+                <img
+                  src="cloudsparrow-all-img/experience.png"
+                  alt=""
+                  className="size-full"
+                />
               </div>
-              <div className="w-[90%] text-start flex flex-col justify-evenly items-start">
+              <div className="w-[90%] text-start">
                 <h1 className="text-lg font-medium text-black">Experience</h1>
               </div>
             </div>
-            <div className="border-y-1 border-[#9CA7AA] h-[20%] flex items-start p-6 gap-2">
-              <div className="size-10 w-[10%]">
-                <img src="" alt="" className="size-full" />
+            <div className="h-[20%] flex items-center justify-center p-6 gap-4 border-y-1 border-[#9CA7AA] ">
+              <div className="size-10 w-[10%] p-1 overflow-hidden">
+                <img
+                  src="cloudsparrow-all-img/solutions.png"
+                  alt=""
+                  className="size-full"
+                />
               </div>
-              <div className="w-[90%] text-start flex flex-col justify-evenly items-start">
+              <div className="w-[90%] text-start">
                 <h1 className="text-lg font-medium text-black">Solutions</h1>
               </div>
             </div>
-            <div className="h-[20%] flex items-start p-6 gap-2">
-              <div className="size-10 w-[10%]">
-                <img src="" alt="" className="size-full" />
+            <div className="h-[20%] flex items-center justify-center p-6 gap-4">
+              <div className="size-10 w-[10%] p-1 overflow-hidden">
+                <img
+                  src="cloudsparrow-all-img/services.png"
+                  alt=""
+                  className="size-full"
+                />
               </div>
-              <div className="w-[90%] text-start flex flex-col justify-evenly items-start">
+              <div className="w-[90%] text-start">
                 <h1 className="text-lg font-medium text-black">Services</h1>
               </div>
             </div>
@@ -128,7 +137,7 @@ const About = () => {
               Projects <br /> Delivered
             </p>
           </div>
-          <div className="w-full border-r-2 border-[#9CA7AA] flex flex-col gap-4 items-center justify-center text-center">
+          <div className="w-full flex flex-col gap-4 items-center justify-center text-center">
             <h1 className="text-5xl font-medium">100+</h1>
             <p className="text-[#EC4918] font-medium">
               Repeat and <br /> Referral
