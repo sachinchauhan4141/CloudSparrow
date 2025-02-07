@@ -2,14 +2,14 @@ import React from "react";
 
 const ServiceSection = ({ title, bgcolor, color, btcolor, pcolor }) => {
   return (
-    <div style={{ color, backgroundColor: bgcolor }} className="skew-y-2">
-      <div className="relative flex py-20 px-30 gap-16 text-start h-[96vh] -skew-y-2">
-        <div className="w-[60%] px-20 py-10">
+    <div style={{ color, backgroundColor: bgcolor }} className="skew-y-1 lg:skew-y-2">
+      <div className="relative flex py-10 lg:px-30 gap-16 text-start -skew-y-1 lg:-skew-y-2">
+        <div className="lg:w-[60%] py-2 px-10 lg:px-20 lg:py-10">
           <div>
             <p className="uppercase font-medium">Un-Put-Downable</p>
           </div>
           <div className="my-4">
-            <h1 className="text-5xl font-medium">{title}</h1>
+            <h1 className="lg:text-5xl text-3xl font-medium">{title}</h1>
           </div>
           <div className="my-8">
             <p className="text-xs font-medium" style={{ color: pcolor }}>
@@ -38,7 +38,7 @@ const ServiceSection = ({ title, bgcolor, color, btcolor, pcolor }) => {
             </button>
           </div>
         </div>
-        <div className="flex justify-center w-[40%]">
+        <div className="hidden lg:flex justify-center w-[40%]">
           <div className="border-x-1 mt-10">
             <div className="flex flex-col gap-1 justify-center items-center px-10 py-6">
               <img

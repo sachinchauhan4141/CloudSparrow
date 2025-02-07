@@ -3,17 +3,25 @@ import React from "react";
 const Contact = () => {
   return (
     <div>
-      <div className="text-center py-48 px-60 bg-[radial-gradient(circle_at_bottom,#FDE7E1_20%,#FFF9EC_30%,#FFFFFF_60%)]">
-        <h1 className="text-7xl font-bold leading-20">
-          GOOD THINGS <img src="cloudsparrow-all-img/orangestar.png" alt="" className="inline size-16"/> HAPPEN <br /> WHEN YOU SAY
+      <div className="text-center pt-24 pb-10 lg:py-48 lg:px-60 bg-[radial-gradient(circle_at_bottom,#FDE7E1_20%,#FFF9EC_30%,#FFFFFF_60%)]">
+        <h1 className="text-3xl lg:text-7xl font-bold lg:leading-20">
+          GOOD THINGS{" "}
+          <img
+            src="cloudsparrow-all-img/orangestar.png"
+            alt=""
+            className="inline lg:size-16 size-6"
+          />{" "}
+          HAPPEN <br /> WHEN YOU SAY
           <p className="text-[#407BFF]">“Hello”</p>
         </h1>
       </div>
-      <div className="py-28 px-52 bg-[#F6F6F6]">
+      <div className="p-4 lg:py-28 lg:px-52 bg-[#F6F6F6]">
         <div>
-          <h1 className="text-6xl font-medium">Where to find us?</h1>
+          <h1 className="text-3xl lg:text-6xl font-medium">
+            Where to find us?
+          </h1>
         </div>
-        <div className="flex gap-8 mt-16">
+        <div className="flex gap-8 mt-4 lg:mt-16 overflow-scroll">
           <Card
             title={"Delhi NCR"}
             color={"#499DFF"}
@@ -31,15 +39,15 @@ const Contact = () => {
           />
         </div>
       </div>
-      <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
-        <div className="py-4 my-2">
-          <h1 className="text-4xl font-medium">
+      <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-4">
+        <div className="lg:py-4 lg:my-2 px-10 lg:px-0">
+          <h1 className="text-3xl lg:text-4xl font-medium">
             Fill out the form and we will be in touch.
           </h1>
         </div>
-        <div className="min-w-2xl px-2">
+        <div className="lg:min-w-2xl lg:px-2 px-10">
           <form className="mx-auto w-full">
-            <div className="flex flex-col w-full mb-5 my-12 gap-2">
+            <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <label htmlFor="name">What’s Your Name?</label>
               <input
                 type="text"
@@ -50,7 +58,7 @@ const Contact = () => {
                 required
               />
             </div>
-            <div className="flex flex-col w-full mb-5 my-12 gap-2">
+            <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <label htmlFor="email">Your Email</label>
               <input
                 type="email"
@@ -61,7 +69,7 @@ const Contact = () => {
                 required
               />
             </div>
-            <div className="flex flex-col w-full mb-5 my-12 gap-2">
+            <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <label htmlFor="number">
                 Would you like to add a phone number?
               </label>
@@ -74,9 +82,9 @@ const Contact = () => {
                 required
               />
             </div>
-            <div className="flex flex-col w-full mb-5 my-12 gap-2">
+            <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <p>Services that interest you*</p>
-              <div className="grid grid-cols-3 grid-rows-3">
+              <div className="grid grid-cols-2 grid-rows-2 lg:grid-cols-3 lg:grid-rows-3">
                 <div className="flex items-start my-5">
                   <div className="flex items-center h-5">
                     <input
@@ -223,13 +231,13 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-full mb-5 my-12 gap-2">
-              <label htmlFor="email">Briefly describe your Request</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="h-16 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+            <div className="flex flex-col w-full lg:mb-5 lg:my-12 gap-2">
+              <label htmlFor="description">Briefly describe your Request</label>
+              <textarea
+                type="description"
+                name="description"
+                id="description"
+                className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
               />
@@ -256,7 +264,7 @@ const Card = ({ title, color, image }) => {
   return (
     <div
       style={{ backgroundColor: color }}
-      className="text-[#1F252B] rounded-md text-center px-20 py-10"
+      className="text-[#1F252B] rounded-md text-center py-6 px-20 lg:py-10"
     >
       <div>
         <h1 className="text-2xl font-bold">{title}</h1>

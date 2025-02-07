@@ -12,21 +12,21 @@ const CraftProduct = () => {
     }
   };
   return (
-    <div className={"py-2 gap-16 text-[#1F252B]"}>
-      <div className="flex px-30">
-        <div className="w-[40%]">
-          <h1 className="text-6xl font-medium">
+    <div className={"py-2 text-[#1F252B]"}>
+      <div className="lg:flex lg:px-30 px-4">
+        <div className="lg:w-[40%]">
+          <h1 className="lg:text-6xl text-3xl font-medium">
             We share how <br /> to craft{" "}
             <span className="text-[#EC4918]">products</span>
           </h1>
         </div>
-        <div className="flex justify-center items-end w-[40%]">
+        <div className="flex justify-center items-end lg:w-[40%] my-2">
           <p className="text-sm font-medium">
-            Lorem Ipsum is simply dummy text of the printing and --- <br />
+            Lorem Ipsum is simply dummy text of the printing and <br className="hidden lg:block" />
             industry site Ipsum has been the site
           </p>
         </div>
-        <div className="flex justify-center items-end gap-4 w-[20%]">
+        <div className="hidden lg:flex justify-center items-end gap-4 w-[20%]">
           <button
             onClick={() => scroll("left")}
             className="border border-[#9CA7AA] rounded-4xl px-6 py-1 font-bold text-3xl"
@@ -43,9 +43,9 @@ const CraftProduct = () => {
       </div>
       <div
         ref={scrollRef}
-        className="px-8 my-14 flex gap-8 overflow-x-scroll no-scrollbar"
+        className="px-4 lg:px-8 lg:my-14 my-4 flex gap-8 overflow-x-scroll no-scrollbar"
       >
-        <div className="relative min-w-[40vw] h-[60vh] rounded-2xl overflow-hidden">
+        <div className="relative min-w-full lg:min-w-[40vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/car.png"}
             alt=""
@@ -62,7 +62,7 @@ const CraftProduct = () => {
             </div>
           </div>
         </div>
-        <div className="relative min-w-[22vw] h-[60vh] rounded-2xl overflow-hidden">
+        <div className="relative min-w-full lg:min-w-[22vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/man.png"}
             alt=""
@@ -79,7 +79,7 @@ const CraftProduct = () => {
             </div>
           </div>
         </div>
-        <div className=" relative min-w-[22vw] h-[60vh] rounded-2xl overflow-hidden">
+        <div className=" relative min-w-full lg:min-w-[22vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/children.png"}
             alt=""
@@ -96,7 +96,7 @@ const CraftProduct = () => {
             </div>
           </div>
         </div>
-        <div className="relative min-w-[22vw] h-[60vh] rounded-2xl overflow-hidden">
+        <div className="relative min-w-full lg:min-w-[22vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/model.png"}
             alt=""

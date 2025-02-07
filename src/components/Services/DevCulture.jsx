@@ -29,14 +29,16 @@ const data = [
 
 const DevCulture = () => {
   return (
-    <div className={"py-24 px-30 gap-16 text-center text-[#1F252B]"}>
+    <div
+      className={"p-4 lg:py-24 lg:px-30 gap-16 lg:text-center text-[#1F252B]"}
+    >
       <div className="my-4">
-        <h1 className="text-6xl font-medium">
+        <h1 className="lg:text-6xl text-3xl font-medium">
           Create the culture of <br />{" "}
           <span className="text-[#EC4918]">development by</span> Industry.
         </h1>
       </div>
-      <div className="my-10 w-fit mx-auto p-2">
+      <div className="my-4 lg:my-10 w-fit mx-auto p-2">
         <h3 className="text-sm font-medium">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.Lorem <br /> Ipsum has been the industry's standard dummy
@@ -44,7 +46,7 @@ const DevCulture = () => {
         </h3>
       </div>
 
-      <div className="flex flex-wrap gap-4 items-center justify-center px-14">
+      <div className="flex lg:flex-wrap gap-4 items-center justify-center lg:px-14 mx-4 lg:mx-0 overflow-scroll lg:overflow-visible">
         {data.map((data) => (
           <div
             key={data.title}
