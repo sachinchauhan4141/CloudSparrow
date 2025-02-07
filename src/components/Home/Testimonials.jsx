@@ -48,7 +48,7 @@ const Testimonials = () => {
           <button className="mt-6 h-10 w-36  text-[14px] bg-[#2A6BFD] text-white font-semibold rounded-[6px]">
             Work With Us
           </button>
-          <div className="font-[Public Sans] flex flex-col mt-12">
+          <div className="flex flex-col mt-12">
             <p className="mb-6">Satisfied customers! 😮</p>
             <div className="flex gap-2">
               <div className="flex items-center overflow-hidden w-36">
@@ -113,7 +113,7 @@ const Card = () => {
       </div>
 
       {/* Testimonial Text */}
-      <p className="font-[Public Sans] text-[16px] text-[#0C0C0C] mt-6">
+      <p className="text-[16px] text-[#0C0C0C] mt-6">
         Lorem ipsum dolor sit amet consectetur. Elementum integer ipsum sed
         accumsan nunc morbi dapibus. Egestas interdum commodo ut egestas nec.
         Varius auctor elit elit gravida viverra nisl neque facilisis. Mauris

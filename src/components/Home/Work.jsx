@@ -9,8 +9,8 @@ const Work = () => {
 
   const data = [
     "/cloudsparrow-all-img/bottomTab.png",
-    "/cloudsparrow-all-img/bottomTab.png",
-    "/cloudsparrow-all-img/bottomTab.png",
+    "/cloudsparrow-all-img/discussion.png",
+    "/cloudsparrow-all-img/meating.png",
   ];
 
   const prev = () => {
@@ -57,17 +57,19 @@ const Work = () => {
             </div>
           </div>
           <div className="flex flex-col justify-between items-center w-[54%] gap-18">
-            <div className="rounded-xl overflow-hidden border-4">
-              <img
-                className="w-full h-full"
-                src={data[curr]}
-                alt=""
-              />
+            <div className="rounded-xl overflow-hidden border-4 h-72 w-[540px]">
+              <img className="w-full h-full" src={data[curr]} alt="" />
             </div>
             <div className="flex justify-between items-center w-full text-white">
-              <IoIosArrowDropleftCircle onClick={prev} className="rounded-full border border-white size-8" />
+              <IoIosArrowDropleftCircle
+                onClick={prev}
+                className="rounded-full border border-white size-8"
+              />
               <button className="font-bold text-sm">CHECK VIEW PROJECT</button>
-              <IoIosArrowDroprightCircle onClick={next} className="rounded-full border border-white size-8 " />
+              <IoIosArrowDroprightCircle
+                onClick={next}
+                className="rounded-full border border-white size-8 "
+              />
             </div>
           </div>
           <div className="flex flex-col justify-center gap-20 items-center w-[25%] h-full">

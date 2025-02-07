@@ -66,11 +66,9 @@ const Banner = () => {
               alt="Background"
             />
             {/* Overlay Image */}
-            <img
-              className="absolute top-9 left-35 w-[600px] object-contain rounded-xl"
-              src={data[curr]}
-              alt="Overlay"
-            />
+            <div className="absolute border-2 top-9 left-35 w-[600px] h-[420px] object-contain rounded-xl overflow-hidden">
+              <img src={data[curr]} alt="Overlay" className="size-full" />
+            </div>
             <img
               className="absolute w-full h-full top-0 object-cover"
               src="/cloudsparrow-all-img/hands.png"

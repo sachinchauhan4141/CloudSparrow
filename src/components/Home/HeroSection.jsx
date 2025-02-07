@@ -37,7 +37,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="font-[Public Sans] mt-[20px]">
+          <div className="mt-[20px]">
             <p className="text-[16px]">
               Under the name World Fax Services, Inc., our company has been
               successfully creating various projects in the fields of web
@@ -53,7 +53,7 @@ const HeroSection = () => {
               Let's Talk
             </button>
           </div>
-          <div className="font-[Public Sans] flex items-center justify-between mt-18">
+          <div className="flex items-center justify-between mt-18">
             <div className="flex justify-center items-center gap-4">
               <div className="flex items-center overflow-hidden w-36">
                 <img
