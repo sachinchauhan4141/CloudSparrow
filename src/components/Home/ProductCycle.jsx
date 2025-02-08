@@ -59,7 +59,7 @@ const ProductCycle = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col pt-10 lg:pt-24 lg:min-h-[90vh] min-h-[40vh]">
+      <div className="flex flex-col pt-10 lg:pt-24 lg:min-h-[90vh] min-h-[36vh]">
         <div className="flex flex-wrap items-center justify-center">
           <img src="/cloudsparrow-all-img/FourthPage.png" alt="No" />
           <p className=" text-[12px] sm:text-[14px] text-white font-bold ml-4">
@@ -90,7 +90,7 @@ const ProductCycle = () => {
           </button>
         </div>
       </div>
-      <div className="flex justify-center w-full items-center mt-5">
+      <div className="hidden lg:flex justify-center w-full items-center mt-5">
         <img
           src="/cloudsparrow-all-img/FooterImage.png"
           alt="UI Design"

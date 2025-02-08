@@ -45,7 +45,7 @@ const CraftProduct = () => {
         ref={scrollRef}
         className="px-4 lg:px-8 lg:my-14 my-4 flex gap-8 overflow-x-scroll no-scrollbar"
       >
-        <div className="relative min-w-full lg:min-w-[40vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
+        <div className="relative min-w-full lg:min-w-[40vw] h-[30vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/car.png"}
             alt=""
@@ -62,7 +62,7 @@ const CraftProduct = () => {
             </div>
           </div>
         </div>
-        <div className="relative min-w-full lg:min-w-[22vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
+        <div className="relative min-w-full lg:min-w-[22vw] h-[30vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/man.png"}
             alt=""
@@ -79,7 +79,7 @@ const CraftProduct = () => {
             </div>
           </div>
         </div>
-        <div className=" relative min-w-full lg:min-w-[22vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
+        <div className=" relative min-w-full lg:min-w-[22vw] h-[30vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/children.png"}
             alt=""
@@ -96,7 +96,7 @@ const CraftProduct = () => {
             </div>
           </div>
         </div>
-        <div className="relative min-w-full lg:min-w-[22vw] h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden">
+        <div className="relative min-w-full lg:min-w-[22vw] h-[30vh] lg:h-[60vh] rounded-2xl overflow-hidden">
           <img
             src={"/cloudsparrow-all-img/model.png"}
             alt=""

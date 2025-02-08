@@ -120,7 +120,7 @@ const WhatWeDo = () => {
 
 const Card = ({ logo, img, title, description, tags }) => {
   return (
-    <div className="flex flex-col bg-black min-w-full lg:min-w-sm lg:max-w-md h-auto p-8 rounded-lg shadow-lg text-white">
+    <div className="flex flex-col bg-[#0C0C0C] min-w-full lg:min-w-sm lg:max-w-md h-auto p-8 rounded-lg shadow-lg text-white">
       {/* Card Header */}
       <div className="flex justify-between items-start">
         <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white">

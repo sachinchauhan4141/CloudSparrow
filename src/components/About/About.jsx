@@ -119,7 +119,7 @@ const About = () => {
       </div>
       <div className="lg:pb-40">
         <div className="flex flex-col lg:flex-row border-b-2 border-[#9CA7AA] w-full lg:h-[33vh]">
-          <div className="lg:py-0 py-10 w-full lg:border-r-2 lg:border-b-0 border-b-2 border-[#9CA7AA] flex lg:flex-col gap-4 items-center justify-evenly lg:justify-center text-center">
+          <div className="lg:py-0 py-6 w-full lg:border-r-2 lg:border-b-0 border-b-2 border-[#9CA7AA] flex lg:flex-col gap-4 items-center justify-evenly lg:justify-center text-center">
             <h1 className="text-5xl font-medium">99%</h1>
             <p className="text-[#EC4918] font-medium">
               Successful <br /> Years
@@ -187,7 +187,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="lg:absolute lg:h-[40vh] w-full z-50">
+        <div className="lg:absolute lg:h-[40vh] w-full z-50 my-4 lg:my-0">
           <div className="lg:w-[90%] h-full mx-auto py-4 lg:py-0 bg-[#FFEDC1] text-center flex flex-col items-center justify-center lg:gap-10 gap-2 lg:rounded-3xl">
             <h1 className="lg:text-5xl font-medium lg:leading-20">
               Want to measure your{" "}

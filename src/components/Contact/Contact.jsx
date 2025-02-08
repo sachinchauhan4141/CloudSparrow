@@ -15,37 +15,14 @@ const Contact = () => {
           <p className="text-[#407BFF]">“Hello”</p>
         </h1>
       </div>
-      <div className="p-4 lg:py-28 lg:px-52 bg-[#F6F6F6]">
-        <div>
-          <h1 className="text-3xl lg:text-6xl font-medium">
-            Where to find us?
-          </h1>
-        </div>
-        <div className="flex gap-8 mt-4 lg:mt-16 overflow-scroll no-scrollbar">
-          <Card
-            title={"Delhi NCR"}
-            color={"#499DFF"}
-            image={"/cloudsparrow-all-img/delhi.png"}
-          />
-          <Card
-            title={"Lucknow"}
-            color={"#FF9559"}
-            image={"/cloudsparrow-all-img/lucknow.png"}
-          />
-          <Card
-            title={"USA"}
-            color={"#00CA8E"}
-            image={"/cloudsparrow-all-img/usa.png"}
-          />
-        </div>
-      </div>
+      
       <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-4">
-        <div className="lg:py-4 lg:my-2 px-10 lg:px-0">
+        <div className="lg:py-4 lg:my-2 px-4 lg:px-0">
           <h1 className="text-3xl lg:text-4xl font-medium">
             Fill out the form and we will be in touch.
           </h1>
         </div>
-        <div className="lg:min-w-2xl lg:px-2 px-10">
+        <div className="lg:min-w-2xl px-4 lg:px-2">
           <form className="mx-auto w-full">
             <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <label htmlFor="name">What’s Your Name?</label>
@@ -256,6 +233,30 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <div className="p-4 lg:py-28 lg:px-52 bg-[#F6F6F6]">
+        <div>
+          <h1 className="text-3xl lg:text-6xl font-medium">
+            Where to find us?
+          </h1>
+        </div>
+        <div className="flex gap-8 mt-4 lg:mt-16 overflow-scroll no-scrollbar">
+          <Card
+            title={"Delhi NCR"}
+            color={"#499DFF"}
+            image={"/cloudsparrow-all-img/delhi.png"}
+          />
+          <Card
+            title={"Lucknow"}
+            color={"#FF9559"}
+            image={"/cloudsparrow-all-img/lucknow.png"}
+          />
+          <Card
+            title={"USA"}
+            color={"#00CA8E"}
+            image={"/cloudsparrow-all-img/usa.png"}
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -264,7 +265,7 @@ const Card = ({ title, color, image }) => {
   return (
     <div
       style={{ backgroundColor: color }}
-      className="text-[#1F252B] rounded-md text-center py-6 px-20 lg:py-10"
+      className="text-[#1F252B] rounded-md text-center py-6 min-w-full lg:min-w-auto px-20 lg:py-10"
     >
       <div>
         <h1 className="text-2xl font-bold">{title}</h1>
