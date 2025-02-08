@@ -15,7 +15,7 @@ export const JobPage = () => {
 
   return (
     <>
-      <div className="bg-gray-200 mx-16 px-8 py-12 mb-12">
+      <div className="bg-gray-200 mx-0 lg:mx-16 lg:px-8 py-6 lg:py-12 mb-0 lg:mb-12">
         {jobDetailsData.map((data, index) => {
           return (
             <JobDescriptionPoint
@@ -42,24 +42,24 @@ const JobDescriptionPoint = ({
     <>
       <div
         className={
-          "flex border-t-2  p-2 mx-8 justify-between  " +
+          "flex border-t-2 p-2 lg:mx-8 mx-2 justify-between  " +
           (activeIndex !== index ? "border-[#5F5F61]" : "border-[#0F75BC]")
         }
       >
-        <div>
+        <div className="w-[65%]">
           <h3
             className={
-              "text-[28px] font-semibold " +
+              "lg:text-[28px] text-xl font-semibold " +
               (activeIndex !== index ? "text-[#080808]" : "text-[#0F75BC]")
             }
           >
             {jobDetails.jobDescription.jobTitle}
           </h3>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 justify-center items-center">
           <p
             className={
-              "bg-white text-[15px] border  font-medium  px-4 py-2 rounded-3xl " +
+              "bg-white lg:text-[15px] border size-fit font-medium px-4 py-2 rounded-3xl " +
               (activeIndex !== index
                 ? "border-[#5F5F61] text-[#5F5F61]"
                 : "border-[#0F75BC] text-[#0F75BC]")
@@ -77,7 +77,7 @@ const JobDescriptionPoint = ({
         </div>
       </div>
       {activeIndex === index && (
-        <div className="flex flex-col mx-8">
+        <div className="flex flex-col lg:mx-8 mx-2">
           <JobDescriptionCard JobDetails={jobDetails} />
         </div>
       )}
@@ -87,9 +87,9 @@ const JobDescriptionPoint = ({
 
 const JobDescriptionCard = ({ JobDetails }) => {
   return (
-    <div className="bg-white p-8 my-2 flex flex-col ">
+    <div className="bg-white p-4 lg:p-8 my-2 flex flex-col ">
       <div>
-        <p className=" text-[18px] font-bold ">Job Description:</p>
+        <p className="text-[18px] font-bold ">Job Description:</p>
         <div className="text-[16px] my-2">
           <p className="font-bold">
             Job title:{" "}
