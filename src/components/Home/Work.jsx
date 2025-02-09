@@ -3,6 +3,7 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Work = () => {
   const [curr, setCurr] = useState(0);
@@ -36,9 +37,9 @@ const Work = () => {
         />
       </div>
       <div className="flex flex-col gap-12 items-center justify-center w-full px-8 pt-66">
-        <button className="text-sm font-bold px-4 py-2 bg-[#2A6BFD] text-white rounded-md">
+        <Link to={"/portfolio"} className="z-10 text-sm font-bold px-4 py-2 bg-[#2A6BFD] text-white rounded-md">
           Explore Our Work
-        </button>
+        </Link>
         <div className="flex items-center justify-evenly bg-[url('/cloudsparrow-all-img/Rectangle24.png')] h-[80vh] w-full px-40">
           <div className="flex flex-col justify-between items-center w-[25%] h-full">
             <div className="flex items-center justify-center h-[40%]">

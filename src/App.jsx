@@ -1,13 +1,13 @@
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import Footer from "./components/Common/Footer";
-import { Route, Routes } from "react-router-dom";
 import Careers from "./components/Careers/Careers";
 import Navbar from "./components/Common/Navbar";
 import Contact from "./components/Contact/Contact";
 import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
-import { useEffect, useState } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
 
 function App() {

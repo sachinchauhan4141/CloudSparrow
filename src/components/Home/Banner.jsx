@@ -66,7 +66,7 @@ const Banner = () => {
               alt="Background"
             />
             {/* Overlay Image */}
-            <div className="absolute border-2 top-2 lg:top-5 h-[70%] w-[69%] object-contain rounded-2xl  overflow-hidden">
+            <div className="absolute border-2 top-2 lg:top-5 h-[70%] w-[69%] object-contain lg:rounded-2xl rounded-md  overflow-hidden">
               <img src={data[curr]} alt="Overlay" className="size-full" />
             </div>
             <img

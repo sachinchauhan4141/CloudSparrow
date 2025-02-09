@@ -1,5 +1,6 @@
 import React from "react";
 import CraftProduct from "../Common/CraftProduct";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
             We create brands that get noticed
           </h1>
           <button className="uppercase p-3 lg:py-3 lg:px-10 bg-[#F48B3A] rounded-md text-xs font-medium text-white">
-            Get Started Now!
+            <Link to={"/contact"}>Get Started Now!</Link>
           </button>
         </div>
         <div className="hidden lg:block w-[40%] overflow-hidden">
@@ -187,14 +188,14 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="lg:absolute lg:h-[40vh] w-full z-50 my-4 lg:my-0">
+        <div className="lg:absolute lg:h-[40vh] w-full my-4 lg:my-0">
           <div className="lg:w-[90%] h-full mx-auto py-4 lg:py-0 bg-[#FFEDC1] text-center flex flex-col items-center justify-center lg:gap-10 gap-2 lg:rounded-3xl">
             <h1 className="lg:text-5xl font-medium lg:leading-20">
               Want to measure your{" "}
               <span className="text-[#EC4918]">site Performance</span> for free?
             </h1>
             <button className="uppercase py-2 px-5 lg:py-4 lg:px-10 bg-[#F48B3A] rounded-md text-xs font-medium text-white">
-              Get Started Now!
+              <Link to={"/contact"}>Get Started Now!</Link>
             </button>
           </div>
         </div>
@@ -241,7 +242,7 @@ const About = () => {
                 satisfaction.
               </p>
               <button className="uppercase py-3 px-10 bg-[#F48B3A] rounded-md text-xs font-medium text-white">
-                Get Started Now!
+                <Link to={"/contact"}>Get Started Now!</Link>
               </button>
               <div></div>
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TechStack = () => {
   return (
@@ -22,7 +23,7 @@ const TechStack = () => {
         {/* middle section */}
         <div className="">
           <button className="text-sm font-bold px-8 py-3 bg-[#2A6BFD] text-white rounded-md">
-            Work With Us
+            <Link to={"/contact"}>Work With Us</Link>
           </button>
         </div>
         {/* mid bottom section */}

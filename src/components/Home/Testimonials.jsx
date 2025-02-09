@@ -5,6 +5,7 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Testimonials = () => {
   const scrollRef = useRef(null);
@@ -46,7 +47,7 @@ const Testimonials = () => {
 
           {/* CTA Button */}
           <button className="mt-6 h-10 w-36 text-[14px] bg-[#2A6BFD] text-white font-semibold rounded-[6px]">
-            Work With Us
+            <Link to={"/contact"}>Work With Us</Link>
           </button>
           <div className="flex flex-col mt-6 lg:mt-12">
             <p className="mb-6">Satisfied customers! 😮</p>
@@ -70,7 +71,7 @@ const Testimonials = () => {
                 <FaCirclePlus className="absolute mx-24 mb-1 rounded-full border border-white size-8 text-[#2A6BFD] bg-white" />
               </div>
               <div className="text-sm max-w-32 font-medium text-[#0C0C0C]">
-                <p>Join them now</p>
+                <Link to={"careers"}>Join them now</Link>
               </div>
             </div>
           </div>

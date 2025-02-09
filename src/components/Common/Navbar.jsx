@@ -17,28 +17,42 @@ const Navbar = () => {
         />
         {/* Navigation Links (Desktop) */}
         <nav className="hidden lg:flex gap-8 ">
-          {["Home", "About", "Services", "Portfolio", "Careers", "Contact"].map(
-            (item) => (
-              <Link
-                key={item}
-                to={item === "Home" ? "/" : item.toLowerCase()}
-                className={
-                  "font-medium hover:text-blue-400 transition text-xs " +
-                  (path.pathname === "/" || path.pathname === "/careers"
-                    ? " text-white "
-                    : " ")
-                }
-              >
-                {item}
-              </Link>
-            )
-          )}
+          {[
+            "Home",
+            "About",
+            "Services",
+            "Portfolio",
+            "Careers",
+            "Contact",
+            "Dashboard",
+          ].map((item) => (
+            <Link
+              key={item}
+              to={item === "Home" ? "/" : item.toLowerCase()}
+              className={
+                "font-medium hover:text-blue-400 transition text-xs " +
+                (path.pathname === "/" || path.pathname === "/careers"
+                  ? " text-white "
+                  : " ")
+              }
+            >
+              {item}
+            </Link>
+          ))}
         </nav>
       </div>
       {/* Work With Us Button */}
-      <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-        Work With Us
-      </button>
+      <div className="flex items-center justify-center gap-2">
+        {/* <button
+          onClick={handleLogout}
+          className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white"
+        >
+          Logout
+        </button> */}
+        <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
+          <Link to={"/contact"}>Work With Us</Link>
+        </button>
+      </div>
 
       {/* Mobile Menu Button */}
       <button
@@ -63,6 +77,12 @@ const Navbar = () => {
               </Link>
             )
           )}
+          {/* <button
+            onClick={handleLogout}
+            className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white"
+          >
+            Logout
+          </button> */}
           <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
             Work With Us
           </button>

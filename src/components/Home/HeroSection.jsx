@@ -1,6 +1,7 @@
 import React from "react";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { FaCirclePlus } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -78,9 +79,9 @@ const HeroSection = () => {
               </div>
             </div>
             <div className="mt-4 mg:mt-0">
-              <button className="text-[12px] px-6 py-2 border border-[#0374BB33] rounded-lg text-[#0C0C0C]">
+              <Link to={"/about"} className="text-[12px] px-6 py-2 border border-[#0374BB33] rounded-lg text-[#0C0C0C]">
                 {"About Us >"}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

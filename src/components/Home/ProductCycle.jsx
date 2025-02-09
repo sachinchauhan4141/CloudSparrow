@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProductCycle = () => {
   return (
@@ -19,7 +20,7 @@ const ProductCycle = () => {
                 MOBILE APPS
               </p>
               <button className="h-10 w-36 mt-4 lg:mt-7  text-sm text-white bg-[#2A6BFD] font-semibold rounded-[4px]">
-                Let's Start
+                <Link to={"/about"}>Let's Start</Link>
               </button>
             </div>
             <div className="hidden lg:block">
@@ -73,8 +74,12 @@ const ProductCycle = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center my-4">
-          <p className="text-4xl lg:text-6xl text-white font-bold">LET'S BUILD YOUR</p>
-          <p className="text-4xl lg:text-6xl text-white font-bold">PRODUCT TOGETHER</p>
+          <p className="text-4xl lg:text-6xl text-white font-bold">
+            LET'S BUILD YOUR
+          </p>
+          <p className="text-4xl lg:text-6xl text-white font-bold">
+            PRODUCT TOGETHER
+          </p>
         </div>
 
         <div className="flex flex-col items-center justify-center text-center mt-2">
@@ -85,8 +90,8 @@ const ProductCycle = () => {
           <p className="text-xs lg:text-sm text-white font-bold">
             into successful, cutting-edge solutions.
           </p>
-          <button className="h-8 w-24 mt-4  text-[12px] text-[#2A6BFD] bg-white font-semibold rounded-[4px] hover:cursor-pointer">
-            Let's Start
+          <button className="z-10 h-8 w-24 mt-4  text-[12px] text-[#2A6BFD] bg-white font-semibold rounded-[4px] hover:cursor-pointer">
+            <Link to={"/contact"}>Let's Start</Link>
           </button>
         </div>
       </div>

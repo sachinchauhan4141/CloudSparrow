@@ -2,6 +2,7 @@ import React from "react";
 import ServiceSection from "./ServiceSection";
 import DevCulture from "./DevCulture";
 import CraftProduct from "../Common/CraftProduct";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -27,7 +28,7 @@ const Services = () => {
           </div>
           <div className="flex justify-start my-8">
             <button className="uppercase py-3 px-10 bg-[#F48B3A] rounded-md text-xs font-medium text-white">
-              Get Started Now!
+            <Link to={"/contact"}>Get Started Now!</Link>
             </button>
           </div>
         </div>
