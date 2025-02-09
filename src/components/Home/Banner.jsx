@@ -58,7 +58,7 @@ const Banner = () => {
             className="text-3xl lg:text-4xl text-[black] rounded-full"
             onClick={prev}
           />
-          <div className="relative lg:w-4xl w-fit">
+          <div className="relative lg:w-4xl w-fit flex items-center justify-center">
             {/* Background Image */}
             <img
               className="w-full h-full object-cover"
@@ -66,7 +66,7 @@ const Banner = () => {
               alt="Background"
             />
             {/* Overlay Image */}
-            <div className="absolute border-2 top-2 w-[210px] h-[150px] left-12 lg:top-9 lg:left-35 lg:w-[600px] lg:h-[420px] object-contain rounded-xl overflow-hidden">
+            <div className="absolute border-2 top-2 lg:top-5 h-[70%] w-[69%] object-contain rounded-2xl  overflow-hidden">
               <img src={data[curr]} alt="Overlay" className="size-full" />
             </div>
             <img
