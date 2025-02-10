@@ -1,11 +1,13 @@
 import { Client, Account, ID } from "appwrite";
-import { appwriteUrl, appwriteProjectId } from "../conf/conf";
+import config from "../config/config.js";
 
 class AuthService {
   client = new Client();
   account;
   constructor() {
-    this.client.setEndpoint(appwriteUrl).setProject(appwriteProjectId);
+    this.client
+      .setEndpoint(config.appwriteUrl)
+      .setProject(config.appwriteProjectId);
     this.account = new Account(this.client);
   }
 
@@ -39,14 +41,6 @@ class AuthService {
   async getCurrUser() {
     try {
       return await this.account.get();
-    } catch (error) {
-      throw error;
-    }
-  }
-
-  async getCurrUser() {
-    try {
-      return this.account.get();
     } catch (error) {
       throw error;
     }

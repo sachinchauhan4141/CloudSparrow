@@ -9,9 +9,15 @@ import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import { IoIosArrowDropup } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import authService from "./appwrite/auth";
+import { login, logout } from "./store/authSlice";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const dispatch = useDispatch();
 
   const handleScroll = () => {
     if (window.scrollY > 300) {
@@ -26,6 +32,18 @@ function App() {
   };
 
   useEffect(() => {
+    authService
+      .getCurrUser()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login({userData}));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -42,6 +60,8 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="careers" element={<Careers />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
       </Routes>
       <Footer />
       {isVisible && (
