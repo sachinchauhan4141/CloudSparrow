@@ -1,6 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import enquiryService from "../../appwrite/enquiry";
 
 const Contact = () => {
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    description: "",
+    services: [], // Services as an array
+  });
+
+  const handleCheckboxChange = (event) => {
+    const { id, checked } = event.target;
+    setFormData((prevData) => {
+      let newServices = [...prevData.services];
+      if (checked) {
+        newServices.push(id); // Add the service if checked
+      } else {
+        newServices = newServices.filter((service) => service !== id); // Remove the service if unchecked
+      }
+
+      return {
+        ...prevData,
+        services: newServices,
+      };
+    });
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    setError("");
+    e.preventDefault();
+    try {
+      const response = await enquiryService.createEnquiry(formData);
+      if (response) {
+        setError("submitted successfully");
+      }
+    } catch (error) {
+      setError(error);
+    }
+  };
+
   return (
     <div>
       <div className="text-center pt-24 pb-10 lg:py-48 lg:px-60 bg-[radial-gradient(circle_at_bottom,#FDE7E1_20%,#FFF9EC_30%,#FFFFFF_60%)]">
@@ -15,7 +63,7 @@ const Contact = () => {
           <p className="text-[#407BFF]">“Hello”</p>
         </h1>
       </div>
-      
+
       <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-4">
         <div className="lg:py-4 lg:my-2 px-4 lg:px-0">
           <h1 className="text-3xl lg:text-4xl font-medium">
@@ -23,7 +71,7 @@ const Contact = () => {
           </h1>
         </div>
         <div className="lg:min-w-2xl px-4 lg:px-2">
-          <form className="mx-auto w-full">
+          <form className="mx-auto w-full" onSubmit={handleSubmit}>
             <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <label htmlFor="name">What’s Your Name?</label>
               <input
@@ -33,6 +81,8 @@ const Contact = () => {
                 className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
+                value={formData.name}
+                onChange={handleInputChange}
               />
             </div>
             <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
@@ -44,185 +94,73 @@ const Contact = () => {
                 className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
+                value={formData.email}
+                onChange={handleInputChange}
               />
             </div>
             <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
-              <label htmlFor="number">
+              <label htmlFor="phone">
                 Would you like to add a phone number?
               </label>
               <input
                 type="number"
-                name="number"
-                id="number"
+                name="phone"
+                id="phone"
                 className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
+                value={formData.phone}
+                onChange={handleInputChange}
               />
             </div>
             <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
               <p>Services that interest you*</p>
               <div className="grid grid-cols-2 grid-rows-2 lg:grid-cols-3 lg:grid-rows-3">
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="ecommerce"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
+                {[
+                  { id: "ecommerce", label: "eCommerce development" },
+                  { id: "design", label: "Creative Design" },
+                  { id: "redesign", label: "Redesign" },
+                  { id: "webdevelopment", label: "Web development" },
+                  { id: "shopify", label: "Shopify" },
+                  { id: "marketing", label: "Digital Marketing" },
+                  { id: "appdevelopment", label: "App development" },
+                  { id: "wordpress", label: "Wordpress" },
+                  { id: "other", label: "Other" },
+                ].map(({ id, label }) => (
+                  <div key={id} className="flex items-start my-5">
+                    <div className="flex items-center h-5">
+                      <input
+                        id={id}
+                        type="checkbox"
+                        checked={formData.services.includes(id)} // Check if the service is in the array
+                        onChange={handleCheckboxChange}
+                        className="size-5 border border-gray-300 rounded-sm bg-gray-50"
+                      />
+                    </div>
+                    <label htmlFor={id} className="ms-2 text-sm font-medium">
+                      {label}
+                    </label>
                   </div>
-                  <label
-                    htmlFor="ecommerce"
-                    className="ms-2 text-sm font-medium"
-                  >
-                    eCommerce development
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="design"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label htmlFor="design" className="ms-2 text-sm font-medium">
-                    Creative Design
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="redesign"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label
-                    htmlFor="redesign"
-                    className="ms-2 text-sm font-medium"
-                  >
-                    Redesign
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="webdevelopment"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label
-                    htmlFor="webdevelopment"
-                    className="ms-2 text-sm font-medium"
-                  >
-                    web development
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="shopify"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label htmlFor="shopify" className="ms-2 text-sm font-medium">
-                    Shopify
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="marketing"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label
-                    htmlFor="marketing"
-                    className="ms-2 text-sm font-medium"
-                  >
-                    Digital Marketing
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="appdevelopment"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label
-                    htmlFor="appdevelopment"
-                    className="ms-2 text-sm font-medium"
-                  >
-                    App development
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="wordpress"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label
-                    htmlFor="wordpress"
-                    className="ms-2 text-sm font-medium"
-                  >
-                    Wordpress
-                  </label>
-                </div>
-                <div className="flex items-start my-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="other"
-                      type="checkbox"
-                      value=""
-                      className="size-5 border border-gray-300 rounded-sm bg-gray-50"
-                      required
-                    />
-                  </div>
-                  <label htmlFor="other" className="ms-2 text-sm font-medium">
-                    Other
-                  </label>
-                </div>
+                ))}
               </div>
             </div>
             <div className="flex flex-col w-full lg:mb-5 lg:my-12 gap-2">
               <label htmlFor="description">Briefly describe your Request</label>
               <textarea
-                type="description"
                 name="description"
                 id="description"
                 className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
+                value={formData.description}
+                onChange={handleInputChange}
               />
             </div>
             <div className="flex w-full mb-5 mt-12 h-20">
-              <div className="w-full">im not a robot</div>
+              <div className="w-full">I'm not a robot</div>
               <div className="w-full relative">
                 <button
+                  disabled={error}
                   type="submit"
                   className="absolute bottom-0 right-0 uppercase py-3 px-10 bg-[#F48B3A] rounded-md text-xs font-medium"
                 >
@@ -231,8 +169,10 @@ const Contact = () => {
               </div>
             </div>
           </form>
+          {error && <div>{error}</div>}
         </div>
       </div>
+
       <div className="p-4 lg:py-28 lg:px-52 bg-[#F6F6F6]">
         <div>
           <h1 className="text-3xl lg:text-6xl font-medium">
@@ -272,7 +212,7 @@ const Card = ({ title, color, image }) => {
       </div>
       <div className="my-5">
         <p className="font-medium">
-          E-53,Block G, Sector 3 Noida,Pincode-201301 Uttar-Pradesh India
+          E-53, Block G, Sector 3 Noida, Pincode-201301 Uttar-Pradesh India
         </p>
       </div>
       <div className="flex justify-center items-center">

@@ -9,7 +9,6 @@ export const JobPage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleCollapse = (index) => {
-    console.log(index);
     setActiveIndex(activeIndex === index ? null : index);
   };
 

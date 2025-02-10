@@ -1,25 +1,39 @@
 import { Client, Databases, ID } from "appwrite";
-import {
-  appwriteUrl,
-  appwriteProjectId,
-  appwriteDatabaseId,
-  appwriteCollectionId,
-} from "../conf/conf";
+import config from "../config/config.js";
 
-class Contact {
+class Enquiry {
   client = new Client();
   databases;
   constructor() {
-    this.client.setEndpoint(appwriteUrl).setProject(appwriteProjectId);
+    this.client.setEndpoint(config.appwriteUrl).setProject(config.appwriteProjectId);
     this.databases = new Databases(this.client);
   }
 
   async createEnquiry({ name, email, phone, services, description }) {
     try {
       return await this.databases.createDocument(
-        appwriteDatabaseId,
-        appwriteCollectionId,
+        config.appwriteDatabaseId,
+        config.appwriteEnquiryCollectionId,
         ID.unique(),
+        {
+          name,
+          email,
+          phone,
+          services,
+          description,
+        }
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updateEnquiry({ id, name, email, phone, services, description }) {
+    try {
+      return await this.databases.updateDocument(
+        config.appwriteDatabaseId,
+        config.appwriteEnquiryCollectionId,
+        id,
         {
           name,
           email,
@@ -36,8 +50,8 @@ class Contact {
   async deleteEnquiry(id) {
     try {
       return await this.databases.deleteDocument(
-        appwriteDatabaseId,
-        appwriteCollectionId,
+        config.appwriteDatabaseId,
+        config.appwriteEnquiryCollectionId,
         id
       );
     } catch (error) {
@@ -48,8 +62,8 @@ class Contact {
   async getEnquiryById(id) {
     try {
       return await this.databases.getDocument(
-        appwriteDatabaseId,
-        appwriteCollectionId,
+        config.appwriteDatabaseId,
+        config.appwriteEnquiryCollectionId,
         id
       );
     } catch (error) {
@@ -60,8 +74,8 @@ class Contact {
   async getAllEnquiries() {
     try {
       return await this.databases.listDocuments(
-        appwriteDatabaseId,
-        appwriteCollectionId
+        config.appwriteDatabaseId,
+        config.appwriteEnquiryCollectionId
       );
     } catch (error) {
       throw error;
@@ -69,4 +83,4 @@ class Contact {
   }
 }
 
-export default new Contact();
+export default new Enquiry();

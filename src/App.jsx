@@ -9,15 +9,18 @@ import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import { IoIosArrowDropup } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
+import EnquiryDash from "./components/Admin/EnquiryDash";
+import JobDash from "./components/Admin/JobDashBoard/JobDash";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.authSlice.userData);
 
   const handleScroll = () => {
     if (window.scrollY > 300) {
@@ -36,7 +39,7 @@ function App() {
       .getCurrUser()
       .then((userData) => {
         if (userData) {
-          dispatch(login({userData}));
+          dispatch(login({ userData }));
         } else {
           dispatch(logout());
         }
@@ -62,6 +65,9 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
+        {/* protected routes admin only */}
+        {user && <Route path="/dashboard/enquiry" element={<EnquiryDash />} />}
+        {user && <Route path="/dashboard/jobs" element={<JobDash />} />}
       </Routes>
       <Footer />
       {isVisible && (

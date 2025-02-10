@@ -100,7 +100,7 @@ const Signup = () => {
         <div className="flex items-center justify-center w-full">
           Already have an account ?{" "} <Link to={"/login"}>{" Login "}</Link>
         </div>
-        {error && <div>{error?.message}</div>}
+        {error && <div>{error}</div>}
       </div>
     </div>
   );

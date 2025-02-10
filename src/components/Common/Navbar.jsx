@@ -11,7 +11,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const authStatus = useSelector((state) => state.authSlice.status);
-  console.log(authStatus);
   
   const handleLogout = () => {
     authService.logoutUser().then(() => {
