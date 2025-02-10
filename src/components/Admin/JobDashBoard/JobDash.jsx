@@ -124,7 +124,7 @@ const JobDash = () => {
     <div className="min-h-screen bg-gray-100 py-20 px-4 lg:px-28">
       <div className="flex justify-between">
         <h1 className="text-3xl lg:text-5xl font-bold text-[#407BFF] mb-10">
-          Job Listings
+          Jobs Management
         </h1>
         <button
           onClick={handleCreateJob}

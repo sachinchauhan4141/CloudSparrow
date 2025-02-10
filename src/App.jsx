@@ -11,11 +11,15 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import { IoIosArrowDropup } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import authService from "./appwrite/auth";
+import userService from "./appwrite/user";
 import { login, logout } from "./store/authSlice";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
+import UpdateUser from "./components/Auth/UpdateUser";
+import Dashboard from "./components/Admin/Dashboard";
 import EnquiryDash from "./components/Admin/EnquiryDash";
 import JobDash from "./components/Admin/JobDashBoard/JobDash";
+import UsersDash from "./components/Admin/UsersDash";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,19 +38,22 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const getUser = async () => {
+    try {
+      const response = await authService.getCurrUser();
+      const userData = await userService.getUserById(response.$id);
+      if (userData) {
+        dispatch(login({ userData }));
+      } else {
+        dispatch(logout());
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
-    authService
-      .getCurrUser()
-      .then((userData) => {
-        if (userData) {
-          dispatch(login({ userData }));
-        } else {
-          dispatch(logout());
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    getUser();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -65,9 +72,16 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="updateuser/:id" element={<UpdateUser />} />
         {/* protected routes admin only */}
-        {user && <Route path="/dashboard/enquiry" element={<EnquiryDash />} />}
-        {user && <Route path="/dashboard/jobs" element={<JobDash />} />}
+        {user?.admin && <Route path="/dashboard" element={<Dashboard />} />}
+        {user?.admin && (
+          <Route path="/dashboard/enquiry" element={<EnquiryDash />} />
+        )}
+        {user?.admin && <Route path="/dashboard/jobs" element={<JobDash />} />}
+        {user?.admin && (
+          <Route path="/dashboard/users" element={<UsersDash />} />
+        )}
       </Routes>
       <Footer />
       {isVisible && (

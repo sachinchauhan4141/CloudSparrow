@@ -1,5 +1,6 @@
 import { Client, Account, ID } from "appwrite";
 import config from "../config/config.js";
+import userService from "./user.js";
 
 class AuthService {
   client = new Client();
@@ -11,7 +12,7 @@ class AuthService {
     this.account = new Account(this.client);
   }
 
-  async createAccount({ email, password, name }) {
+  async createAccount({ email, password, name, phone, avatar }) {
     try {
       const userAccount = await this.account.create(
         ID.unique(),
@@ -19,7 +20,15 @@ class AuthService {
         password,
         name
       );
-      if (userAccount) {
+      //saving user deatils to database
+      const saveUserDetails = await userService.createUser({
+        id: userAccount.$id,
+        name,
+        email,
+        phone,
+        avatar,
+      });
+      if (userAccount && saveUserDetails) {
         //login the user
         this.loginUser(email, password);
       } else {

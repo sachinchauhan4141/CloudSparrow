@@ -87,7 +87,7 @@ const EnquiryDash = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-20 px-4 lg:px-28">
       <h1 className="text-3xl lg:text-5xl font-bold text-[#407BFF] mb-10">
-        Enquiries
+        Enquiries Management
       </h1>
       <div className="flex flex-wrap justify-between gap-4">
         {enquiries.map((item) => (

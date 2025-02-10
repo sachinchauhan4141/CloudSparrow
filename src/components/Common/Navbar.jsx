@@ -7,11 +7,12 @@ import authService from "../../appwrite/auth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdown, setDropDown] = useState(false);
   const path = useResolvedPath();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const authStatus = useSelector((state) => state.authSlice.status);
-  
+  const { status, userData } = useSelector((state) => state.authSlice);
+
   const handleLogout = () => {
     authService.logoutUser().then(() => {
       dispatch(logout());
@@ -38,7 +39,10 @@ const Navbar = () => {
           className="size-16"
         />
         {/* Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex gap-8 ">
+        <nav
+          className="hidden lg:flex gap-8 "
+          onClick={() => setDropDown(false)}
+        >
           {navItems.map((item) => (
             <Link
               key={item}
@@ -55,24 +59,82 @@ const Navbar = () => {
           ))}
         </nav>
       </div>
-      {/* Work With Us Button */}
-      <div className="flex items-center justify-center gap-2">
-        {authStatus ? (
-          <button
-            onClick={handleLogout}
-            className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white"
-          >
-            Logout
-          </button>
-        ) : (
-          <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-            <Link to={"/signup"}>Register</Link>
-          </button>
-        )}
-        <button className="hidden lg:block h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-          <Link to={"/contact"}>Work With Us</Link>
-        </button>
-      </div>
+      <button
+        className="hidden lg:block text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center"
+        type="button"
+        onClick={() => setDropDown(!dropdown)}
+      >
+        Dropdown
+      </button>
+      {dropdown && (
+        <div
+          onClick={() => setDropDown(false)}
+          className="absolute hidden lg:block right-4 top-16 divide-y divide-black rounded-lg shadow-sm w-44 bg-white text-black"
+        >
+          {userData && (
+            <div className="px-4 py-3 text-sm">
+              <div>{userData.name}</div>
+              <div className="font-medium truncate">{userData.email}</div>
+            </div>
+          )}
+          <ul className="py-2 text-sm">
+            {status ? (
+              <>
+                {userData?.admin && (
+                  <li>
+                    <Link
+                      to={"/dashboard"}
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Dashboard
+                    </Link>
+                  </li>
+                )}
+                <li>
+                  <Link
+                    to={"/updateuser/" + userData?.$id}
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Account
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="block px-4 py-2 hover:bg-gray-100 w-full text-left"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    to={"/login"}
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={"/signup"}
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Register
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
+          <div className="py-2">
+            <Link to={""} className="block px-4 py-2 text-sm hover:bg-gray-100">
+              Work With Us
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Mobile Menu Button */}
       <button
@@ -85,7 +147,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="absolute top-20 left-0 w-full bg-[url('./assets/BackGroundImage.png')] py-4 flex flex-col items-center lg:hidden">
+        <div className="absolute z-10 top-20 left-0 w-full bg-[url('./assets/BackGroundImage.png')] py-4 flex flex-col items-center lg:hidden">
           {navItems.map((item) => (
             <Link
               key={item}
@@ -95,17 +157,29 @@ const Navbar = () => {
               {item}
             </Link>
           ))}
-          {authStatus ? (
-            <button
-              onClick={handleLogout}
-              className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white"
-            >
-              Logout
-            </button>
+          {status ? (
+            <>
+              <button
+                onClick={handleLogout}
+                className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white"
+              >
+                Logout
+              </button>
+              {userData.admin && (
+                <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
+                  <Link to={"/dashboard"}>Dashboard</Link>
+                </button>
+              )}
+            </>
           ) : (
-            <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-              <Link to={"/signup"}>Register</Link>
-            </button>
+            <>
+              <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
+                <Link to={"/login"}>Login</Link>
+              </button>
+              <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
+                <Link to={"/signup"}>Register</Link>
+              </button>
+            </>
           )}
           <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
             Work With Us
