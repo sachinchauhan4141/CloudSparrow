@@ -54,7 +54,8 @@ const Navbar = () => {
                 (path.pathname === "/" ||
                 path.pathname === "/careers" ||
                 path.pathname === "/login" ||
-                path.pathname === "/signup"
+                path.pathname === "/signup" ||
+                path.pathname === "/updateuser/" + userData?.$id
                   ? " text-white "
                   : " ")
               }
@@ -190,10 +191,14 @@ const Navbar = () => {
           ) : (
             <>
               <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-                <Link to={"/login"}>Login</Link>
+                <Link onClick={() => setIsOpen(!isOpen)} to={"/login"}>
+                  Login
+                </Link>
               </button>
               <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-                <Link to={"/signup"}>Register</Link>
+                <Link onClick={() => setIsOpen(!isOpen)} to={"/signup"}>
+                  Register
+                </Link>
               </button>
             </>
           )}

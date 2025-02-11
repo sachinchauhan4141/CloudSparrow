@@ -35,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center pt-28 pb-10">
+    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center pb-10 min-h-screen">
       <div className="lg:w-md lg:py-4 px-4 w-full lg:px-0">
         <h1 className="text-3xl lg:text-4xl font-medium">Welcome Back...</h1>
       </div>

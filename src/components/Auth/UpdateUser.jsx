@@ -71,7 +71,7 @@ const UpdateUser = () => {
   };
 
   return (
-    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
+    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20 h-screen">
       <div className="lg:w-md w-full lg:my-2 px-4 lg:px-0">
         <h1 className="text-3xl lg:text-4xl font-medium">Account Update...</h1>
       </div>

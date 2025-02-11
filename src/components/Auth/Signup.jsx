@@ -50,7 +50,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
+    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20 min-h-screen">
       <div className="lg:w-md lg:my-2 px-4 my-2 lg:px-0 w-full">
         <h1 className="text-3xl lg:text-4xl font-medium">Register...</h1>
       </div>
