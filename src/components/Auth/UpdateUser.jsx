@@ -72,10 +72,10 @@ const UpdateUser = () => {
 
   return (
     <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
-      <div className="lg:my-2 px-4 lg:px-0">
+      <div className="lg:w-md w-full lg:my-2 px-4 lg:px-0">
         <h1 className="text-3xl lg:text-4xl font-medium">Account Update...</h1>
       </div>
-      <div className="lg:w-2xl px-4 lg:px-2">
+      <div className="lg:w-md w-full px-4 lg:px-2">
         <form onSubmit={handleSubmit} className="mx-auto w-full">
           <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
             <label htmlFor="name">Name</label>

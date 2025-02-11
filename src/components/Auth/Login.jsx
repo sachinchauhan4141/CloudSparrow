@@ -35,11 +35,11 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
-      <div className="lg:py-4 lg:my-2 px-4 lg:px-0">
+    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center pt-28 pb-10">
+      <div className="lg:w-md lg:py-4 px-4 w-full lg:px-0">
         <h1 className="text-3xl lg:text-4xl font-medium">Welcome Back...</h1>
       </div>
-      <div className="lg:w-2xl px-4 lg:px-2">
+      <div className="lg:w-md px-4 lg:px-2 w-full">
         <form onSubmit={handleSubmit} className="mx-auto w-full">
           <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
             <label htmlFor="email">Email address</label>

@@ -34,8 +34,8 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="py-16 px-24 min-h-screen bg-gray-200">
-      <h1 className="text-5xl py-4">Dashboard</h1>
+    <div className="py-16 lg:px-24 px-4 min-h-screen bg-gray-200">
+      <h1 className="text-5xl py-4 lg:my-4">Dashboard</h1>
       <div className="flex flex-col lg:flex-row gap-2 lg:gap-7 lg:justify-end">
         {cards.map((card, index) => (
           <Card key={index} {...card} />

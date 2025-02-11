@@ -14,6 +14,8 @@ const Navbar = () => {
   const { status, userData } = useSelector((state) => state.authSlice);
 
   const handleLogout = () => {
+    setIsOpen(!isOpen);
+
     authService.logoutUser().then(() => {
       dispatch(logout());
     });
@@ -40,7 +42,7 @@ const Navbar = () => {
         />
         {/* Navigation Links (Desktop) */}
         <nav
-          className="hidden lg:flex gap-8 "
+          className="hidden lg:flex gap-8"
           onClick={() => setDropDown(false)}
         >
           {navItems.map((item) => (
@@ -49,7 +51,10 @@ const Navbar = () => {
               to={item === "Home" ? "/" : item.toLowerCase()}
               className={
                 "font-medium hover:text-blue-400 transition text-xs " +
-                (path.pathname === "/" || path.pathname === "/careers"
+                (path.pathname === "/" ||
+                path.pathname === "/careers" ||
+                path.pathname === "/login" ||
+                path.pathname === "/signup"
                   ? " text-white "
                   : " ")
               }
@@ -150,6 +155,7 @@ const Navbar = () => {
         <div className="absolute z-10 top-20 left-0 w-full bg-[url('./assets/BackGroundImage.png')] py-4 flex flex-col items-center lg:hidden">
           {navItems.map((item) => (
             <Link
+              onClick={() => setIsOpen(!isOpen)}
               key={item}
               to={item === "Home" ? "/" : item.toLowerCase()}
               className="py-2 text-lg font-medium hover:text-blue-400 transition"
@@ -165,9 +171,19 @@ const Navbar = () => {
               >
                 Logout
               </button>
+              <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
+                <Link
+                  onClick={() => setIsOpen(!isOpen)}
+                  to={"/updateuser/" + userData?.$id}
+                >
+                  Account
+                </Link>
+              </button>
               {userData.admin && (
                 <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-                  <Link to={"/dashboard"}>Dashboard</Link>
+                  <Link onClick={() => setIsOpen(!isOpen)} to={"/dashboard"}>
+                    Dashboard
+                  </Link>
                 </button>
               )}
             </>
