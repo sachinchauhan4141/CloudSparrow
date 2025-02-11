@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import enquiryService from "../../appwrite/enquiry";
+import { toast } from "react-toastify";
 
 const Contact = () => {
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState({ status: false, message: "" });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,7 +21,6 @@ const Contact = () => {
       } else {
         newServices = newServices.filter((service) => service !== id); // Remove the service if unchecked
       }
-
       return {
         ...prevData,
         services: newServices,
@@ -37,15 +37,24 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    setError("");
+    setLoading(true, "Submitting...");
     e.preventDefault();
     try {
       const response = await enquiryService.createEnquiry(formData);
       if (response) {
-        setError("submitted successfully");
+        toast("submitted successfully");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          description: "",
+          services: [], // Services as an array
+        });
       }
     } catch (error) {
-      setError(error);
+      toast(error?.message);
+    } finally {
+      setLoading(false, "");
     }
   };
 
@@ -160,16 +169,15 @@ const Contact = () => {
               <div className="w-full">I'm not a robot</div>
               <div className="w-full relative">
                 <button
-                  disabled={error}
+                  disabled={loading.status}
                   type="submit"
                   className="absolute bottom-0 right-0 uppercase py-3 px-10 bg-[#F48B3A] rounded-md text-xs font-medium"
                 >
-                  Send Inquiry
+                  {loading.status ? loading.message : "Send Inquiry"}
                 </button>
               </div>
             </div>
           </form>
-          {error && <div>{error}</div>}
         </div>
       </div>
 

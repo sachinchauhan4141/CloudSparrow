@@ -41,7 +41,7 @@ const UsersDash = () => {
   };
 
   return (
-    <div className="px-28 py-20 bg-gray-100 min-h-screen">
+    <div className="lg:px-28 px-4 py-20 bg-gray-100 min-h-screen">
       <h1 className="text-3xl font-bold mb-6">User Management</h1>
       <div className="overflow-x-auto">
         <table className="w-full bg-white shadow-md rounded-lg">

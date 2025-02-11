@@ -23,6 +23,8 @@ import UsersDash from "./components/Admin/UsersDash";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AuthLayout from "./components/Auth/AuthLayout";
 import { ToastContainer } from "react-toastify";
+import jobService from "./appwrite/job";
+import { setAllJobs } from "./store/jobSlice";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,8 +56,16 @@ function App() {
     }
   };
 
+  const getAllJobs = async () => {
+    const jobData = await jobService.getAllJobs();
+    if (jobData) {
+      dispatch(setAllJobs({ jobsData: jobData.documents }));
+    }
+  };
+
   useEffect(() => {
     getUser();
+    getAllJobs();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

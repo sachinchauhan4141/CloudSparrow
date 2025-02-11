@@ -17,7 +17,7 @@ const CreateJobModal = ({
 
   const handleArrayInputChange = (e, type) => {
     const { value } = e.target;
-    const updatedArray = value.split(",").map((val) => val.trim());
+    const updatedArray = value.split("-next-").map((val) => val.trim());
     setNewJobData((prev) => ({
       ...prev,
       [type]: updatedArray,
@@ -103,7 +103,7 @@ const CreateJobModal = ({
         />
 
         <label className="block text-sm font-medium mb-2">
-          Requirements (comma-separated)
+          {"Requirements (separate-by-(-next-))"}
         </label>
         <input
           type="text"

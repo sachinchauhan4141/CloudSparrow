@@ -2,11 +2,12 @@ import {
   IoIosArrowDropdownCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
-import { jobDetailsData } from "../../common/dummyData";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export const JobPage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const jobDetailsData = useSelector((state) => state.jobSlice?.jobsData);
 
   const toggleCollapse = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -14,19 +15,21 @@ export const JobPage = () => {
 
   return (
     <>
-      <div className="bg-gray-200 mx-0 lg:mx-16 lg:px-8 py-6 lg:py-12 mb-0 lg:mb-12">
-        {jobDetailsData.map((data, index) => {
-          return (
-            <JobDescriptionPoint
-              jobDetails={data}
-              toggleCollapse={toggleCollapse}
-              index={index}
-              activeIndex={activeIndex}
-              key={index}
-            />
-          );
-        })}
-      </div>
+      {jobDetailsData && (
+        <div className="bg-gray-200 mx-0 lg:mx-16 lg:px-8 py-6 lg:py-12 mb-0 lg:mb-12">
+          {jobDetailsData.map((data, index) => {
+            return (
+              <JobDescriptionPoint
+                jobDetails={data}
+                toggleCollapse={toggleCollapse}
+                index={index}
+                activeIndex={activeIndex}
+                key={index}
+              />
+            );
+          })}
+        </div>
+      )}
     </>
   );
 };
@@ -52,11 +55,11 @@ const JobDescriptionPoint = ({
               (activeIndex !== index ? "text-[#080808]" : "text-[#0F75BC]")
             }
           >
-            {jobDetails.jobDescription.jobTitle}
+            {jobDetails.title}
           </h3>
         </div>
         <div className="flex gap-2 justify-center items-center">
-          <p
+          {/* <p
             className={
               "bg-white lg:text-[15px] border size-fit font-medium px-4 py-2 rounded-3xl " +
               (activeIndex !== index
@@ -65,7 +68,7 @@ const JobDescriptionPoint = ({
             }
           >
             2 jobs
-          </p>
+          </p> */}
           <button onClick={() => toggleCollapse(index)}>
             {activeIndex === index ? (
               <IoIosArrowDropdownCircle className="text-4xl text-[#0F75BC]" />
@@ -91,44 +94,27 @@ const JobDescriptionCard = ({ JobDetails }) => {
         <p className="text-[18px] font-bold ">Job Description:</p>
         <div className="text-[16px] my-2">
           <p className="font-bold">
-            Job title:{" "}
-            <span className="font-normal">
-              {JobDetails.jobDescription.jobTitle}
-            </span>
+            Job title: <span className="font-normal">{JobDetails.title}</span>
           </p>
           <p className="font-bold">
-            Location:{" "}
-            <span className="font-normal">
-              {JobDetails.jobDescription.location}
-            </span>
+            Location: <span className="font-normal">{JobDetails.location}</span>
           </p>
           <p className="font-bold">
-            Terms:{" "}
-            <span className="font-normal">
-              {JobDetails.jobDescription.terms}
-            </span>
+            Terms: <span className="font-normal">{JobDetails.terms}</span>
           </p>
           <p className="font-bold">
             Expirence:{" "}
-            <span className="font-normal">
-              {JobDetails.jobDescription.expirence}
-            </span>
+            <span className="font-normal">{JobDetails.expirience}</span>
           </p>
           <p className="font-bold">
             Remuneration:{" "}
-            <span className="font-normal">
-              {JobDetails.jobDescription.remuneration}
-            </span>
+            <span className="font-normal">{JobDetails.remuneration}</span>
           </p>
         </div>
       </div>
       <div className="my-4">
-        <p className=" text-[18px] font-bold ">About us:</p>
-        <p className=" text-[16px]  mt-2">{JobDetails.aboutUs}</p>
-      </div>
-      <div className="my-4">
         <p className=" text-[18px] font-bold ">About the role:</p>
-        <p className=" text-[16px]  mt-2">{JobDetails.aboutTheRole}</p>
+        <p className=" text-[16px]  mt-2">{JobDetails.role}</p>
       </div>
       <div className="my-4">
         <p className=" text-[18px] font-bold ">Responsibilities:</p>
@@ -145,7 +131,7 @@ const JobDescriptionCard = ({ JobDetails }) => {
       <div className="my-4">
         <p className=" text-[18px] font-bold ">Candidate requirements:</p>
         <ul className="list-disc ml-5">
-          {JobDetails.candidateRequirements.map((res, index) => {
+          {JobDetails.requirements.map((res, index) => {
             return (
               <li key={index} className=" text-[16px]">
                 {res}
@@ -155,7 +141,9 @@ const JobDescriptionCard = ({ JobDetails }) => {
         </ul>
       </div>
       <button className="bg-[#0F75BC] py-2 px-6 rounded-sm text-white text-[15px] w-48">
-        Apply for this Job
+        <a href={JobDetails.url} target="_blank" rel="noopener noreferrer">
+          Apply for this Job
+        </a>
       </button>
     </div>
   );

@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const jobSlice = createSlice({
   name: "job",
-  initialState: [],
+  initialState: { jobsData: [] },
   reducers: {
-    setJobs: (state, action) => {
-      state.userData = action.payload;
+    setAllJobs: (state, action) => {
+      state.jobsData = action.payload.jobsData;
     },
   },
 });
 
-export const { setJobs } = jobSlice.actions;
+export const { setAllJobs } = jobSlice.actions;
 
 export default jobSlice.reducer;

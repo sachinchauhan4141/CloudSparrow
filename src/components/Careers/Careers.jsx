@@ -5,7 +5,7 @@ const Careers = () => {
   return (
     <>
       <div className="bg-[url('./assets/careerimg.png')] bg-cover bg-center lg:min-h-[500px] text-white">
-        <div className="px-4 pt-26 pb-10 lg:px-0 lg:pt-0 lg:pb-0 lg:pl-28 lg:w-[1600px] lg:min-h-[500px] bg-gradient-to-r from-[#080808B8] via-transparent to-transparent flex flex-col items-start justify-center">
+        <div className="px-4 pt-26 pb-10 lg:px-0 lg:pt-0 lg:pb-0 lg:pl-28 lg:w-full lg:min-h-[500px] bg-gradient-to-r from-[#080808B8] via-transparent to-transparent flex flex-col items-start justify-center">
           <div>
             <p className="font-bold text-xs">
               HOME / <span className="text-[#0F75BC]">CAREERS</span>
