@@ -5,7 +5,6 @@ const CreateJobModal = ({
   setNewJobData,
   setCreateModalVisible,
   handleCreateNewJob,
-  error,
 }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -93,11 +92,11 @@ const CreateJobModal = ({
         />
 
         <label className="block text-sm font-medium mb-2">
-          Responsibilities (comma-separated)
+          {"Responsibilities (separate-by-(-next-))"}
         </label>
         <input
           type="text"
-          value={newJobData.responsibilities.join(", ")}
+          value={newJobData.responsibilities.join("-next-")}
           onChange={(e) => handleArrayInputChange(e, "responsibilities")}
           className="bg-gray-100 border border-gray-300 rounded-md w-full p-2 mb-4"
         />
@@ -107,7 +106,7 @@ const CreateJobModal = ({
         </label>
         <input
           type="text"
-          value={newJobData.requirements.join(", ")}
+          value={newJobData.requirements.join("-next-")}
           onChange={(e) => handleArrayInputChange(e, "requirements")}
           className="bg-gray-100 border border-gray-300 rounded-md w-full p-2 mb-4"
         />

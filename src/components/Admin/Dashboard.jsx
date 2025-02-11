@@ -24,13 +24,6 @@ const Dashboard = () => {
       icon: "/cloudsparrow-all-img/service_card_3_icon.png",
       path: "/dashboard/enquiry",
     },
-    {
-      text: "Manage UI",
-      color: "#00CA8E",
-      image: "/cloudsparrow-all-img/girlvideocall.png",
-      icon: "/cloudsparrow-all-img/service_card_4_icon.png",
-      path: "/dashboard/uidashboard",
-    },
   ];
 
   return (
@@ -46,7 +39,10 @@ const Dashboard = () => {
 };
 
 const Card = ({ icon, text, image, color, path }) => (
-  <div style={{ backgroundColor: color }} className="lg:w-[36%] rounded-lg p-4 text-xl">
+  <div
+    style={{ backgroundColor: color }}
+    className="lg:w-[36%] rounded-lg p-4 text-xl"
+  >
     <Link to={path}>
       <div className="flex justify-end">
         <img src={icon} alt="icon" className="size-9" />

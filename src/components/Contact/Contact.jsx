@@ -42,7 +42,7 @@ const Contact = () => {
     try {
       const response = await enquiryService.createEnquiry(formData);
       if (response) {
-        toast("submitted successfully");
+        toast("submitted successfully...");
         setFormData({
           name: "",
           email: "",
@@ -50,6 +50,7 @@ const Contact = () => {
           description: "",
           services: [], // Services as an array
         });
+        toast("We will contact you shortly...");
       }
     } catch (error) {
       toast(error?.message);

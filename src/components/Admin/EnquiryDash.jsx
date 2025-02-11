@@ -9,7 +9,7 @@ const EnquiryDash = () => {
   const [updatedData, setUpdatedData] = useState({
     name: "",
     email: "",
-    number: "",
+    phone: "",
     services: [],
     description: "",
   });
@@ -100,7 +100,7 @@ const EnquiryDash = () => {
               {item.name}
             </h2>
             <p className="text-sm text-gray-500 mb-2">Email: {item.email}</p>
-            <p className="text-sm text-gray-500 mb-2">Phone: {item.number}</p>
+            <p className="text-sm text-gray-500 mb-2">Phone: {item.phone}</p>
             <p className="text-sm text-gray-500 mb-4">
               Services:{" "}
               {item.services.map((service) => (

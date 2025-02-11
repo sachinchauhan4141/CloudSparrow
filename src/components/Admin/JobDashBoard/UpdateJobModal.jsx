@@ -6,7 +6,6 @@ const UpdateJobModal = ({
   setUpdatedData,
   setModalVisible,
   handleSaveChanges,
-  error,
 }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -96,25 +95,25 @@ const UpdateJobModal = ({
         />
 
         <label className="block text-sm font-medium mb-2">
-          Responsibilities (comma-separated)
+          {"Responsibilities (separate-by-(-next-))"}
         </label>
         <input
           type="text"
-          value={updatedData.responsibilities.join(", ")}
+          value={updatedData.responsibilities.join("-next-")}
           onChange={(e) => handleArrayInputChange(e, "responsibilities")}
           className="bg-gray-100 border border-gray-300 rounded-md w-full p-2 mb-4"
         />
 
         <label className="block text-sm font-medium mb-2">
-          Requirements (comma-separated)
+          {"Requirements (separate-by-(-next-))"}
         </label>
         <input
           type="text"
-          value={updatedData.requirements.join(", ")}
+          value={updatedData.requirements.join("-next-")}
           onChange={(e) => handleArrayInputChange(e, "requirements")}
           className="bg-gray-100 border border-gray-300 rounded-md w-full p-2 mb-4"
         />
-        
+
         <div className="flex justify-end gap-4">
           <button
             onClick={() => setModalVisible(false)}
