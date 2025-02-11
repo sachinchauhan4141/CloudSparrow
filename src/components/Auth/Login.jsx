@@ -3,18 +3,17 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../store/authSlice";
 import authService from "../../appwrite/auth";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState({ status: false, message: "" });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     try {
       setLoading({ status: true, message: "Logging in..." });
       const session = await authService.loginUser({ email, password });
@@ -25,69 +24,56 @@ const Login = () => {
           setLoading({ status: true, message: "Logging you in..." });
           dispatch(login(userData));
         }
-        setLoading({ status: true, message: "Redirecting..." });
+        toast("LoggedIn Successfully");
         navigate("/");
       }
     } catch (error) {
-      setError(error?.message);
+      toast(error?.message);
     } finally {
       setLoading({ status: false, message: "" });
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900">
-          Login
-        </h2>
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
+    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
+      <div className="lg:py-4 lg:my-2 px-4 lg:px-0">
+        <h1 className="text-3xl lg:text-4xl font-medium">Welcome Back...</h1>
+      </div>
+      <div className="lg:w-2xl px-4 lg:px-2">
+        <form onSubmit={handleSubmit} className="mx-auto w-full">
+          <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
+            <label htmlFor="email">Email address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
-          {error && <div>{error}</div>}
-
+          <div className="flex flex-col w-full mb-5 my-6 lg:my-12 gap-2">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
           <div className="flex items-center justify-between">
             <div className="text-sm">
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
+              <a href="#" className="font-medium">
                 Forgot your password?
               </a>
             </div>
           </div>
 
-          <div>
+          <div className="flex w-full my-6">
             <button
               disabled={loading.status}
               type="submit"
@@ -97,9 +83,12 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <div className="flex items-center justify-center w-full">
-          Create a new account? <Link to={"/signup"}>SignUp</Link>
-        </div>
+      </div>
+      <div className="flex items-center justify-center w-full">
+        Create a new account?{" "}
+        <Link to={"/signup"} className="ml-2">
+          SignUp
+        </Link>
       </div>
     </div>
   );

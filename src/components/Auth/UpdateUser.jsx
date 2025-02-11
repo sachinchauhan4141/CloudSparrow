@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import userService from "../../appwrite/user";
 import authService from "../../appwrite/auth";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const UpdateUser = () => {
   const user = useSelector((state) => state.authSlice?.userData);
   const { id } = useParams();
   const [loading, setLoading] = useState({ status: false, message: "" });
   const [credentials, setCredentials] = useState(false);
-  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,7 +44,6 @@ const UpdateUser = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     setLoading({ status: true, message: "Updating..." });
     try {
       await userService.updateUser({ id, ...formData });
@@ -62,142 +61,116 @@ const UpdateUser = () => {
             oldpassword: formData.oldPassword,
           });
         }
+        toast("Updated Successfully");
       }
-      setLoading({ status: true, message: "Updated Successfully..." });
     } catch (error) {
-      setError(error?.message);
+      toast(error?.message);
     } finally {
       setLoading({ status: false, message: "" });
     }
   };
 
   return (
-    <div className="p-8 bg-gray-100 min-h-screen flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md max-h-[70vh] overflow-y-scroll no-scrollbar">
-        <h2 className="text-2xl font-bold mb-4">Update User</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Name"
-            id="name"
-            className="w-full p-2 border rounded"
-          />
-
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Phone
-          </label>
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Phone"
-            id="phone"
-            className="w-full p-2 border rounded"
-          />
-
-          <label
-            htmlFor="avatar"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Avatar URL
-          </label>
-          <input
-            type="text"
-            name="avatar"
-            value={formData.avatar}
-            onChange={handleChange}
-            placeholder="Avatar URL"
-            id="avatar"
-            className="w-full p-2 border rounded"
-          />
-
+    <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-20">
+      <div className="lg:my-2 px-4 lg:px-0">
+        <h1 className="text-3xl lg:text-4xl font-medium">Account Update...</h1>
+      </div>
+      <div className="lg:w-2xl px-4 lg:px-2">
+        <form onSubmit={handleSubmit} className="mx-auto w-full">
+          <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              id="name"
+              className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+            />
+          </div>
+          <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              id="phone"
+              className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+            />
+          </div>
+          <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+            <label htmlFor="avatar">Avatar URL</label>
+            <input
+              type="text"
+              name="avatar"
+              value={formData.avatar}
+              onChange={handleChange}
+              id="avatar"
+              className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+            />
+          </div>
           {credentials && (
             <>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                required
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                id="email"
-                className="w-full p-2 border rounded"
-              />
-
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                New Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="New Password"
-                id="password"
-                className="w-full p-2 border rounded"
-              />
-
-              <label
-                htmlFor="oldPassword"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Current Password
-              </label>
-              <input
-                required
-                type="password"
-                name="oldPassword"
-                value={formData.oldPassword}
-                onChange={handleChange}
-                placeholder="Your Password"
-                id="oldPassword"
-                className="w-full p-2 border rounded"
-              />
+              <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+                <label htmlFor="email">Email</label>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  id="email"
+                  className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+                />
+              </div>
+              <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+                <label htmlFor="password">New Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  id="password"
+                  className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+                />
+              </div>
+              <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+                <label htmlFor="oldPassword">Current Password</label>
+                <input
+                  required
+                  type="password"
+                  name="oldPassword"
+                  value={formData.oldPassword}
+                  onChange={handleChange}
+                  id="oldPassword"
+                  className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+                />
+              </div>
             </>
           )}
-
-          {error && <h1>{error}</h1>}
-
-          {!credentials && (
+          <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
+            {!credentials && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCredentials(!credentials);
+                }}
+                className="w-full bg-blue-500 text-white py-2 rounded"
+              >
+                Update Credentials
+              </button>
+            )}
+          </div>
+          <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                setCredentials(!credentials);
-              }}
+              type="submit"
+              disabled={loading.status}
               className="w-full bg-blue-500 text-white py-2 rounded"
             >
-              Change Credentials
+              {loading.status ? loading.message : "Submit"}
             </button>
-          )}
-          <button
-            type="submit"
-            disabled={loading.status}
-            className="w-full bg-blue-500 text-white py-2 rounded"
-          >
-            {loading.status ? loading.message : "Submit"}
-          </button>
+          </div>
         </form>
       </div>
     </div>

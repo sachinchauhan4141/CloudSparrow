@@ -112,10 +112,6 @@ const CreateJobModal = ({
           className="bg-gray-100 border border-gray-300 rounded-md w-full p-2 mb-4"
         />
 
-        <div className="text-sm text-gray-700 mb-4">
-          {error && error}
-        </div>
-
         <div className="flex justify-end gap-4">
           <button
             onClick={() => setCreateModalVisible(false)}

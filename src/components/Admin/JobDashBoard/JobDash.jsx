@@ -3,10 +3,10 @@ import jobService from "../../../appwrite/job"; // Assuming `jobService` handles
 import JobCard from "./JobDashCard";
 import UpdateJobModal from "./UpdateJobModal";
 import CreateJobModal from "./CreateJobModal";
+import { toast } from "react-toastify";
 
 const JobDash = () => {
   const [jobs, setJobs] = useState([]);
-  const [error, setError] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const [createModalVisible, setCreateModalVisible] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
@@ -35,15 +35,14 @@ const JobDash = () => {
   });
 
   const handleDelete = async (id) => {
-    setError("");
     try {
       const response = await jobService.deleteJob(id);
       if (response) {
-        setError("Job deleted successfully");
+        toast("Job deleted successfully");
         setJobs((prevJobs) => prevJobs.filter((item) => item.$id !== id));
       }
     } catch (error) {
-      setError(error?.message);
+      toast(error?.message);
     }
   };
 
@@ -58,32 +57,30 @@ const JobDash = () => {
   };
 
   const handleSaveChanges = async () => {
-    setError("");
     try {
       const response = await jobService.updateJob({
         id: currentItem.$id,
         ...updatedData,
       });
       if (response) {
-        setError("Changes saved successfully!");
+        toast("Changes saved successfully!");
         setModalVisible(false);
       }
     } catch (error) {
-      setError(error?.message);
+      toast(error?.message);
     }
   };
 
   const handleCreateNewJob = async () => {
-    setError("");
     try {
       const response = await jobService.createJob(newJobData);
       if (response) {
-        setError("Job created successfully!");
+        toast("Job created successfully!");
         setCreateModalVisible(false);
         setJobs((prevJobs) => [response, ...prevJobs]);
       }
     } catch (error) {
-      setError(error?.message);
+      toast(error?.message);
     }
   };
 
@@ -113,7 +110,6 @@ const JobDash = () => {
             setNewJobData={setNewJobData}
             setCreateModalVisible={setCreateModalVisible}
             handleCreateNewJob={handleCreateNewJob}
-            error={error}
           />
         )}
       </div>
@@ -141,7 +137,6 @@ const JobDash = () => {
             item={item}
             onUpdate={handleUpdate}
             onDelete={handleDelete}
-            error={error}
           />
         ))}
       </div>
@@ -154,7 +149,6 @@ const JobDash = () => {
           setUpdatedData={setUpdatedData}
           setModalVisible={setModalVisible}
           handleSaveChanges={handleSaveChanges}
-          error={error}
         />
       )}
 
@@ -165,7 +159,6 @@ const JobDash = () => {
           setNewJobData={setNewJobData}
           setCreateModalVisible={setCreateModalVisible}
           handleCreateNewJob={handleCreateNewJob}
-          error={error}
         />
       )}
     </div>

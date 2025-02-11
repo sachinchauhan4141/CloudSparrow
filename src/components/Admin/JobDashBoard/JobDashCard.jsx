@@ -25,10 +25,6 @@ const JobDashCard = ({ item, onUpdate, onDelete, error }) => {
         </p>
       </div>
 
-      <div className="text-sm text-gray-700 mb-4">
-        {error && error}
-      </div>
-
       <div className="flex justify-between gap-4">
         <button
           onClick={() => onUpdate(item)}

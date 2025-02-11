@@ -9,7 +9,7 @@ import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import { IoIosArrowDropup } from "react-icons/io";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import userService from "./appwrite/user";
 import { login, logout } from "./store/authSlice";
@@ -22,11 +22,11 @@ import JobDash from "./components/Admin/JobDashBoard/JobDash";
 import UsersDash from "./components/Admin/UsersDash";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AuthLayout from "./components/Auth/AuthLayout";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.authSlice.userData);
 
   const handleScroll = () => {
     if (window.scrollY > 300) {
@@ -65,6 +65,7 @@ function App() {
   return (
     <div className="relative">
       <Navbar />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="about" element={<About />} />

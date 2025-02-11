@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import userService from "../../appwrite/user";
 import authService from "../../appwrite/auth";
+import { toast } from "react-toastify";
 
 const UsersDash = () => {
   const [users, setUsers] = useState([]);
@@ -14,7 +15,7 @@ const UsersDash = () => {
       const response = await userService.getAllUsers();
       setUsers(response.documents);
     } catch (error) {
-      console.error("Error fetching users:", error);
+      toast(error?.message);
     }
   };
 
@@ -23,7 +24,7 @@ const UsersDash = () => {
       await userService.updateUser({ id, admin: !admin });
       fetchUsers();
     } catch (error) {
-      console.error("Error toggling admin status:", error);
+      toast(error?.message);
     }
   };
 
@@ -34,7 +35,7 @@ const UsersDash = () => {
         await authService.deleteUser(id);
         fetchUsers();
       } catch (error) {
-        console.error("Error deleting user:", error);
+        toast(error?.message);
       }
     }
   };

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import enquiryService from "../../appwrite/enquiry";
+import { toast } from "react-toastify";
 
 const EnquiryDash = () => {
   const [enquiries, setEnquiries] = useState([]);
-  const [error, setError] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
   const [updatedData, setUpdatedData] = useState({
@@ -15,15 +15,17 @@ const EnquiryDash = () => {
   });
 
   const handleDelete = async (id) => {
-    setError("");
-    try {
-      const response = await enquiryService.deleteEnquiry(id);
-      if (response) {
-        setError("deleted successfully");
-        setData((prevData) => prevData.filter((item) => item.id !== id));
+    const confirm = window.confirm("Are you sure?");
+    if (confirm) {
+      try {
+        const response = await enquiryService.deleteEnquiry(id);
+        if (response) {
+          toast("deleted successfully");
+          setData((prevData) => prevData.filter((item) => item.id !== id));
+        }
+      } catch (error) {
+        toast(error?.message);
       }
-    } catch (error) {
-      setError(error?.message);
     }
   };
 
@@ -51,18 +53,17 @@ const EnquiryDash = () => {
   };
 
   const handleSaveChanges = async () => {
-    setError("");
     try {
       const response = await enquiryService.updateEnquiry({
         id: currentItem.$id,
         ...updatedData,
       });
       if (response) {
-        setError("changes saved!");
+        toast("changes saved!");
         setModalVisible(false);
       }
     } catch (error) {
-      setError(error?.message);
+      toast(error?.message);
     }
   };
 
@@ -112,9 +113,6 @@ const EnquiryDash = () => {
               ))}
             </p>
             <p className="text-sm text-gray-700 mb-4">{item.description}</p>
-            <div className="text-sm text-gray-700 mb-4">
-              {error && error}
-            </div>
             <div className="flex justify-between gap-4">
               <button
                 onClick={() => handleUpdate(item)}
@@ -123,7 +121,6 @@ const EnquiryDash = () => {
                 Update
               </button>
               <button
-                disabled={error}
                 onClick={() => handleDelete(item.$id)}
                 className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
               >
@@ -199,9 +196,6 @@ const EnquiryDash = () => {
               onChange={handleInputChange}
               className="bg-gray-100 border border-gray-300 rounded-md w-full p-2 mb-4"
             />
-            <div className="text-sm text-gray-700 mb-4">
-              {error && error}
-            </div>
             <div className="flex justify-end gap-4">
               <button
                 onClick={() => setModalVisible(false)}
