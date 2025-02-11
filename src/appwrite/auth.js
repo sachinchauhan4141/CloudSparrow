@@ -47,6 +47,14 @@ class AuthService {
     }
   }
 
+  async logoutUser() {
+    try {
+      return await this.account.deleteSessions();
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async getCurrUser() {
     try {
       return await this.account.get();
@@ -55,9 +63,25 @@ class AuthService {
     }
   }
 
-  async logoutUser() {
+  async updateEmail({ email, password }) {
     try {
-      return await this.account.deleteSessions();
+      return await this.account.updateEmail(email, password);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updatePassword({ password, oldpassword }) {
+    try {
+      return await this.account.updatePassword(password, oldpassword);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteUser(id) {
+    try {
+      return await this.account.deleteIdentity(id);
     } catch (error) {
       throw error;
     }

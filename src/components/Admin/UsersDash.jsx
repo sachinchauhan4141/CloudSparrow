@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import userService from "../../appwrite/user";
+import authService from "../../appwrite/auth";
 
 const UsersDash = () => {
   const [users, setUsers] = useState([]);
@@ -17,9 +18,9 @@ const UsersDash = () => {
     }
   };
 
-  const toggleAdmin = async (id, isAdmin) => {
+  const toggleAdmin = async (id, admin) => {
     try {
-      await userService.updateUser({ id, isAdmin: !isAdmin });
+      await userService.updateUser({ id, admin: !admin });
       fetchUsers();
     } catch (error) {
       console.error("Error toggling admin status:", error);
@@ -27,11 +28,14 @@ const UsersDash = () => {
   };
 
   const deleteUser = async (id) => {
-    try {
-      await userService.deleteUser(id);
-      fetchUsers();
-    } catch (error) {
-      console.error("Error deleting user:", error);
+    const confirm = window.confirm("are you sure?");
+    if (confirm) {
+      try {
+        await authService.deleteUser(id);
+        fetchUsers();
+      } catch (error) {
+        console.error("Error deleting user:", error);
+      }
     }
   };
 
@@ -65,12 +69,12 @@ const UsersDash = () => {
                 <td className="p-4">{user.phone}</td>
                 <td className="p-4">
                   <button
-                    onClick={() => toggleAdmin(user.$id, user.isAdmin)}
+                    onClick={() => toggleAdmin(user.$id, user.admin)}
                     className={`px-3 py-1 rounded ${
-                      user.isAdmin ? "bg-green-500" : "bg-red-500"
+                      user.admin ? "bg-green-500" : "bg-red-500"
                     } text-white`}
                   >
-                    {user.isAdmin ? "Yes" : "No"}
+                    {user.admin ? "Yes" : "No"}
                   </button>
                 </td>
                 <td className="p-4">

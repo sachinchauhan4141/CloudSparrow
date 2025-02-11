@@ -20,6 +20,8 @@ import Dashboard from "./components/Admin/Dashboard";
 import EnquiryDash from "./components/Admin/EnquiryDash";
 import JobDash from "./components/Admin/JobDashBoard/JobDash";
 import UsersDash from "./components/Admin/UsersDash";
+import AdminLayout from "./components/Admin/AdminLayout";
+import AuthLayout from "./components/Auth/AuthLayout";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,18 +72,72 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="careers" element={<Careers />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<Signup />} />
-        <Route path="updateuser/:id" element={<UpdateUser />} />
+        {/* protected routes logged in only */}
+        <Route
+          path="login"
+          element={
+            <AuthLayout authentication={false}>
+              <Login />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="signup"
+          element={
+            <AuthLayout authentication={false}>
+              <Signup />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="updateuser/:id"
+          element={
+            <AuthLayout>
+              <UpdateUser />
+            </AuthLayout>
+          }
+        />
         {/* protected routes admin only */}
-        {user?.admin && <Route path="/dashboard" element={<Dashboard />} />}
-        {user?.admin && (
-          <Route path="/dashboard/enquiry" element={<EnquiryDash />} />
-        )}
-        {user?.admin && <Route path="/dashboard/jobs" element={<JobDash />} />}
-        {user?.admin && (
-          <Route path="/dashboard/users" element={<UsersDash />} />
-        )}
+        <Route
+          path="/dashboard"
+          element={
+            <AuthLayout>
+              <AdminLayout>
+                <Dashboard />
+              </AdminLayout>
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/dashboard/enquiry"
+          element={
+            <AuthLayout>
+              <AdminLayout>
+                <EnquiryDash />
+              </AdminLayout>
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/dashboard/jobs"
+          element={
+            <AuthLayout>
+              <AdminLayout>
+                <JobDash />
+              </AdminLayout>
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/dashboard/users"
+          element={
+            <AuthLayout>
+              <AdminLayout>
+                <UsersDash />
+              </AdminLayout>
+            </AuthLayout>
+          }
+        />
       </Routes>
       <Footer />
       {isVisible && (

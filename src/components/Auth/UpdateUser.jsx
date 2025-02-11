@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import userService from "../../appwrite/user";
+import authService from "../../appwrite/auth";
+import { useSelector } from "react-redux";
 
 const UpdateUser = () => {
+  const user = useSelector((state) => state.authSlice?.userData);
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState({ status: false, message: "" });
+  const [credentials, setCredentials] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     avatar: "",
+    password: "",
+    oldPassword: "",
   });
 
   useEffect(() => {
@@ -19,12 +25,13 @@ const UpdateUser = () => {
 
   const fetchUser = async () => {
     try {
-      const user = await userService.getUserById(id);
       setFormData({
-        name: user.name,
-        email: user.email,
-        phone: user.phone,
-        avatar: user.avatar,
+        name: user?.name,
+        email: user?.email,
+        phone: user?.phone,
+        avatar: user?.avatar,
+        password: "",
+        oldPassword: "",
       });
     } catch (error) {
       console.error("Error fetching user:", error);
@@ -38,20 +45,35 @@ const UpdateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    setLoading(true);
+    setLoading({ status: true, message: "Updating..." });
     try {
       await userService.updateUser({ id, ...formData });
-      setError("details updated");
+      if (credentials) {
+        setLoading({ status: true, message: "Updating creds..." });
+        if (user.email !== formData.email) {
+          await authService.updateEmail({
+            email: formData.email,
+            password: formData.oldPassword,
+          });
+        }
+        if (formData?.password?.length > 0) {
+          await authService.updatePassword({
+            password: formData.password,
+            oldpassword: formData.oldPassword,
+          });
+        }
+      }
+      setLoading({ status: true, message: "Updated Successfully..." });
     } catch (error) {
       setError(error?.message);
     } finally {
-      setLoading(false);
+      setLoading({ status: false, message: "" });
     }
   };
 
   return (
     <div className="p-8 bg-gray-100 min-h-screen flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md max-h-[70vh] overflow-y-scroll no-scrollbar">
         <h2 className="text-2xl font-bold mb-4">Update User</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <label
@@ -67,22 +89,6 @@ const UpdateUser = () => {
             onChange={handleChange}
             placeholder="Name"
             id="name"
-            className="w-full p-2 border rounded"
-          />
-
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            id="email"
             className="w-full p-2 border rounded"
           />
 
@@ -117,16 +123,80 @@ const UpdateUser = () => {
             id="avatar"
             className="w-full p-2 border rounded"
           />
+
+          {credentials && (
+            <>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email
+              </label>
+              <input
+                required
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                id="email"
+                className="w-full p-2 border rounded"
+              />
+
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                New Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="New Password"
+                id="password"
+                className="w-full p-2 border rounded"
+              />
+
+              <label
+                htmlFor="oldPassword"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Current Password
+              </label>
+              <input
+                required
+                type="password"
+                name="oldPassword"
+                value={formData.oldPassword}
+                onChange={handleChange}
+                placeholder="Your Password"
+                id="oldPassword"
+                className="w-full p-2 border rounded"
+              />
+            </>
+          )}
+
           {error && <h1>{error}</h1>}
-          <button className="w-full bg-blue-500 text-white py-2 rounded">
-            Change Password
-          </button>
+
+          {!credentials && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setCredentials(!credentials);
+              }}
+              className="w-full bg-blue-500 text-white py-2 rounded"
+            >
+              Change Credentials
+            </button>
+          )}
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading.status}
             className="w-full bg-blue-500 text-white py-2 rounded"
           >
-            {loading ? "Updating...." : "Update"}
+            {loading.status ? loading.message : "Submit"}
           </button>
         </form>
       </div>

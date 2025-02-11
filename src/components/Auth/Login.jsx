@@ -8,23 +8,30 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState({ status: false, message: "" });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    setError("");
     e.preventDefault();
+    setError("");
     try {
-      const session = await authService.loginUser({email, password});
+      setLoading({ status: true, message: "Logging in..." });
+      const session = await authService.loginUser({ email, password });
       if (session) {
+        setLoading({ status: true, message: "getting info..." });
         const userData = await authService.getCurrUser();
         if (userData) {
+          setLoading({ status: true, message: "Logging you in..." });
           dispatch(login(userData));
         }
+        setLoading({ status: true, message: "Redirecting..." });
         navigate("/");
       }
     } catch (error) {
       setError(error?.message);
+    } finally {
+      setLoading({ status: false, message: "" });
     }
   };
 
@@ -67,6 +74,7 @@ const Login = () => {
               />
             </div>
           </div>
+          {error && <div>{error}</div>}
 
           <div className="flex items-center justify-between">
             <div className="text-sm">
@@ -81,17 +89,17 @@ const Login = () => {
 
           <div>
             <button
+              disabled={loading.status}
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Sign in
+              {loading.status ? loading.message : "Sign in"}
             </button>
           </div>
         </form>
         <div className="flex items-center justify-center w-full">
-            Create a new account? <Link to={"/signup"}>SignUp</Link>
+          Create a new account? <Link to={"/signup"}>SignUp</Link>
         </div>
-        {error && <div>{error}</div>}
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const Signup = () => {
     e.preventDefault();
     setError("");
     try {
-      setLoading({ status: true, message: "registering..." });
+      setLoading({ status: true, message: "Registering..." });
       const session = await authService.createAccount({
         email,
         password,
@@ -29,12 +29,13 @@ const Signup = () => {
         avatar,
       });
       if (session) {
-        setLoading({ status: true, message: "Logging you in..." });
+        setLoading({ status: true, message: "Getting info..." });
         const userData = await authService.getCurrUser();
         if (userData) {
+          setLoading({ status: true, message: "Logging you in..." });
           dispatch(login(userData));
         }
-        setLoading({ status: true, message: "redirecting..." });
+        setLoading({ status: true, message: "Redirecting..." });
         navigate("/");
       }
     } catch (error) {
