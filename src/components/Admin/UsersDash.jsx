@@ -29,7 +29,7 @@ const UsersDash = () => {
   };
 
   const deleteUser = async (id) => {
-    const confirm = window.confirm("are you sure?");
+    const confirm = window.confirm("Are you sure?");
     if (confirm) {
       try {
         await authService.deleteUser(id);

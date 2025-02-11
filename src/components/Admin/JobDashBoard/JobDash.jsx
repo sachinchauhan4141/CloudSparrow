@@ -35,14 +35,17 @@ const JobDash = () => {
   });
 
   const handleDelete = async (id) => {
-    try {
-      const response = await jobService.deleteJob(id);
-      if (response) {
-        toast("Job deleted successfully");
-        setJobs((prevJobs) => prevJobs.filter((item) => item.$id !== id));
+    const confirm = window.confirm("Are you sure");
+    if (confirm) {
+      try {
+        const response = await jobService.deleteJob(id);
+        if (response) {
+          toast("Job deleted successfully");
+          setJobs((prevJobs) => prevJobs.filter((item) => item.$id !== id));
+        }
+      } catch (error) {
+        toast(error?.message);
       }
-    } catch (error) {
-      toast(error?.message);
     }
   };
 
