@@ -13,9 +13,10 @@ import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import userService from "./appwrite/user";
 import { login, logout } from "./store/authSlice";
-import Login from "./components/Auth/Login";
-import Signup from "./components/Auth/Signup";
-import UpdateUser from "./components/Auth/UpdateUser";
+import Login from "./components/Auth/Login/Login";
+import Signup from "./components/Auth/Register/Signup";
+import UpdateUser from "./components/Auth/Update/UpdateUser";
+import ForgotPassword from "./components/Auth/Recover/ForgotPassword";
 import Dashboard from "./components/Admin/Dashboard";
 import EnquiryDash from "./components/Admin/EnquiryDash";
 import JobDash from "./components/Admin/JobDashBoard/JobDash";
@@ -83,6 +84,7 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="careers" element={<Careers />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="passwordrecovery" element={<ForgotPassword />} />
         {/* protected routes logged in only */}
         <Route
           path="login"

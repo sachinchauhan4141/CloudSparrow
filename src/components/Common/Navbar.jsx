@@ -51,11 +51,7 @@ const Navbar = () => {
               to={item === "Home" ? "/" : item.toLowerCase()}
               className={
                 "font-medium hover:text-blue-400 transition text-xs " +
-                (path.pathname === "/" ||
-                path.pathname === "/careers" ||
-                path.pathname === "/login" ||
-                path.pathname === "/signup" ||
-                path.pathname === "/updateuser/" + userData?.$id
+                (path.pathname === "/" || path.pathname === "/careers"
                   ? " text-white "
                   : " ")
               }

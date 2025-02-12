@@ -86,6 +86,14 @@ class AuthService {
       throw error;
     }
   }
+
+  async forgetPassword({email, url}) {
+    try {
+      return await this.account.createRecovery(email, url);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default new AuthService();
