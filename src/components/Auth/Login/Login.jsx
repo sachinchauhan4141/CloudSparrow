@@ -1,8 +1,26 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 import { Link } from "react-router-dom";
+import authService from "../../../appwrite/auth";
+import { toast } from "react-toastify";
 
 function Login() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams?.get("userId");
+  const secret = urlParams?.get("secret");
+
+  if (userId && secret) {
+    authService
+      .verifyEmail({ userId, secret })
+      .then((response) => {
+        if (response) {
+          toast("Email Verified Successfully");
+        }
+      })
+      .catch((e) => {
+        toast(e?.message);
+      });
+  }
   return (
     <div className="lg:h-screen flex items-center justify-center px-4 py-24 lg:py-0 lg:px-0">
       <div className="bg-gray-700 rounded-2xl lg:mt-10 lg:p-10 p-6 text-white lg:h-[80vh] w-7xl">
