@@ -14,7 +14,7 @@ function ForgotPassword() {
       const token = await authService.forgetPassword({ email, url });
       setLoading({ status: true, message: "Redirecting..." });
       if (token) {
-        toast(error?.message);
+        toast("Recovery email sent...");
       }
     } catch (error) {
       toast(error?.message);
@@ -50,7 +50,7 @@ function ForgotPassword() {
             />
             <div className="flex w-full items-center justify-end">
               <button
-                disabled={loading}
+                disabled={loading.status}
                 onClick={handleRecovery}
                 className="border border-gray-400 py-2 px-6 rounded-md bg-gray-800 hover:bg-gray-900"
               >

@@ -87,9 +87,17 @@ class AuthService {
     }
   }
 
-  async forgetPassword({email, url}) {
+  async forgetPassword({ email, url }) {
     try {
       return await this.account.createRecovery(email, url);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async verifyRecovery({ userId, secret, password }) {
+    try {
+      return await this.account.updateRecovery(userId, secret, password);
     } catch (error) {
       throw error;
     }

@@ -9,6 +9,12 @@ import ProductCycle from "./ProductCycle";
 import Banner from "./Banner";
 
 const HomePage = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('userId');
+  const secret = urlParams.get('secret');
+
+  
+
   return (
     <div>
       <Banner />

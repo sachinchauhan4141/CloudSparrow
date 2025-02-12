@@ -17,7 +17,7 @@ const UpdateJobModal = ({
 
   const handleArrayInputChange = (e, type) => {
     const { value } = e.target;
-    const updatedArray = value.split(",").map((val) => val.trim());
+    const updatedArray = value.split("-next-").map((val) => val.trim());
     setUpdatedData((prev) => ({
       ...prev,
       [type]: updatedArray,
