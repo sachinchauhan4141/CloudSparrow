@@ -33,7 +33,6 @@ const UpdateEmail = () => {
         toast("Already registered");
         setEmail("");
       }
-      toast("Updated Successfully");
     } catch (error) {
       toast(error?.message);
     } finally {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import userService from "../../../appwrite/user";
+import authService from "../../../appwrite/auth";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 

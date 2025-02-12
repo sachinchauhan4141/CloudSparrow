@@ -9,7 +9,7 @@ function UpdateUser() {
   const pages = [<UpdateInfo/>, <UpdateEmail/>, <UpdatePassword/>];
 
   return (
-    <div className="h-screen flex items-center justify-center px-4 lg:px-0">
+    <div className="lg:h-screen flex items-center justify-center px-4 py-24 lg:py-0 lg:px-0">
       <div className="bg-gray-700 rounded-2xl lg:mt-10 lg:p-10 p-6 text-white lg:h-[80vh] w-7xl">
         <div className="flex">
           <button
