@@ -76,7 +76,8 @@ class AuthService {
 
   async deleteUser(id) {
     try {
-      return await this.account.deleteIdentity(id);
+      await this.account.deleteIdentity(id);
+      return await userService.deleteUser(id);
     } catch (error) {
       throw error;
     }

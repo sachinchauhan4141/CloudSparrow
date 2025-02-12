@@ -176,7 +176,7 @@ const Navbar = () => {
                   Account
                 </Link>
               </button>
-              {userData.admin && (
+              {userData?.admin && (
                 <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
                   <Link onClick={() => setIsOpen(!isOpen)} to={"/dashboard"}>
                     Dashboard

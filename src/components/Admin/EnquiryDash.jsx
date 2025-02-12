@@ -21,7 +21,6 @@ const EnquiryDash = () => {
         const response = await enquiryService.deleteEnquiry(id);
         if (response) {
           toast("deleted successfully");
-          setData((prevData) => prevData.filter((item) => item.id !== id));
         }
       } catch (error) {
         toast(error?.message);
