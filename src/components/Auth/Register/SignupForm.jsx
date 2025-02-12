@@ -30,19 +30,14 @@ const Signup = () => {
         });
         if (session) {
           toast("Registered Successfully");
-          setLoading({ status: true, message: "Getting info..." });
-          const userData = await authService.getCurrUser();
-          if (userData) {
-            setLoading({ status: true, message: "Logging you in..." });
-            dispatch(login(userData));
-          }
           setLoading({ status: true, message: "Redirecting..." });
-          navigate("/");
+          navigate("/login");
         }
       } else {
         toast("passwords must be same");
       }
     } catch (error) {
+      console.log(error);
       toast(error?.message);
     } finally {
       setLoading({ status: false, message: "" });

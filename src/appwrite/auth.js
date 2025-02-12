@@ -21,19 +21,14 @@ class AuthService {
         name
       );
       //saving user deatils to database
-      const saveUserDetails = await userService.createUser({
+      await userService.createUser({
         id: userAccount.$id,
         name,
         email,
         phone,
         avatar,
       });
-      if (userAccount && saveUserDetails) {
-        //login the user
-        this.loginUser(email, password);
-      } else {
-        return userAccount;
-      }
+      return userAccount;
     } catch (error) {
       throw error;
     }
@@ -82,6 +77,24 @@ class AuthService {
   async deleteUser(id) {
     try {
       return await this.account.deleteIdentity(id);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async sendVerifyEmail() {
+    try {
+      return await this.account.createVerification(
+        config.emailVerifyRedirectUrl
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async verifyEmail({ userId, secret }) {
+    try {
+      return await this.account.updateVerification(userId, secret);
     } catch (error) {
       throw error;
     }

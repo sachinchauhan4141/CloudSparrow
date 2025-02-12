@@ -10,6 +10,9 @@ const config = {
   passRecoveryRedirectUrl: String(
     import.meta.env.VITE_PASS_RECOVERY_REDIRECT_URL
   ),
+  emailVerifyRedirectUrl: String(
+    import.meta.env.VITE_EMAIL_VERIFY_REDIRECT_URL
+  ),
 };
 
 export default config;

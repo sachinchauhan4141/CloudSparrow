@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import Footer from "./components/Common/Footer";
 import Careers from "./components/Careers/Careers";
@@ -23,7 +23,7 @@ import JobDash from "./components/Admin/JobDashBoard/JobDash";
 import UsersDash from "./components/Admin/UsersDash";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AuthLayout from "./components/Auth/AuthLayout";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import jobService from "./appwrite/job";
 import { setAllJobs } from "./store/jobSlice";
 import UpdatePassword from "./components/Auth/Recover/UpdatePassword";
@@ -47,6 +47,12 @@ function App() {
   const getUser = async () => {
     try {
       const response = await authService.getCurrUser();
+      if (!response?.emailVerification) {
+        toast("check your mail for verification link");
+        toast("You have been logged out");
+        await authService.sendVerifyEmail();
+        await authService.logoutUser();
+      }
       const userData = await userService.getUserById(response.$id);
       if (userData) {
         dispatch(login({ userData }));
