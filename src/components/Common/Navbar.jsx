@@ -21,14 +21,11 @@ const Navbar = () => {
     try {
       const response = await authService.getCurrUser();
       if (!response?.emailVerification) {
-        toast("check your mail for verification link");
-        toast("You have been logged out");
         await authService.sendVerifyEmail();
+        toast("check your mail for verification link");
         await authService.logoutUser();
       }
       const userData = await userService.getUserById(response.$id);
-      console.log(userData);
-
       if (userData) {
         dispatch(login({ userData }));
       } else {
@@ -48,7 +45,6 @@ const Navbar = () => {
 
   const handleLogout = () => {
     setIsOpen(!isOpen);
-
     authService.logoutUser().then(() => {
       dispatch(logout());
     });
@@ -67,7 +63,7 @@ const Navbar = () => {
   useEffect(() => {
     getUser();
     getAllJobs();
-  }, []);
+  }, [status, navigate, dispatch, userData]);
 
   return (
     <div className="flex absolute justify-between items-center h-20 w-full px-4 text-black">
