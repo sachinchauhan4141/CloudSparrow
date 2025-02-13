@@ -11,10 +11,12 @@ const Careers = () => {
               HOME / <span className="text-[#0F75BC]">CAREERS</span>
             </p>
           </div>
-          <h1 className="font-bold text-3xl my-4 lg:my-0 lg:text-[74px]">Join the Cloud-Sparrow</h1>
+          <h1 className="font-bold text-3xl my-4 lg:my-0 lg:text-[74px]">
+            Join the Cloud-Sparrow
+          </h1>
           <p className="font-bold text-sm lg:text-[20px]">
-            At Cloud-Sparrow, we are on a mission to revolutionize the way{" "}
-            <br className="hidden lg:block"/> businesses approach Hyperautomation & digital transformation.
+          At Cloud-Sparrow,<br className="hidden lg:block" /> we are on a mission to transform how businesses leverage <br className="hidden lg:block" /> digital marketing, web development, and design to achieve success.
+            
           </p>
         </div>
       </div>
@@ -34,19 +36,18 @@ const Careers = () => {
         </div>
         <div className="lg:w-1/2 lg:mt-12 lg:ml-18">
           <h1 className=" font-bold text-[48px] text-[#080808] leading-[1.1]">
-            Doers. Hackers.
-            <br /> Thinkers.
+            Innovators. Builders. <br /> Visionaries.
           </h1>
           <p className="text-[16px] my-6 font-medium text-[#080808]">
-            Cloud-Sparrow is a product engineering company working with
-            innovative <br className="hidden lg:block" /> startups and enterprises. We have provided core
-            product development <br className="hidden lg:block" /> for 110+ startups across the globe
-            building products in the cloud-
-            <br className="hidden lg:block" />
-            native, data engineering, B2B SaaS & Machine Learning space. Our{" "}
-            <br className="hidden lg:block" /> team of 350+ elite software engineers solve hard technical
-            problems <br className="hidden lg:block" /> while transforming customer ideas into successful
-            products.
+            At Cloud-Sparrow, we craft cutting-edge digital experiences that
+            drive brand growth and engagement.
+            <br className="hidden lg:block" /> From high-performance websites to
+            seamless mobile apps, compelling marketing strategies, and visually
+            stunning designs—we bring ideas to life.
+            <br className="hidden lg:block" /> Our team of experts specializes
+            in web and app development, UI/UX design, branding, and digital
+            marketing to help businesses thrive in a competitive digital
+            landscape.
           </p>
           <button className="bg-[#0F75BC] py-2 px-6 rounded-sm text-white text-[15px]">
             See Open Positions

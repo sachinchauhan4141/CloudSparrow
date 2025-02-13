@@ -1,6 +1,6 @@
 import React from "react";
 
-const ServiceSection = ({ title, bgcolor, color, btcolor, pcolor }) => {
+const ServiceSection = ({ title, bgcolor, color, btcolor, pcolor, content , features }) => {
   return (
     <div style={{ color, backgroundColor: bgcolor }} className="skew-y-1 lg:skew-y-2">
       <div className="relative flex py-10 lg:px-30 gap-16 text-start -skew-y-1 lg:-skew-y-2">
@@ -13,20 +13,14 @@ const ServiceSection = ({ title, bgcolor, color, btcolor, pcolor }) => {
           </div>
           <div className="my-8">
             <p className="text-xs font-medium" style={{ color: pcolor }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting{" "}
-              <br />
-              industry. Lorem Ipsum has been the industry's standard dummy text{" "}
-              <br />
-              ever since the 1500s, when an unknown printer took a galley of
-              type <br /> and scrambled it to make a type specimen book.
+              {content}
             </p>
           </div>
           <div className="my-8">
             <ol className="my-2 px-4 list-disc font-medium text-sm">
-              <li className="my-2">Native Applications</li>
-              <li className="my-2">Hybrid Apps</li>
-              <li className="my-2">Frameworks and Libraries</li>
-              <li className="my-2">Automated QA services</li>
+              {features.map((feature)=>{
+                return <li key={feature} className="my-2">{feature}</li>
+              })}
             </ol>
           </div>
           <div>

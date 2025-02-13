@@ -22,8 +22,8 @@ const CraftProduct = () => {
         </div>
         <div className="flex justify-center items-end lg:w-[40%] my-2">
           <p className="text-sm font-medium">
-            Lorem Ipsum is simply dummy text of the printing and <br className="hidden lg:block" />
-            industry site Ipsum has been the site
+            At Cloud Sparrow, we believe in transforming ideas into exceptional
+            products.
           </p>
         </div>
         <div className="hidden lg:flex justify-center items-end gap-4 w-[20%]">

@@ -2,6 +2,7 @@ import React from "react";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { FaCirclePlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { HeroSectionImg } from "../../utils/utils";
 
 const HeroSection = () => {
   return (
@@ -20,7 +21,7 @@ const HeroSection = () => {
         <div className="hidden lg:block w-[860px] h-[460px] mr-8">
           <img
             className="size-full"
-            src="/cloudsparrow-all-img/ThirdPage.png"
+            src={HeroSectionImg}
             alt=""
           />
         </div>
@@ -40,7 +41,7 @@ const HeroSection = () => {
 
           <div className="mt-[20px]">
             <p className="text-[16px]">
-              Under the name World Fax Services, Inc., our company has been
+              Under the name Cloud Sparrow Technologies, our company has been
               successfully creating various projects in the fields of web
               development and other online services for 10 years.
             </p>

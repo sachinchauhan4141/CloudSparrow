@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { problems } from "../../utils/dummyData";
 
 const ProductCycle = () => {
   return (
@@ -53,10 +54,10 @@ const ProductCycle = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-4 lg:mt-6 items-center justify-center">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {/* Map over the problems array to generate the cards */}
+            {problems.map((problem) => (
+              <Card key={problem.id} text={problem.text} />
+            ))}
           </div>
         </div>
       </div>
@@ -106,12 +107,11 @@ const ProductCycle = () => {
   );
 };
 
-const Card = () => {
+// Card component to display each problem
+const Card = ({ text }) => {
   return (
     <div className="flex items-center justify-between w-lg py-4 px-6 mt-2 border rounded-md border-[#0C0C0C33]">
-      <p className="text-base">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
+      <p className="text-base">{text}</p>
       <FaPlus className="text-[#2A6BFD] text-xl" />
     </div>
   );

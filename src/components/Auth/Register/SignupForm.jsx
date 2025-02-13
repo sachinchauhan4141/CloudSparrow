@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../../store/authSlice";
 import authService from "../../../appwrite/auth";
 import { toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [loading, setLoading] = useState({ status: false, message: "" });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

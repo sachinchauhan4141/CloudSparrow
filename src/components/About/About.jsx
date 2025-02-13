@@ -68,14 +68,13 @@ const About = () => {
                   className="size-full"
                 />
               </div>
-              <div className="w-[90%] text-start flex flex-col justify-evenly items-start">
+              <div className="w-[90%] text-start flex flex-col gap-4 justify-start items-start">
                 <h1 className="text-lg font-medium text-[#E05A32]">
                   Reliability
                 </h1>
                 <p className="text-xs lg:text-sm font-medium text-[#676767]">
-                  The Cloud Sparrow is a reliable Indian Owned Company that has
-                  expanded its operation successfully in India, Australia, and
-                  the USA.
+                  Cloud Sparrow is a reliable Indian-owned company committed to
+                  delivering top-notch digital solutions.
                 </p>
               </div>
             </div>
@@ -123,25 +122,23 @@ const About = () => {
           <div className="lg:py-0 py-6 w-full lg:border-r-2 lg:border-b-0 border-b-2 border-[#9CA7AA] flex lg:flex-col gap-4 items-center justify-evenly lg:justify-center text-center">
             <h1 className="text-5xl font-medium">99%</h1>
             <p className="text-[#EC4918] font-medium">
-              Successful <br /> Years
+              Client Satisfaction Rate
             </p>
           </div>
           <div className="lg:py-0 py-10 w-full lg:border-r-2 lg:border-b-0 border-b-2 border-[#9CA7AA] flex lg:flex-col gap-4 items-center justify-evenly lg:justify-center text-center">
-            <h1 className="text-5xl font-medium">100+</h1>
-            <p className="text-[#EC4918] font-medium">
-              Global <br /> Locations
-            </p>
+            <h1 className="text-5xl font-medium">5+</h1>
+            <p className="text-[#EC4918] font-medium">Years of Expertise</p>
           </div>
           <div className="lg:py-0 py-10 w-full lg:border-r-2 lg:border-b-0 border-b-2 border-[#9CA7AA] flex lg:flex-col gap-4 items-center justify-evenly lg:justify-center text-center">
-            <h1 className="text-5xl font-medium">20K+</h1>
+            <h1 className="text-5xl font-medium">200+</h1>
             <p className="text-[#EC4918] font-medium">
-              Projects <br /> Delivered
+              Successful Projects Delivered
             </p>
           </div>
           <div className="lg:py-0 py-10 w-full flex lg:flex-col gap-4 items-center justify-evenly lg:justify-center text-center">
-            <h1 className="text-5xl font-medium">100+</h1>
+            <h1 className="text-5xl font-medium">50+</h1>
             <p className="text-[#EC4918] font-medium">
-              Repeat and <br /> Referral
+              Trusted Clients & Growing
             </p>
           </div>
         </div>
@@ -152,30 +149,28 @@ const About = () => {
               <span className="text-[#EC4918]"> Expert Digital</span> Strategy
               and <span className="text-[#58B9F8]">Design</span>
             </h1>
-            <p className="text-[#1F252B] text-xs lg:text-sm font-medium lg:my-10 my-4">
-              Cloud Sparrow has some of the best technical experts who are well
-              experienced in their respective provinces while holding the
-              perfect skills that are necessitated at the professional front.
-              Our team consists of geekiest aficionados, imaginative digital
-              artists, and the most ingenious and interactive marketers and
-              writers, who can provide advanced services, covering the full
-              umbrella of online marketing. Additionally, our team has a strong
-              hold over the latest web technology and it is our unvarying
-              venture to come up with the best in terms of quality and
-              commitment. The bestowed team of Cloud Sparrow makes it an extreme
-              priority to keep constant watch over the numerous online accounts
-              that we manage on popular social networks and on other platforms.
-              We make sure that we are able to surpass the expectations of our
-              clients and also to prove our proficiency in all the projects that
-              we embark on.
+            <p className="text-[#1F252B] text-xs lg:text-sm font-medium lg:mt-10 mt-4">
+              At Cloud Sparrow, our team comprises highly skilled professionals
+              with deep expertise in their respective fields. From tech-savvy
+              developers and creative digital artists to innovative marketers
+              and content strategists, we bring together the best minds to
+              deliver top-notch digital solutions.
             </p>
-            <p className="text-[#1F252B] text-xs lg:text-sm font-medium lg:my-10 my-4">
-              In addition, based in India, we provide a prominence offshore and
-              on-site services to software development companies and end-users
-              on broad progressions of hardware and software platforms. These
-              consist of Linux, windows, and Apache. Apart from this, we also
-              apply progressive technologies like HTML and PHP to deliver
-              un-equivalent solutions.
+            <p className="text-[#1F252B] text-xs lg:text-sm font-medium my-4">
+              We specialize in a full spectrum of online marketing services,
+              leveraging cutting-edge web technologies to ensure the highest
+              standards of quality and commitment. Our dedicated team
+              continuously monitors and optimizes online accounts across popular
+              social platforms, ensuring that we exceed client expectations with
+              every project.
+            </p>
+            <p className="text-[#1F252B] text-xs lg:text-sm font-medium lg:mb-10 mb-4">
+              Based in India, we provide both offshore and on-site services for
+              software development companies and end-users, working across
+              various hardware and software platforms, including Linux, Windows,
+              and Apache. Additionally, we utilize advanced technologies like
+              HTML, PHP, and modern frameworks to deliver unparalleled solutions
+              tailored to your business needs.
             </p>
           </div>
           <div className="hidden relative w-[40%] lg:flex items-end">
@@ -234,11 +229,11 @@ const About = () => {
             </div>
             <div className="flex flex-col w-[60%] justify-between items-start px-30 pt-0">
               <p className="font-medium">
-                Our chief aim is to educate clients in relation to the most
-                recent technologies in website development, which facilitates
-                them to promote their business model accordingly. With help from
-                latest technologies, superior quality, and a wide-ranging
-                service portfolio, we endeavor towards complete customer
+                Our primary goal is to empower clients with knowledge of the
+                latest website development technologies, enabling them to
+                effectively promote their business models. By leveraging
+                cutting-edge technology, top-tier quality, and a comprehensive
+                service portfolio, we strive to achieve complete customer
                 satisfaction.
               </p>
               <button className="uppercase py-3 px-10 bg-[#F48B3A] rounded-md text-xs font-medium text-white">

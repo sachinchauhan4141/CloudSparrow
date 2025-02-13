@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { TechStackBg } from "../../utils";
 
 const TechStack = () => {
   return (
@@ -13,7 +14,7 @@ const TechStack = () => {
         <img src="" alt="" />
       </div>
       {/* mid section */}
-      <div className="bg-[url('./assets/brandsBg.png')] flex flex-col gap-6 justify-center items-center w-[80vw] border-x-2 ">
+      <div style={{backgroundImage:`url(${TechStackBg})`}} className={`flex flex-col gap-6 justify-center items-center w-[80vw] border-x-2 bg-cover`}>
         {/* mid top section */}
         <div className="pt-14 px-60 text-center">
           <h1 className="uppercase font-bold text-6xl">
