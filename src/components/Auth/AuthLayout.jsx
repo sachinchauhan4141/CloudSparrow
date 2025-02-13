@@ -5,18 +5,27 @@ import { useNavigate } from "react-router-dom";
 const AuthLayout = ({ children, authentication = true }) => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
-  const authStatus = useSelector((state) => state.authSlice.status);
+  const authStatus = useSelector((state) => state.authSlice?.status ?? false);
 
   useEffect(() => {
-    if (authentication && authStatus !== authentication) {
-      navigate("/login");
-    } else if (!authentication && authStatus !== authentication) {
-      navigate("/");
-    }
-    setLoader(false);
-  }, [navigate, authentication, authStatus]);
+    if (authStatus === null) return; // Wait until authStatus is resolved
 
-  return loader ? <h1>Loading...</h1> : <>{children}</>;
+    if (authentication && !authStatus) {
+      navigate("/login");
+    } else if (!authentication && authStatus) {
+      navigate("/");
+    } else {
+      setLoader(false);
+    }
+  }, [authStatus, authentication, navigate]);
+
+  return loader ? (
+    <div className="flex items-center justify-center h-screen w-full">
+      <h1 className="text-3xl">Authenticating...</h1>
+    </div>
+  ) : (
+    <>{children}</>
+  );
 };
 
 export default AuthLayout;

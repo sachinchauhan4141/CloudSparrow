@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useResolvedPath } from "react-router-dom";
-import { logout } from "../../store/authSlice";
+import jobService from "../../appwrite/job";
 import authService from "../../appwrite/auth";
+import userService from "../../appwrite/user";
+import { setAllJobs } from "../../store/jobSlice";
+import { login, logout } from "../../store/authSlice";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +15,35 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { status, userData } = useSelector((state) => state.authSlice);
+
+  const getUser = async () => {
+    try {
+      const response = await authService.getCurrUser();
+      if (!response?.emailVerification) {
+        toast("check your mail for verification link");
+        toast("You have been logged out");
+        await authService.sendVerifyEmail();
+        await authService.logoutUser();
+      }
+      const userData = await userService.getUserById(response.$id);
+      console.log(userData);
+
+      if (userData) {
+        dispatch(login({ userData }));
+      } else {
+        dispatch(logout());
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const getAllJobs = async () => {
+    const jobData = await jobService.getAllJobs();
+    if (jobData) {
+      dispatch(setAllJobs({ jobsData: jobData.documents }));
+    }
+  };
 
   const handleLogout = () => {
     setIsOpen(!isOpen);
@@ -30,6 +62,11 @@ const Navbar = () => {
     "Careers",
     "Contact",
   ];
+
+  useEffect(() => {
+    getUser();
+    getAllJobs();
+  }, []);
 
   return (
     <div className="flex absolute justify-between items-center h-20 w-full px-4 text-black">

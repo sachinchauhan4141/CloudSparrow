@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import Footer from "./components/Common/Footer";
 import Careers from "./components/Careers/Careers";
@@ -9,10 +9,6 @@ import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import { IoIosArrowDropup } from "react-icons/io";
-import { useDispatch } from "react-redux";
-import authService from "./appwrite/auth";
-import userService from "./appwrite/user";
-import { login, logout } from "./store/authSlice";
 import Login from "./components/Auth/Login/Login";
 import Signup from "./components/Auth/Register/Signup";
 import UpdateUser from "./components/Auth/Update/UpdateUser";
@@ -23,14 +19,13 @@ import JobDash from "./components/Admin/JobDashBoard/JobDash";
 import UsersDash from "./components/Admin/UsersDash";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AuthLayout from "./components/Auth/AuthLayout";
-import { toast, ToastContainer } from "react-toastify";
-import jobService from "./appwrite/job";
-import { setAllJobs } from "./store/jobSlice";
+import { ToastContainer } from "react-toastify";
 import UpdatePassword from "./components/Auth/Recover/UpdatePassword";
+import NotFound from "./components/Error/NotFound";
+import NotFoundAdmin from "./components/Error/NotFoundAdmin";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-  const dispatch = useDispatch();
 
   const handleScroll = () => {
     if (window.scrollY > 300) {
@@ -44,36 +39,7 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const getUser = async () => {
-    try {
-      const response = await authService.getCurrUser();
-      if (!response?.emailVerification) {
-        toast("check your mail for verification link");
-        toast("You have been logged out");
-        await authService.sendVerifyEmail();
-        await authService.logoutUser();
-      }
-      const userData = await userService.getUserById(response.$id);
-      if (userData) {
-        dispatch(login({ userData }));
-      } else {
-        dispatch(logout());
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const getAllJobs = async () => {
-    const jobData = await jobService.getAllJobs();
-    if (jobData) {
-      dispatch(setAllJobs({ jobsData: jobData.documents }));
-    }
-  };
-
   useEffect(() => {
-    getUser();
-    getAllJobs();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -93,6 +59,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="passwordrecovery" element={<ForgotPassword />} />
         <Route path="updatepassword" element={<UpdatePassword />} />
+        <Route path="*" element={<NotFound />} />
         {/* protected routes logged in only */}
         <Route
           path="login"
@@ -119,44 +86,37 @@ function App() {
           }
         />
         {/* protected routes admin only */}
+        <Route path="/notadmin" element={<NotFoundAdmin />} />
         <Route
           path="/dashboard"
           element={
-            <AuthLayout>
-              <AdminLayout>
-                <Dashboard />
-              </AdminLayout>
-            </AuthLayout>
+            <AdminLayout>
+              <Dashboard />
+            </AdminLayout>
           }
         />
         <Route
           path="/dashboard/enquiry"
           element={
-            <AuthLayout>
-              <AdminLayout>
-                <EnquiryDash />
-              </AdminLayout>
-            </AuthLayout>
+            <AdminLayout>
+              <EnquiryDash />
+            </AdminLayout>
           }
         />
         <Route
           path="/dashboard/jobs"
           element={
-            <AuthLayout>
-              <AdminLayout>
-                <JobDash />
-              </AdminLayout>
-            </AuthLayout>
+            <AdminLayout>
+              <JobDash />
+            </AdminLayout>
           }
         />
         <Route
           path="/dashboard/users"
           element={
-            <AuthLayout>
-              <AdminLayout>
-                <UsersDash />
-              </AdminLayout>
-            </AuthLayout>
+            <AdminLayout>
+              <UsersDash />
+            </AdminLayout>
           }
         />
       </Routes>

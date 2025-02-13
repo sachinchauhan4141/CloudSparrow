@@ -103,8 +103,8 @@ const JobDescriptionCard = ({ JobDetails }) => {
             Terms: <span className="font-normal">{JobDetails.terms}</span>
           </p>
           <p className="font-bold">
-            Expirence:{" "}
-            <span className="font-normal">{JobDetails.expirience}</span>
+            Experience:{" "}
+            <span className="font-normal">{JobDetails.experience}</span>
           </p>
           <p className="font-bold">
             Remuneration:{" "}
