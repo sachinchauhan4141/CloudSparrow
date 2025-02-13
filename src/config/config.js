@@ -1,12 +1,18 @@
 const config = {
-  appwriteUrl: "https://cloud.appwrite.io/v1",
-  appwriteProjectId: "67a86c12001d6af97197",
-  appwriteDatabaseId: "67a86c98000d7607ffdc",
-  appwriteEnquiryCollectionId: "67a91276002b0f2c544c",
-  appwriteUserCollectionId: "67a89ac0000f75c5de9e",
-  appwriteJobCollectionId: "67a86cc200141e9e073f",
-  passRecoveryRedirectUrl: "https://cloudsparrowtechnology.com/updatepassword",
-  emailVerifyRedirectUrl: "https://cloudsparrowtechnology.com/",
+  appwriteUrl: String(import.meta.env.VITE_APPWRITE_URL),
+  appwriteProjectId: String(import.meta.env.VITE_PROJECT_ID),
+  appwriteDatabaseId: String(import.meta.env.VITE_DATABASE_ID),
+  appwriteEnquiryCollectionId: String(
+    import.meta.env.VITE_ENQUIRY_COLLECTION_ID
+  ),
+  appwriteUserCollectionId: String(import.meta.env.VITE_USER_COLLECTION_ID),
+  appwriteJobCollectionId: String(import.meta.env.VITE_JOB_COLLECTION_ID),
+  passRecoveryRedirectUrl: String(
+    import.meta.env.VITE_PASS_RECOVERY_REDIRECT_URL
+  ),
+  emailVerifyRedirectUrl: String(
+    import.meta.env.VITE_EMAIL_VERIFY_REDIRECT_URL
+  ),
 };
 
 export default config;
