@@ -1,6 +1,7 @@
 import { Client, Account, ID } from "appwrite";
 import config from "../config/config.js";
 import userService from "./user.js";
+import { toast } from "react-toastify";
 
 class AuthService {
   client = new Client();
@@ -44,7 +45,9 @@ class AuthService {
 
   async logoutUser() {
     try {
-      return await this.account.deleteSessions();
+      const response = await this.account.deleteSessions();
+      toast("Logged you out successfully...")
+      return response;
     } catch (error) {
       throw error;
     }
