@@ -7,6 +7,7 @@ import authService from "../../appwrite/auth";
 import userService from "../../appwrite/user";
 import { setAllJobs } from "../../store/jobSlice";
 import { login, logout } from "../../store/authSlice";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,11 +100,16 @@ const Navbar = () => {
         </nav>
       </div>
       <button
-        className="hidden lg:block text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center"
+        className={
+          "hidden lg:block font-medium hover:text-blue-400 transition text-xs " +
+          (path.pathname === "/" || path.pathname === "/careers"
+            ? " text-white "
+            : " ")
+        }
         type="button"
         onClick={() => setDropDown(!dropdown)}
       >
-        Dropdown
+        {dropdown ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
       </button>
       {dropdown && (
         <div
@@ -186,7 +192,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="absolute z-10 top-20 left-0 w-full bg-[url('./assets/BackGroundImage.png')] py-4 flex flex-col items-center lg:hidden">
+        <div className="absolute z-10 top-20 left-0 w-full bg-[url('./assets/BackGroundImage.png')] text-white py-4 flex flex-col items-center lg:hidden">
           {navItems.map((item) => (
             <Link
               onClick={() => setIsOpen(!isOpen)}
