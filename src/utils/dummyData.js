@@ -170,28 +170,19 @@ export const CARDS = [
 ];
 
 export const data = [
-  { title: "Healthcare", icon: "/cloudsparrow-all-img/heart.png" },
-  { title: "Cloud Solutions", icon: "/cloudsparrow-all-img/cloudbulb.png" },
-  { title: "e-Commerce", icon: "/cloudsparrow-all-img/bucket.png" },
-  { title: "Sports", icon: "/cloudsparrow-all-img/balls.png" },
-  { title: "Gaming", icon: "/cloudsparrow-all-img/controller.png" },
-  { title: "Travel", icon: "/cloudsparrow-all-img/earth.png" },
-  { title: "Insurance", icon: "/cloudsparrow-all-img/insurance.png" },
-  { title: "Real Estate", icon: "/cloudsparrow-all-img/realestate.png" },
-  {
-    title: "Marketing & Advertisement",
-    icon: "/cloudsparrow-all-img/marketing.png",
-  },
-  { title: "Automobile", icon: "/cloudsparrow-all-img/automobile.png" },
-  { title: "Logistics", icon: "/cloudsparrow-all-img/logistics.png" },
-  {
-    title: "Education & Non Profit",
-    icon: "/cloudsparrow-all-img/education.png",
-  },
-  { title: "Manufacturing", icon: "/cloudsparrow-all-img/manufacturing.png" },
-  { title: "Media & Entertainment", icon: "/cloudsparrow-all-img/media.png" },
-  {
-    title: "Technology & Consulting",
-    icon: "/cloudsparrow-all-img/technology.png",
-  },
+  { title: "Healthcare Software Solutions", icon: "/cloudsparrow-all-img/heart.png" },
+  { title: "Cloud Infrastructure & Security", icon: "/cloudsparrow-all-img/cloudbulb.png" },
+  { title: "Custom e-Commerce Development", icon: "/cloudsparrow-all-img/bucket.png" },
+  { title: "Sports Analytics & Management", icon: "/cloudsparrow-all-img/balls.png" },
+  { title: "Travel & Hospitality Tech", icon: "/cloudsparrow-all-img/earth.png" },
+  { title: "Insurance Management Solutions", icon: "/cloudsparrow-all-img/insurance.png" },
+  { title: "Real Estate Digital Platforms", icon: "/cloudsparrow-all-img/realestate.png" },
+  { title: "Marketing Automation & Ads", icon: "/cloudsparrow-all-img/marketing.png" },
+  { title: "Automobile Tech & IoT", icon: "/cloudsparrow-all-img/automobile.png" },
+  { title: "Supply Chain & Logistics Tech", icon: "/cloudsparrow-all-img/logistics.png" },
+  { title: "E-Learning & Non-Profit Solutions", icon: "/cloudsparrow-all-img/education.png" },
+  { title: "Smart Manufacturing & Automation", icon: "/cloudsparrow-all-img/manufacturing.png" },
+  { title: "Media Streaming & Content Platforms", icon: "/cloudsparrow-all-img/media.png" },
+  { title: "AI, Tech Consulting & Innovation", icon: "/cloudsparrow-all-img/technology.png" },
 ];
+

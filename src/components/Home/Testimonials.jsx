@@ -31,7 +31,7 @@ const Testimonials = () => {
               WHAT OUR HAPPY CUSTOMERS SAY
             </h2>
             <p className="text-sm mt-4 lg:w-sm">
-              Lorem ipsum dolor sit amet consectetur. Eu auctor faucibus nunc accumsan tristique augue sodales egestas orci.
+              Here the reviews that we got from our customers
             </p>
           </div>
 

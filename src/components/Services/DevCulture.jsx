@@ -14,9 +14,10 @@ const DevCulture = () => {
       </div>
       <div className="my-4 lg:my-10 w-fit mx-auto p-2">
         <h3 className="text-sm font-medium">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.Lorem <br /> Ipsum has been the industry's standard dummy
-          text ever since the 1500s
+          We provide tailored digital solutions for various <br /> industries,
+          leveraging the latest technologies to drive innovation, efficiency,
+          and growth. <br /> From custom software to scalable cloud solutions, we help
+          businesses stay ahead in their respective domains.
         </h3>
       </div>
 
