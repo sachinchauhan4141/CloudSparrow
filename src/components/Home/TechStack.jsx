@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TechStackBg } from "../../utils";
+import { TechStackBg } from "../../utils/utils";
 
 const TechStack = () => {
   return (
