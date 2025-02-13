@@ -74,7 +74,7 @@ const Contact = () => {
         </h1>
       </div>
 
-      <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-4">
+      <div className="bg-[#323E48] text-[#FFFFFF] flex flex-col justify-center items-center py-4 lg:py-20">
         <div className="lg:py-4 lg:my-2 px-4 lg:px-0">
           <h1 className="text-3xl lg:text-4xl font-medium">
             Fill out the form and we will be in touch.
@@ -166,8 +166,8 @@ const Contact = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="flex w-full mb-5 mt-12 h-20">
-              <div className="w-full">I'm not a robot</div>
+            <div className="flex w-full mb-5 mt-6 h-20">
+              {/* <div className="w-full ">I'm not a robot</div> */}
               <div className="w-full relative">
                 <button
                   disabled={loading.status}
@@ -182,7 +182,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="p-4 lg:py-28 lg:px-52 bg-[#F6F6F6]">
+      {/* <div className="p-4 lg:py-28 lg:px-52 bg-[#F6F6F6]">
         <div>
           <h1 className="text-3xl lg:text-6xl font-medium">
             Where to find us?
@@ -190,14 +190,14 @@ const Contact = () => {
         </div>
         <div className="flex gap-8 mt-4 lg:mt-16 overflow-scroll no-scrollbar">
           <Card
-            title={"Delhi NCR"}
-            color={"#499DFF"}
-            image={"/cloudsparrow-all-img/delhi.png"}
-          />
-          <Card
             title={"Lucknow"}
             color={"#FF9559"}
             image={"/cloudsparrow-all-img/lucknow.png"}
+          />
+          <Card
+            title={"Delhi NCR"}
+            color={"#499DFF"}
+            image={"/cloudsparrow-all-img/delhi.png"}
           />
           <Card
             title={"USA"}
@@ -205,7 +205,7 @@ const Contact = () => {
             image={"/cloudsparrow-all-img/usa.png"}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -221,7 +221,7 @@ const Card = ({ title, color, image }) => {
       </div>
       <div className="my-5">
         <p className="font-medium">
-          E-53, Block G, Sector 3 Noida, Pincode-201301 Uttar-Pradesh India
+          C26 Block Sector 65, Noida, Uttar-Pradesh, India
         </p>
       </div>
       <div className="flex justify-center items-center">

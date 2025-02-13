@@ -37,7 +37,10 @@ const Work = () => {
         />
       </div>
       <div className="flex flex-col gap-12 items-center justify-center w-full px-8 pt-66">
-        <Link to={"/portfolio"} className="z-10 text-sm font-bold px-4 py-2 bg-[#2A6BFD] text-white rounded-md">
+        <Link
+          to={"/portfolio"}
+          className="z-10 text-sm font-bold px-4 py-2 bg-[#2A6BFD] text-white rounded-md"
+        >
           Explore Our Work
         </Link>
         <div className="flex items-center justify-evenly bg-[url('/cloudsparrow-all-img/Rectangle24.png')] h-[80vh] w-full px-40">
@@ -58,10 +61,10 @@ const Work = () => {
             </div>
           </div>
           <div className="flex flex-col justify-between items-center w-[54%] gap-18">
-            <div className="rounded-xl overflow-hidden border-4 h-72 w-[540px]">
+            <div className="relative rounded-xl overflow-hidden border-4 h-72 w-[540px]">
               <img className="w-full h-full" src={data[curr]} alt="" />
             </div>
-            <div className="flex justify-between items-center w-full text-white">
+            <div className="hidden justify-between items-center w-full text-white">
               <IoIosArrowDropleftCircle
                 onClick={prev}
                 className="rounded-full border border-white size-8"
@@ -75,9 +78,12 @@ const Work = () => {
           </div>
           <div className="flex flex-col justify-center gap-20 items-center w-[25%] h-full">
             <div className="flex items-center justify-center">
-              <button className="rounded-sm font-bold text-xs bg-gray-200 border border-black text-[#2A6BFD] px-6 py-2">
-                Click Live Project
-              </button>
+              <Link
+                to={"/portfolio"}
+                className="rounded-sm font-bold text-xs border bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
+              >
+                Check Live Project
+              </Link>
             </div>
             <div className="rounded-xl overflow-hidden border-3 ">
               <img

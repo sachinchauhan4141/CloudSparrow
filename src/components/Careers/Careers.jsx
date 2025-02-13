@@ -6,17 +6,11 @@ const Careers = () => {
     <>
       <div className="bg-[url('./assets/careerimg.png')] bg-cover bg-center lg:min-h-[500px] text-white">
         <div className="px-4 pt-26 pb-10 lg:px-0 lg:pt-0 lg:pb-0 lg:pl-28 lg:w-full lg:min-h-[500px] bg-gradient-to-r from-[#080808B8] via-transparent to-transparent flex flex-col items-start justify-center">
-          <div>
-            <p className="font-bold text-xs">
-              HOME / <span className="text-[#0F75BC]">CAREERS</span>
-            </p>
-          </div>
           <h1 className="font-bold text-3xl my-4 lg:my-0 lg:text-[74px]">
-            Join the Cloud-Sparrow
+            Join The Cloud-Sparrow
           </h1>
-          <p className="font-bold text-sm lg:text-[20px]">
-          At Cloud-Sparrow,<br className="hidden lg:block" /> we are on a mission to transform how businesses leverage <br className="hidden lg:block" /> digital marketing, web development, and design to achieve success.
-            
+          <p className="font-medium text-xs lg:text-sm">
+          At Cloud-Sparrow,we are on a mission to transform <br className="hidden lg:block" /> how businesses leverage digital marketing, web development, and design to achieve success.
           </p>
         </div>
       </div>
@@ -38,7 +32,7 @@ const Careers = () => {
           <h1 className=" font-bold text-[48px] text-[#080808] leading-[1.1]">
             Innovators. Builders. <br /> Visionaries.
           </h1>
-          <p className="text-[16px] my-6 font-medium text-[#080808]">
+          <p className="text-xs lg:text-sm my-6 font-medium text-[#080808]">
             At Cloud-Sparrow, we craft cutting-edge digital experiences that
             drive brand growth and engagement.
             <br className="hidden lg:block" /> From high-performance websites to
@@ -49,7 +43,7 @@ const Careers = () => {
             marketing to help businesses thrive in a competitive digital
             landscape.
           </p>
-          <button className="bg-[#0F75BC] py-2 px-6 rounded-sm text-white text-[15px]">
+          <button className="bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded-sm text-white text-sm font-medium">
             See Open Positions
           </button>
         </div>

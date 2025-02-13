@@ -8,9 +8,9 @@ const Banner = () => {
   const [curr, setCurr] = useState(0);
 
   const data = [
-    "/cloudsparrow-all-img/Rectangle1.png",
-    "/cloudsparrow-all-img/Card1Image.png",
-    "/cloudsparrow-all-img/Card2Image.png",
+    "/cloudsparrow-all-img/BannerTabImg1.png",
+    "/cloudsparrow-all-img/BannerTabImg2.png",
+    "/cloudsparrow-all-img/BannerTabImg3.png",
   ];
 
   const prev = () => {

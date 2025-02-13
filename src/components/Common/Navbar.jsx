@@ -170,7 +170,10 @@ const Navbar = () => {
             )}
           </ul>
           <div className="py-2">
-            <Link to={""} className="block px-4 py-2 text-sm hover:bg-gray-100">
+            <Link
+              to={"/contact"}
+              className="block px-4 py-2 text-sm hover:bg-gray-100"
+            >
               Work With Us
             </Link>
           </div>
@@ -238,7 +241,7 @@ const Navbar = () => {
             </>
           )}
           <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-            Work With Us
+            <Link to={"/contact"}>Work With Us</Link>
           </button>
         </div>
       )}
