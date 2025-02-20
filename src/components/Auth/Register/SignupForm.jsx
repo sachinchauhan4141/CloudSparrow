@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authService from "../../../appwrite/auth";
+import imageService from "../../../appwrite/ImageManager";
 import { toast } from "react-toastify";
 
 const Signup = () => {
@@ -11,19 +12,21 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [cpass, setCpass] = useState("");
   const [phone, setPhone] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading({ status: true, message: "Registering..." });
+      const avatarData = await imageService.uploadImage(avatar);
+      setLoading({ status: true, message: "Avatar uploaded..." });
       if (password === cpass) {
         const session = await authService.createAccount({
           email,
           password,
           name,
           phone,
-          avatar,
+          avatar: avatarData.imageUrl,
         });
         if (session) {
           toast("Registered Successfully");
@@ -106,12 +109,12 @@ const Signup = () => {
       <div className="flex flex-col w-full my-2 lg:my-4 gap-2">
         <label htmlFor="avatar">avatar</label>
         <input
-          type="text"
+          type="file"
           name="avatar"
           id="avatar"
+          accept="image/*"
           className="bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
-          value={avatar}
-          onChange={(e) => setAvatar(e.target.value)}
+          onChange={(e) => setAvatar(e.target.files[0])}
           required
         />
       </div>

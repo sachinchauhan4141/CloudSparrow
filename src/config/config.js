@@ -7,6 +7,8 @@ const config = {
   ),
   appwriteUserCollectionId: String(import.meta.env.VITE_USER_COLLECTION_ID),
   appwriteJobCollectionId: String(import.meta.env.VITE_JOB_COLLECTION_ID),
+  appwriteImageCollectionId:String(import.meta.env.VITE_IMAGE_COLLECTION_ID),
+  appwriteStorageId:String(import.meta.env.VITE_STORAGE_ID),
   passRecoveryRedirectUrl: String(
     import.meta.env.VITE_PASS_RECOVERY_REDIRECT_URL
   ),
