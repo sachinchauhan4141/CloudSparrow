@@ -18,6 +18,7 @@ import Dashboard from "./components/Admin/Dashboard";
 import EnquiryDash from "./components/Admin/EnquiryDash";
 import JobDash from "./components/Admin/JobDashBoard/JobDash";
 import UsersDash from "./components/Admin/UsersDash";
+import TeamDash from "./components/Admin/TeamDashBoard/TeamDash";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AuthLayout from "./components/Auth/AuthLayout";
 import { ToastContainer } from "react-toastify";
@@ -125,6 +126,16 @@ function App() {
             <AuthLayout>
               <AdminLayout>
                 <UsersDash />
+              </AdminLayout>
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/dashboard/team"
+          element={
+            <AuthLayout>
+              <AdminLayout>
+                <TeamDash />
               </AdminLayout>
             </AuthLayout>
           }

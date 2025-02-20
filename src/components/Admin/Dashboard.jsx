@@ -24,6 +24,13 @@ const Dashboard = () => {
       icon: "/cloudsparrow-all-img/service_card_3_icon.png",
       path: "/dashboard/enquiry",
     },
+    {
+      text: "Manage TeamMembers",
+      color: "#499DFF",
+      image: "/cloudsparrow-all-img/boytab.png",
+      icon: "/cloudsparrow-all-img/service_card_1_icon.png",
+      path: "/dashboard/team",
+    },
   ];
 
   return (
