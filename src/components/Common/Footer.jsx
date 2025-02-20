@@ -1,6 +1,6 @@
 import React from "react";
 import { CiFacebook } from "react-icons/ci";
-import { FaInstagram, FaYoutube, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { CiLinkedin, CiLocationOn, CiMail } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
@@ -30,13 +30,22 @@ const Footer = () => {
             .
           </div>
           <div className="my-4 lg:my-0 flex justify-center items-center space-x-4 text-[40px] h-full w-full">
-            <a href="https://www.facebook.com/profile.php?id=61571866867135" target="_blank">
+            <a
+              href="https://www.facebook.com/profile.php?id=61571866867135"
+              target="_blank"
+            >
               <CiFacebook />
             </a>
-            <a href="https://www.instagram.com/cloudsparrowtech" target="_blank">
+            <a
+              href="https://www.instagram.com/cloudsparrowtech"
+              target="_blank"
+            >
               <FaInstagram />
             </a>
-            <a href="https://www.linkedin.com/in/cloud-sparrow-aa6b48346/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/cloud-sparrow-aa6b48346/"
+              target="_blank"
+            >
               <CiLinkedin />
             </a>
             <a href="https://wa.me/917838393552" target="_blank">
@@ -61,7 +70,9 @@ const Footer = () => {
             <div className="bg-blue-600 p-3 rounded-full text-xl">
               <CiLocationOn />
             </div>
-            <p className="mt-2 text-[#FFFBF0] font-medium">C26 Block Sector 65,</p>
+            <p className="mt-2 text-[#FFFBF0] font-medium">
+              C26 Block Sector 65,
+            </p>
             <p className="text-[#FFFBF0] font-medium">Noida, Uttar Pradesh</p>
           </div>
           <div className="block lg:hidden w-full border-dotted bg-gradient-to-r h-[1px] from-[#55555500] via-gray-600 to-[#55555500]" />
@@ -78,29 +89,47 @@ const Footer = () => {
         </div>
         <div className="w-full border-dotted bg-gradient-to-r h-[1px] from-[#55555500] via-gray-600 to-[#55555500]" />
         <div className="lg:my-0 my-4 flex flex-col justify-center items-center h-[20%]">
-          <div className="hidden lg:flex text-[#FFFFFF] items-center justify-evenly gap-14 text-xs font-medium h-full">
-            <Link className="cursor-pointer" to={"/"}>
+          <div className="flex text-[#FFFFFF] items-center justify-evenly gap-2 lg:gap-14 text-xs font-medium h-full flex-wrap">
+            <Link className="cursor-pointer hover:text-gray-400" to={"/"}>
               HOME
             </Link>
-            <Link className="cursor-pointer" to={"/about"}>
+            <Link className="cursor-pointer hover:text-gray-400" to={"/about"}>
               ABOUT
             </Link>
-            <Link className="cursor-pointer" to={"/services"}>
+            <Link
+              className="cursor-pointer hover:text-gray-400"
+              to={"/services"}
+            >
               SERVICES
             </Link>
-            <Link className="cursor-pointer" to={"/portfolio"}>
+            <Link
+              className="cursor-pointer hover:text-gray-400"
+              to={"/portfolio"}
+            >
               PORTFOLIO
             </Link>
-            <Link className="cursor-pointer" to={"/careers"}>
+            <Link
+              className="cursor-pointer hover:text-gray-400"
+              to={"/careers"}
+            >
               CAREERS
             </Link>
-            <Link className="cursor-pointer" to={"/contact"}>
+            <Link
+              className="cursor-pointer hover:text-gray-400"
+              to={"/contact"}
+            >
               CONTACT
+            </Link>
+            <Link
+              to={"termsandconditions"}
+              className="cursor-pointer hover:text-gray-400"
+            >
+              PRIVACYPOLICY/T&Cs
             </Link>
           </div>
           <div className="hidden lg:block w-full border-dotted bg-gradient-to-r h-[1px] from-[#55555500] via-gray-600 to-[#55555500]" />
           <div className="h-full flex items-center justify-center">
-            <div className="text-xs">
+            <div className="text-xs my-2">
               <p>2025 © Cloud Sparrow Technology LLP All Rights Reserved</p>
             </div>
           </div>

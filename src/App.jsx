@@ -6,6 +6,7 @@ import Careers from "./components/Careers/Careers";
 import Navbar from "./components/Common/Navbar";
 import Contact from "./components/Contact/Contact";
 import Services from "./components/Services/Services";
+import TermsAndConditions from "./components/T&C/TermsAndConditions";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import { IoIosArrowDropup } from "react-icons/io";
@@ -57,6 +58,7 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="careers" element={<Careers />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="termsandconditions" element={<TermsAndConditions />} />
         <Route path="passwordrecovery" element={<ForgotPassword />} />
         <Route path="updatepassword" element={<UpdatePassword />} />
         <Route path="*" element={<NotFound />} />
