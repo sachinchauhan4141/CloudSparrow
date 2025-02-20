@@ -120,6 +120,9 @@ const Footer = () => {
             >
               CONTACT
             </Link>
+            <Link className="cursor-pointer hover:text-gray-400" to={"/team"}>
+              TEAM
+            </Link>
             <Link
               to={"termsandconditions"}
               className="cursor-pointer hover:text-gray-400"

@@ -25,6 +25,7 @@ import { ToastContainer } from "react-toastify";
 import UpdatePassword from "./components/Auth/Recover/UpdatePassword";
 import NotFound from "./components/Error/NotFound";
 import NotFoundAdmin from "./components/Error/NotFoundAdmin";
+import Team from "./components/Team/Team";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,6 +59,7 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="careers" element={<Careers />} />
+        <Route path="team" element={<Team />} />
         <Route path="contact" element={<Contact />} />
         <Route path="termsandconditions" element={<TermsAndConditions />} />
         <Route path="passwordrecovery" element={<ForgotPassword />} />

@@ -51,7 +51,14 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  const navItems = ["Home", "Services", "Portfolio", "Careers", "About"];
+  const navItems = [
+    "Home",
+    "Services",
+    "Portfolio",
+    "Team",
+    "Careers",
+    "About",
+  ];
 
   useEffect(() => {
     getUser();
