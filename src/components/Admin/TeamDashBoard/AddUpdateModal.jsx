@@ -57,7 +57,7 @@ const AddUpdateModal = ({
             onChange={(e) =>
               setForm({
                 ...form,
-                avatar: URL.createObjectURL(e.target.files[0]),
+                avatar: e.target.files[0],
               })
             }
             required

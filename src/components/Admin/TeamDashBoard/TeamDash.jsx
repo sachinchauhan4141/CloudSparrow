@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import TeamMemberService from "../../../appwrite/team";
+import imageService from "../../../appwrite/ImageManager";
 import AddUpdateModal from "./AddUpdateModal";
 import TeamMemberCard from "./TeamMemberCard";
 
@@ -34,14 +35,31 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const {imageUrl} = await imageService.uploadImage(form.avatar);
+      console.log(imageUrl);
+      
       if (editingId) {
-        await TeamMemberService.updateTeamMember({ id: editingId, ...form });
+        await TeamMemberService.updateTeamMember({
+          id: editingId,
+          ...form,
+          avatar: imageUrl,
+        });
         toast.success("Team member updated successfully");
       } else {
-        await TeamMemberService.createTeamMember(form);
+        await TeamMemberService.createTeamMember({
+          ...form,
+          avatar: imageUrl,
+        });
         toast.success("Team member added successfully");
       }
-      setForm({ name: "", email: "", role: "", teamId: "", avatar: "", description: "" });
+      setForm({
+        name: "",
+        email: "",
+        role: "",
+        teamId: "",
+        avatar: "",
+        description: "",
+      });
       setEditingId(null);
       setIsModalOpen(false);
       fetchTeamMembers();
