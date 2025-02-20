@@ -90,33 +90,41 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <AdminLayout>
-              <Dashboard />
-            </AdminLayout>
+            <AuthLayout>
+              <AdminLayout>
+                <Dashboard />
+              </AdminLayout>
+            </AuthLayout>
           }
         />
         <Route
           path="/dashboard/enquiry"
           element={
-            <AdminLayout>
-              <EnquiryDash />
-            </AdminLayout>
+            <AuthLayout>
+              <AdminLayout>
+                <EnquiryDash />
+              </AdminLayout>
+            </AuthLayout>
           }
         />
         <Route
           path="/dashboard/jobs"
           element={
-            <AdminLayout>
-              <JobDash />
-            </AdminLayout>
+            <AuthLayout>
+              <AdminLayout>
+                <JobDash />
+              </AdminLayout>
+            </AuthLayout>
           }
         />
         <Route
           path="/dashboard/users"
           element={
-            <AdminLayout>
-              <UsersDash />
-            </AdminLayout>
+            <AuthLayout>
+              <AdminLayout>
+                <UsersDash />
+              </AdminLayout>
+            </AuthLayout>
           }
         />
       </Routes>

@@ -51,14 +51,7 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  const navItems = [
-    "Home",
-    "About",
-    "Services",
-    "Portfolio",
-    "Careers",
-    "Contact",
-  ];
+  const navItems = ["Home", "Services", "Portfolio", "Careers", "About"];
 
   useEffect(() => {
     getUser();
@@ -95,90 +88,79 @@ const Navbar = () => {
           ))}
         </nav>
       </div>
-      <button
-        className={
-          "hidden lg:block font-medium hover:text-blue-400 transition text-xs " +
-          (path.pathname === "/" || path.pathname === "/careers"
-            ? " text-white "
-            : " ")
-        }
-        type="button"
-        onClick={() => setDropDown(!dropdown)}
-      >
-        {dropdown ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
-      </button>
-      {dropdown && (
-        <div
-          onClick={() => setDropDown(false)}
-          className="absolute hidden lg:block right-4 top-16 divide-y divide-black rounded-lg shadow-sm w-44 bg-white text-black"
-        >
-          {userData && (
-            <div className="px-4 py-3 text-sm">
-              <div>{userData.name}</div>
-              <div className="font-medium truncate">{userData.email}</div>
-            </div>
-          )}
-          <ul className="py-2 text-sm">
-            {status ? (
-              <>
-                {userData?.admin && (
-                  <li>
-                    <Link
-                      to={"/dashboard"}
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Dashboard
-                    </Link>
-                  </li>
-                )}
-                <li>
-                  <Link
-                    to={"/updateuser/" + userData?.$id}
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Account
-                  </Link>
-                </li>
-                <li>
-                  <button
-                    onClick={handleLogout}
-                    className="block px-4 py-2 hover:bg-gray-100 w-full text-left"
-                  >
-                    Logout
-                  </button>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link
-                    to={"/login"}
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/signup"}
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Register
-                  </Link>
-                </li>
-              </>
-            )}
-          </ul>
-          <div className="py-2">
-            <Link
-              to={"/contact"}
-              className="block px-4 py-2 text-sm hover:bg-gray-100"
-            >
-              Work With Us
-            </Link>
-          </div>
+      <div className="flex gap-2 items-center">
+        <div className="hidden lg:block py-2">
+          <Link
+            to={"/contact"}
+            className=" px-4 py-2 text-sm text-white rounded-md bg-blue-700 hover:bg-blue-800"
+          >
+            Contact Us
+          </Link>
         </div>
-      )}
+        {userData && (
+          <div>
+            <button
+              className={
+                "hidden lg:block font-medium hover:text-blue-400 transition text-xs " +
+                (path.pathname === "/" || path.pathname === "/careers"
+                  ? " text-white "
+                  : " ")
+              }
+              type="button"
+              onClick={() => setDropDown(!dropdown)}
+            >
+              {dropdown ? (
+                <AiOutlineClose size={24} />
+              ) : (
+                <AiOutlineMenu size={24} />
+              )}
+            </button>
+            {dropdown && (
+              <div
+                onClick={() => setDropDown(false)}
+                className="absolute hidden lg:block right-4 top-16 divide-y divide-black rounded-lg shadow-sm w-44 bg-white text-black"
+              >
+                <div className="px-4 py-3 text-sm">
+                  <div>{userData.name}</div>
+                  <div className="font-medium truncate">{userData.email}</div>
+                </div>
+                <ul className="py-2 text-sm">
+                  {status && (
+                    <>
+                      {userData?.admin && (
+                        <li>
+                          <Link
+                            to={"/dashboard"}
+                            className="block px-4 py-2 hover:bg-gray-100"
+                          >
+                            Dashboard
+                          </Link>
+                        </li>
+                      )}
+                      <li>
+                        <Link
+                          to={"/updateuser/" + userData?.$id}
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Account
+                        </Link>
+                      </li>
+                      <li>
+                        <button
+                          onClick={handleLogout}
+                          className="block px-4 py-2 hover:bg-gray-100 w-full text-left"
+                        >
+                          Logout
+                        </button>
+                      </li>
+                    </>
+                  )}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
 
       {/* Mobile Menu Button */}
       <button
@@ -202,7 +184,7 @@ const Navbar = () => {
               {item}
             </Link>
           ))}
-          {status ? (
+          {status && (
             <>
               <button
                 onClick={handleLogout}
@@ -226,22 +208,12 @@ const Navbar = () => {
                 </button>
               )}
             </>
-          ) : (
-            <>
-              <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-                <Link onClick={() => setIsOpen(!isOpen)} to={"/login"}>
-                  Login
-                </Link>
-              </button>
-              <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-                <Link onClick={() => setIsOpen(!isOpen)} to={"/signup"}>
-                  Register
-                </Link>
-              </button>
-            </>
           )}
-          <button className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
-            <Link to={"/contact"}>Work With Us</Link>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="mt-4 h-10 px-6 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white"
+          >
+            <Link to={"/contact"}>Contact Us</Link>
           </button>
         </div>
       )}

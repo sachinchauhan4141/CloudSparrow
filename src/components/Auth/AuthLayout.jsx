@@ -13,7 +13,7 @@ const AuthLayout = ({ children, authentication = true }) => {
     if (authentication && !authStatus) {
       navigate("/login");
     } else if (!authentication && authStatus) {
-      navigate("/");
+      navigate("/dashboard");
     } else {
       setLoader(false);
     }
