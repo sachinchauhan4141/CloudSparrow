@@ -25,7 +25,7 @@ const TeamComponent = () => {
     <div className="bg-white lg:px-8 px-2 py-20">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8">
-          We are the people who makes up the cx`loud-sparrow
+          We are the people who makes up the cloud-sparrow
         </h1>
         <p className="text-center mb-12">
           Our philosophy is simple; hire great people and give them the
@@ -46,7 +46,7 @@ const TeamComponent = () => {
                     className="mx-auto rounded-md lg:rounded-2xl mb-4"
                   />
                   <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-gray-500 mt-2">{member.description}</p>
+                  <p className="text-gray-500 mt-2 line-clamp-3">{member.description}</p>
                   <p className="text-sm text-gray-400 mt-2">
                     Joined: {member.joinedAt}
                   </p>
