@@ -7,6 +7,9 @@ const config = {
   ),
   appwriteUserCollectionId: String(import.meta.env.VITE_USER_COLLECTION_ID),
   appwriteJobCollectionId: String(import.meta.env.VITE_JOB_COLLECTION_ID),
+  appwriteTestimonialsCollectionId: String(
+    import.meta.env.VITE_TESTIMONIALS_COLLECTION_ID
+  ),
   appwriteTeamMemberCollectionId: String(
     import.meta.env.VITE_TEAM_MEMBERS_COLLECTION_ID
   ),

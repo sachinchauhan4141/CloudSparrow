@@ -31,12 +31,19 @@ const Dashboard = () => {
       icon: "/cloudsparrow-all-img/service_card_1_icon.png",
       path: "/dashboard/team",
     },
+    {
+      text: "Manage Testimonials",
+      color: "#FDE284",
+      image: "/cloudsparrow-all-img/girlgallery.png",
+      icon: "/cloudsparrow-all-img/service_card_2_icon.png",
+      path: "/dashboard/testimonials",
+    },
   ];
 
   return (
     <div className="py-16 lg:px-24 px-4 min-h-screen bg-gray-200">
       <h1 className="text-5xl py-4 lg:my-4">Dashboard</h1>
-      <div className="flex flex-col lg:flex-row gap-2 lg:gap-7 lg:justify-end">
+      <div className="flex flex-col lg:flex-row flex-wrap gap-2 lg:gap-7 lg:justify-start">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
         ))}
@@ -48,7 +55,7 @@ const Dashboard = () => {
 const Card = ({ icon, text, image, color, path }) => (
   <div
     style={{ backgroundColor: color }}
-    className="lg:w-[36%] rounded-lg p-4 text-xl"
+    className="lg:w-[30%] rounded-lg p-4 text-xl"
   >
     <Link to={path}>
       <div className="flex justify-end">

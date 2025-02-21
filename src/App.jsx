@@ -26,6 +26,7 @@ import UpdatePassword from "./components/Auth/Recover/UpdatePassword";
 import NotFound from "./components/Error/NotFound";
 import NotFoundAdmin from "./components/Error/NotFoundAdmin";
 import Team from "./components/Team/Team";
+import TestimonialsDashboard from "./components/Admin/TestimonialsDashboard/testimonialsDashboard";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -138,6 +139,16 @@ function App() {
             <AuthLayout>
               <AdminLayout>
                 <TeamDash />
+              </AdminLayout>
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/dashboard/testimonials"
+          element={
+            <AuthLayout>
+              <AdminLayout>
+                <TestimonialsDashboard />
               </AdminLayout>
             </AuthLayout>
           }
