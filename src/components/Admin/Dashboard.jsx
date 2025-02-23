@@ -42,7 +42,16 @@ const Dashboard = () => {
 
   return (
     <div className="py-16 lg:px-24 px-4 min-h-screen bg-gray-200">
-      <h1 className="text-5xl py-4 lg:my-4">Dashboard</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-5xl py-4 lg:my-4">Dashboard</h1>
+        <a
+          href="https://cloudsparrowmail.onrender.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-3 text-sm bg-blue-600 font-semibold rounded-xl hover:bg-blue-700 transition text-white">
+          Compose Email
+        </a>
+      </div>
       <div className="flex flex-col lg:flex-row flex-wrap gap-2 lg:gap-7 lg:justify-start">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
