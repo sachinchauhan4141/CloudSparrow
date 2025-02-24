@@ -18,28 +18,27 @@ const TeamComponent = () => {
   }, []);
 
   return (
-    <div className="lg:px-10 lg:py-20 px-4 py-10 bg-gray-50">
+    <div className="px-4 py-20 md:px-8 lg:px-16 xl:px-24 bg-gray-50">
       <div className="text-center font-medium">
         <h5 className="text-gray-600 text-lg uppercase tracking-wide">
           Our Team
         </h5>
-        <h1 className="text-4xl md:text-5xl font-bold my-3">
+        <h1 className="text-3xl md:text-5xl font-bold my-3">
           Meet The <span className="text-blue-600">CloudSparrow</span> Team
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Our team is dedicated to delivering innovative solutions in digital
-          marketing, web development, and design, ensuring success for
+          marketing, <br /> web development, and design, ensuring success for
           businesses worldwide.
         </p>
       </div>
 
-      {/* Role-Based Sections */}
       {Object.keys(teamMembers).map((role) => (
-        <div key={role} className="my-4 lg:mx-20">
+        <div key={role} className="mt-10">
           <h2 className="text-2xl font-semibold text-blue-700 border-b-2 border-blue-500 inline-block mb-6">
             {role}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {teamMembers[role].map((member) => (
               <Card data={member} key={member.$id} />
             ))}
@@ -52,8 +51,8 @@ const TeamComponent = () => {
 
 const Card = ({ data }) => {
   return (
-    <div className="border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition hover:shadow-2xl">
-      <div className="w-full h-48 overflow-hidden">
+    <div className="border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <div className="w-full aspect-[4/3] overflow-hidden">
         <img
           src={data.avatar}
           alt={data.name}
@@ -62,7 +61,7 @@ const Card = ({ data }) => {
       </div>
       <div className="p-4 font-medium">
         <h3 className="text-lg font-semibold text-gray-800">{data.name}</h3>
-        <p className="text-gray-500 text-xs">@{data.email}</p>
+        <p className="text-gray-500 text-xs">{data.email}</p>
         <p className="text-blue-600 font-medium mt-1">{data.role}</p>
         <p className="text-gray-600 text-sm mt-2 line-clamp-3">
           {data.description}
